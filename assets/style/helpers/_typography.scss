@@ -1,0 +1,12 @@
+//
+@each $nameSize, $size in $font-size {
+  .text-#{$nameSize} {
+    font-size: #{$size}px;
+  }
+}
+//
+@each $nameWeight, $size in $font-weight {
+  .weight-#{$nameWeight} {
+    font-weight: #{$size};
+  }
+}
