@@ -2,6 +2,14 @@
 @each $nameSize, $size in $font-size {
   .text-#{$nameSize} {
     font-size: #{$size}px;
+    line-height: #{$size * 1.7}px;
+
+    @if $nameSize == 'large' {
+      @media only screen and (max-width: 600px) {
+        font-size: #{$size - 15}px;
+        line-height: #{($size - 15) * 1.7}px;
+      }
+    }
   }
 }
 //

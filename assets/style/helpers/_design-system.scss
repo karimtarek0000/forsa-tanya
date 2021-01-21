@@ -2,15 +2,42 @@ $theme-colors: (
   primary: #ffffff,
   secondary: #000000,
   third: #30a08b,
+  forth: #858585,
+  fifth: #556272,
+  sixth: #707070,
+  seventh: #067d62,
+  eighth: #ffc850,
+  ninth: #a2a2a2,
+);
+
+$spacers: (
+  10: 100px,
 );
 
 //
 $font-size: (
+  large: 40,
+  mid: 22,
   small: 18,
+  xsmall: 16,
+  xxsmall: 14,
 );
 
 $font-weight: (
   bolder: 500,
   bold: 400,
   light: 300,
+);
+
+$width: (
+  90: 90%,
+  80: 80%,
+  70: 70%,
+  50: 50%,
+  60: 60%,
+  40: 40%,
+);
+
+$basis: (
+  large: 28%,
 );

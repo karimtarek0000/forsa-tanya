@@ -1,0 +1,5 @@
+@each $numWidth, $width in $width {
+  .width-#{$numWidth} {
+    width: #{$width};
+  }
+}

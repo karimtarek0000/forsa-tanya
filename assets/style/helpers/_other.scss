@@ -1,0 +1,14 @@
+//
+@each $nameBasis, $basis in $basis {
+  .basis-#{$nameBasis} {
+    flex-basis: #{$basis};
+
+    // Responsive
+    @media only screen and (max-width: 992px) {
+      flex-basis: 49%;
+    }
+    @media only screen and (max-width: 600px) {
+      flex-basis: 100%;
+    }
+  }
+}

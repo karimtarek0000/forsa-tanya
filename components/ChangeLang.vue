@@ -2,7 +2,7 @@
   <b-form-select
     v-model="selected"
     :options="generateAllLanguages"
-    class="select-lang"
+    class="select-lang border border-secondary"
   ></b-form-select>
 </template>
 
