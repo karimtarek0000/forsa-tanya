@@ -1,3 +1,13 @@
 {
-  "welcome": "hellow"
+  "navbar": {
+    "home": "home",
+    "about us": "about us",
+    "therapists": "therapists"
+  },
+  "button": {
+    "getStarted": "get started"
+  },
+  "therapists": {
+    "session": "EGP/Session"
+  }
 }

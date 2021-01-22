@@ -1,3 +1,13 @@
 {
-  "welcome": "مرحبا"
+  "navbar": {
+    "home": "الرئيسية",
+    "about us": "عنا",
+    "therapists": "المعالجين"
+  },
+  "button": {
+    "getStarted": "البدء"
+  },
+  "therapists": {
+    "session": "جنية/الجلسة"
+  }
 }

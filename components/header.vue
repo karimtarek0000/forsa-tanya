@@ -25,7 +25,7 @@
           <b-link
             class="text-decoration-none weight-bolder border border-third rounded text-small text-third py-2 px-4 text-capitalize"
             :to="localePath('therapists')"
-            >get started</b-link
+            >{{ $t('button.getStarted') }}</b-link
           >
         </b-col>
         <!-- Col - 2 -->

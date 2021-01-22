@@ -12,7 +12,11 @@
     <div class="how__card__info text-capitalize">
       <h3 class="text-seventh text-mid mb-2" v-text="title" />
       <p class="text-sixth m-0" v-text="description" />
-      <ButtonPrimary path="about-us" class="button" />
+      <ButtonPrimary
+        :title="$t('button.getStarted')"
+        path="about-us"
+        class="button"
+      />
     </div>
   </b-col>
 </template>

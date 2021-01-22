@@ -35,6 +35,6 @@ export default {
 
 <style>
 .select-lang {
-  width: 70px;
+  width: 73px;
 }
 </style>

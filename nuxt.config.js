@@ -14,7 +14,7 @@ export default {
   css: [{ src: '~/assets/style/style.scss', lang: 'scss' }],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: [],
+  plugins: ['@/plugins/statusI18n.js'],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
@@ -49,20 +49,12 @@ export default {
     ],
     lazy: true,
     langDir: 'locales/',
-    loadLanguagesAsync: true,
     defaultLocale: 'ar',
+    loadLanguagesAsync: true,
     strategy: 'prefix',
     parsePages: true,
-    detectBrowserLanguage: {
-      useCookie: true,
-      alwaysRedirect: false,
-    },
+    detectBrowserLanguage: false,
     seo: false,
-    // vuex: {
-    //   syncLocale: true,
-    //   syncMessages: true,
-    //   syncRouteParams: true,
-    // },
   },
   bootstrapVue: {
     bootstrapCSS: false,

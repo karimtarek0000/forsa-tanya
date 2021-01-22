@@ -32,7 +32,11 @@
           industry. Lorem Ipsum has been the industry's standard dummy text.
         </p>
         <!--  -->
-        <ButtonPrimary class="mx-auto" path="about-us" />
+        <ButtonPrimary
+          :title="$t('button.getStarted')"
+          class="mx-auto"
+          path="about-us"
+        />
       </b-col>
     </b-container>
   </section>

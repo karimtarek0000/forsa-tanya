@@ -28,7 +28,7 @@
             class="text-capitalize"
             :to="localePath(item == 'home' ? '/' : item)"
             :exact="true"
-            >{{ item.replace('-', ' ') }}</b-nav-item
+            >{{ $t(`navbar.${item.replace('-', ' ')}`) }}</b-nav-item
           >
         </b-navbar-nav>
         <!-- 2) - Navbar options -->

@@ -39,6 +39,7 @@
           <!-- 2) - Total -->
           <div
             class="our-therapists__card__other__total d-flex align-items-center mt-2"
+            :style="{ direction: $i18n.locale === 'ar' ? 'ltr' : '' }"
           >
             (
             <GSvg
@@ -55,7 +56,7 @@
         <!-- 2) -  -->
         <b-col class="mt-2">
           <p class="our-therapists__card__other__price">
-            {{ price }} EGP/Session
+            {{ price }} {{ $t('therapists.session') }}
           </p>
         </b-col>
       </div>
