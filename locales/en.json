@@ -1,11 +1,31 @@
 {
+  "meta": {
+    "name": "forsa tanya"
+  },
+  "pages": {},
+  "footer": {
+    "contactsUs": "contacts us",
+    "help": "help",
+    "copyright": "Copyright",
+    "allRights": "all rights reserved"
+  },
   "navbar": {
     "home": "home",
     "about us": "about us",
-    "therapists": "therapists"
+    "therapists": "therapists",
+    "signIn": "sign in",
+    "logOut": "logOut",
+    "profile": "profile"
   },
   "button": {
-    "getStarted": "get started"
+    "getStarted": "get started",
+    "join": "join"
+  },
+  "labels": {
+    "updates": "recive email updates"
+  },
+  "placeHolder": {
+    "email": "Your Email Address"
   },
   "therapists": {
     "session": "EGP/Session"

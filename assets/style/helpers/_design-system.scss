@@ -8,10 +8,19 @@ $theme-colors: (
   seventh: #067d62,
   eighth: #ffc850,
   ninth: #a2a2a2,
+  tenth: #f2f8fc,
+  eleventh: #22262a,
+  twelveth: #e7f5f8,
+  thirdenth: #4ccab2,
+  facebook: #3b5997,
+  twitter: #55acee,
+  linkedin: #0079b9,
+  instagram: #511a96,
+  youtube: #d42528,
 );
 
 $spacers: (
-  10: 100px,
+  10: 120px,
 );
 
 //
@@ -24,6 +33,7 @@ $font-size: (
 );
 
 $font-weight: (
+  extraBold: 700,
   bolder: 500,
   bold: 400,
   light: 300,

@@ -9,7 +9,7 @@
 //
 html {
   box-sizing: border-box;
-  height: 10000px;
+  // height: 10000px;
   scrollbar-color: var(--primary) var(--third);
   scrollbar-width: 5px;
 }
@@ -64,4 +64,8 @@ h4,
 h5,
 h6 {
   user-select: none;
+}
+
+img {
+  pointer-events: none;
 }

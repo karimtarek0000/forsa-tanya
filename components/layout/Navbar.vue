@@ -2,13 +2,13 @@
   <b-navbar
     toggleable="lg"
     type="light"
-    variant="primary"
+    variant="thirdenth"
     class="px-0 justify-content-lg-around"
   >
-    <b-container class="px-2 px-md-0 bg-primary">
+    <b-container class="px-2 px-md-0 bg-thirdenth">
       <!-- 1) - Logo -->
       <b-navbar-brand :to="localePath('/')" class="p-0 col col-lg-2">
-        <Logo />
+        <Logo src-image="logo2.png" />
       </b-navbar-brand>
 
       <!-- 2) - Navbar toggler -->
@@ -25,7 +25,7 @@
           <b-nav-item
             v-for="item in navbar"
             :key="item"
-            class="text-capitalize"
+            class="text-capitalize text-xsmall weight-extraBold"
             :to="localePath(item == 'home' ? '/' : item)"
             :exact="true"
             >{{ $t(`navbar.${item.replace('-', ' ')}`) }}</b-nav-item
@@ -65,24 +65,58 @@ nav.navbar {
 //
 .navbar-light {
   //
-  .navbar-nav .nav-link {
-    color: black;
-    font-size: 18px;
-    font-weight: 500;
+  .nav-link {
+    position: relative;
+    $color: var(--primary);
+    color: $color;
 
-    //
-    &:hover {
-      color: currentColor;
+    @media (hover: hover) {
+      //
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0%;
+        height: 2px;
+        transform: translateX(-50%);
+        background-color: $color;
+        transition: width 0.3s ease;
+        will-change: width;
+
+        //
+        @media only screen and (max-width: 992px) {
+          display: none;
+        }
+      }
+    }
+
+    // Nuxt link active
+    &.nuxt-link-active {
+      //
+      &::after {
+        width: 80%;
+      }
+    }
+
+    // Nuxt link exact active
+    &.nuxt-link-exact-active {
+      color: $color;
     }
   }
 
   //
-  .nav-link.nuxt-link-active {
-    $color: var(--third);
-    color: $color;
+  .navbar-nav .nav-link {
+    color: var(--primary);
+
     //
-    &.nuxt-link-exact-active {
-      color: $color;
+    &:hover,
+    &:focus {
+      color: var(--primary);
+    }
+
+    &:hover::after {
+      width: 80%;
     }
   }
 }

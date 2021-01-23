@@ -1,11 +1,31 @@
 {
+  "meta": {
+    "name": "فرصة تانية"
+  },
+  "pages": {},
+  "footer": {
+    "contactsUs": "التواصل معنا",
+    "help": "المساعدة",
+    "copyright": "النشر",
+    "allRights": "جميع الحقوق محفوظة"
+  },
   "navbar": {
     "home": "الرئيسية",
     "about us": "عنا",
-    "therapists": "المعالجين"
+    "therapists": "المعالجين",
+    "signIn": "تسجيل الدخول",
+    "logOut": "الخروج",
+    "profile": "ملفك الشخصي"
   },
   "button": {
-    "getStarted": "البدء"
+    "getStarted": "ابــدا الأن",
+    "join": "إنضم"
+  },
+  "labels": {
+    "updates": "استلم بريد الكتروني بالتحديثات"
+  },
+  "placeHolder": {
+    "email": "ادخل بريدك الألكتروني"
   },
   "therapists": {
     "session": "جنية/الجلسة"

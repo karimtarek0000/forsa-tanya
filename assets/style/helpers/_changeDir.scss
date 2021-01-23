@@ -1,0 +1,15 @@
+html[dir='rtl'] {
+  //
+  footer .wrapper-icon:not(:last-child) {
+    margin-left: 10px;
+    margin-right: 0;
+  }
+
+  //
+  input {
+    //
+    &::placeholder {
+      text-align: right;
+    }
+  }
+}

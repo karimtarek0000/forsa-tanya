@@ -1,9 +1,17 @@
 <template>
-  <img class="logo" src="@/assets/images/logo/logo.png" alt="" />
+  <img class="logo" :src="require(`@/assets/images/logo/${srcImage}`)" alt="" />
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'Logo',
+  props: {
+    srcImage: {
+      type: String,
+      default: 'logo.png',
+    },
+  },
+}
 </script>
 
 <style lang="scss">

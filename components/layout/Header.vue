@@ -23,7 +23,7 @@
           </p>
           <!--  -->
           <b-link
-            class="text-decoration-none weight-bolder border border-third rounded text-small text-third py-2 px-4 text-capitalize"
+            class="text-decoration-none weight-bolder border border-third rounded text-small text-third py-2 px-4 overflow-hidden text-capitalize"
             :to="localePath('therapists')"
             >{{ $t('button.getStarted') }}</b-link
           >
@@ -51,6 +51,54 @@ export default {
     @media only screen and (min-width: 992px) {
       height: calc(100vh - 110px);
     }
+  }
+
+  //
+  a {
+    position: relative;
+    background-color: transparent;
+    z-index: 2;
+
+    //
+    @media (hover: hover) {
+      //
+      &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: block;
+        background-color: var(--third);
+        z-index: -1;
+        transform: scaleY(0);
+        transition: transform 0.3s ease;
+        transform-origin: bottom;
+        will-change: transform;
+      }
+    }
+  }
+
+  //
+  a.text-third {
+    transition: color 0.3s ease;
+  }
+
+  //
+  a:hover::after,
+  a.text-third:hover,
+  a.text-third:active {
+    @media (hover: hover) {
+      transform: scaleY(1);
+      color: var(--primary) !important;
+      transform-origin: top;
+    }
+  }
+
+  //
+  a.text-third:focus {
+    color: var(--primary) !important;
   }
 }
 </style>

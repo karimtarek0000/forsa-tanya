@@ -2,7 +2,7 @@
   <b-form-select
     v-model="selected"
     :options="generateAllLanguages"
-    class="select-lang border border-secondary"
+    class="select-lang border border-primary text-uppercase"
   ></b-form-select>
 </template>
 
@@ -33,8 +33,11 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .select-lang {
-  width: 73px;
+  width: 66px;
+  background: transparent;
+  color: var(--primary);
+  padding: 0px 17px;
 }
 </style>

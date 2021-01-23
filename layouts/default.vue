@@ -5,16 +5,18 @@
     <!-- 2) - Routing -->
     <Nuxt />
     <!-- 3) - Footer -->
+    <Footer />
   </div>
 </template>
 
 <script>
 export default {
   head() {
+    const i18nSeo = this.$nuxtI18nSeo()
     return {
       htmlAttrs: {
-        lang: this.$i18n.locale,
         dir: this.$i18n.locale === 'en' ? 'ltr' : 'rtl',
+        ...i18nSeo.htmlAttrs,
       },
     }
   },
