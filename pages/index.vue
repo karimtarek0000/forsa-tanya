@@ -12,13 +12,19 @@
 </template>
 
 <script>
-export default {}
+export default {
+  head() {
+    return {
+      title: this.$t('titles.home'),
+    }
+  },
+}
 </script>
 
 <style lang="scss">
 main {
   @media only screen and (max-width: 992px) {
-    margin-top: 100px;
+    margin-top: 60px;
   }
 }
 </style>

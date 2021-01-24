@@ -1,7 +1,7 @@
 <template>
   <footer class="bg-tenth pt-5">
     <!-- Start Container -->
-    <b-container>
+    <b-container fluid="lg" class="px-2 px-lg-0">
       <!-- Start Row 1 -->
       <b-row no-gutters>
         <!-- 1) - Footer info -->
@@ -66,7 +66,7 @@
 
     <!--  -->
     <b-row no-gutters class="bg-twelveth py-3">
-      <b-container>
+      <b-container fluid="lg" class="px-2 px-lg-0">
         <p class="m-0 text-sixth text-center">
           {{ $t('footer.copyright') }} &copy; {{ year }} {{ $t('meta.name') }}
           {{ $t('footer.allRights') }}

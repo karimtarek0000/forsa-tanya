@@ -1,8 +1,17 @@
 {
   "meta": {
-    "name": "forsa tanya"
+    "name": "Forsa Tanya"
   },
-  "pages": {},
+  "titles": {
+    "home": "Home",
+    "aboutus": "about us"
+  },
+  "pages": {
+    "home": {
+      "session": "session",
+      "sessions": "sessions"
+    }
+  },
   "footer": {
     "contactsUs": "contacts us",
     "help": "help",
@@ -26,8 +35,5 @@
   },
   "placeHolder": {
     "email": "Your Email Address"
-  },
-  "therapists": {
-    "session": "EGP/Session"
   }
 }

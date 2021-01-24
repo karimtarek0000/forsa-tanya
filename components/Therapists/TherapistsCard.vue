@@ -15,7 +15,9 @@
       class="our-therapists__card__info text-capitalize py-3 px-2 bg-primary"
     >
       <!-- 1) - Title -->
-      <h3 class="our-therapists__card__info__title weight-bolder text-mid">
+      <h3
+        class="our-therapists__card__info__title our-therapists__card__info--color weight-bolder text-mid"
+      >
         dr. {{ title }}
       </h3>
       <!-- 2) - Job -->
@@ -24,9 +26,17 @@
         v-text="job"
       />
       <!-- 3) - Other Options -->
-      <div class="our-therapists__card__other">
+      <b-row
+        no-gutters
+        class="our-therapists__card__other justify-content-center"
+      >
         <!-- 1) -  -->
-        <b-col class="d-flex align-items-center width-80 mx-auto">
+        <b-col
+          cols="7"
+          md="8"
+          lg="9"
+          class="d-flex align-items-center direction-ltr"
+        >
           <!-- 1) - Rating -->
           <b-form-rating
             v-model="rating"
@@ -38,7 +48,7 @@
           ></b-form-rating>
           <!-- 2) - Total -->
           <div
-            class="our-therapists__card__other__total d-flex align-items-center mt-2"
+            class="our-therapists__card__other__total d-flex align-items-center mt-2 our-therapists__card__info--color"
             :style="{ direction: $i18n.locale === 'ar' ? 'ltr' : '' }"
           >
             (
@@ -53,13 +63,56 @@
             )
           </div>
         </b-col>
-        <!-- 2) -  -->
-        <b-col class="mt-2">
-          <p class="our-therapists__card__other__price">
-            {{ price }} {{ $t('therapists.session') }}
-          </p>
+      </b-row>
+      <!-- 4) - Our Price and Sessions -->
+      <b-row no-gutters class="justify-content-between mt-3">
+        <!--  -->
+        <b-col
+          cols="5"
+          class="d-flex align-items-center justify-content-center our-therapists__card__info--color"
+        >
+          <!--  -->
+          <GSvg
+            class="our-therapists__card--svg mx-2"
+            name-icon="mony"
+            title="mony"
+          />
+          <!--  -->
+          <div class="weight-bolder">
+            <p class="m-0 text-xxsmall our-therapists__card__info--color">
+              250 EGP
+            </p>
+            <p
+              class="m-0 text-xxxsmall our-therapists__card__info__sessions our-therapists__card__info--sessions text-capitalize"
+            >
+              {{ $t('pages.home.session') }}
+            </p>
+          </div>
         </b-col>
-      </div>
+        <!--  -->
+        <b-col
+          cols="5"
+          class="d-flex align-items-center justify-content-center"
+        >
+          <!--  -->
+          <GSvg
+            class="our-therapists__card--svg mx-2"
+            name-icon="sessions"
+            title="sessions"
+          />
+          <!--  -->
+          <div class="weight-bolder">
+            <p class="m-0 text-xxsmall our-therapists__card__info--color">
+              200
+            </p>
+            <p
+              class="m-0 text-xxxsmall text our-therapists__card__info__sessions our-therapists__card__info--sessions text-capitalize"
+            >
+              {{ $t('pages.home.sessions') }}
+            </p>
+          </div>
+        </b-col>
+      </b-row>
     </div>
   </b-col>
 </template>
@@ -104,14 +157,18 @@ export default {
   // Info
   &__info {
     //
-    &__title {
-      color: var(--secondary);
+    &__job {
+      min-height: 50px;
+    }
+    //
+    &__job,
+    &__sessions {
+      color: var(--sixth);
     }
 
     //
-    &__job {
-      min-height: 50px;
-      color: var(--sixth);
+    &--color {
+      color: var(--secondary);
     }
   }
 
@@ -126,8 +183,8 @@ export default {
 
   // svg
   &--svg {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     fill: var(--secondary);
   }
 
@@ -145,10 +202,9 @@ export default {
   }
 
   //
-  &:hover &__info__title,
+  &:hover &__info--color,
   &:hover &__info__job,
-  &:hover &__other__price,
-  &:hover &__other__total {
+  &:hover &__info--sessions {
     //
     @media (hover: hover) {
       color: var(--primary);

@@ -1,7 +1,7 @@
 <template>
   <section class="payment my-5 my-lg-10">
     <!-- Start Container -->
-    <b-container>
+    <b-container fluid="lg" class="px-2 px-lg-0">
       <!-- Payment Info -->
       <b-col class="text-center">
         <!--  -->

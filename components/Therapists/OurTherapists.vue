@@ -1,7 +1,7 @@
 <template>
-  <section class="our-therapists mt-lg-10">
+  <section class="our-therapists mt-4 mt-lg-10">
     <!-- Start Container -->
-    <b-container class="p-lg-0">
+    <b-container fluid="lg" class="px-2 px-lg-0">
       <!-- 1) - Therapists Info -->
       <div class="our__therapists__info text-capitalize text-center mb-5">
         <h2 class="text-large weight-bolder text-fifth">Our Therapists</h2>
@@ -25,8 +25,10 @@
         />
       </b-row>
 
-      <!-- 3) -  -->
-      <b-col class="width-80 mt-5 mx-auto text-center">
+      <!-- 3) - Therapists get started -->
+      <b-col
+        class="our-therapists__getStarted position-relative width-80 mt-5 mx-auto text-center"
+      >
         <p class="text-ninth">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text.
@@ -78,4 +80,38 @@ export default {
 }
 </script>
 
-<style></style>
+<style lang="scss">
+//
+.our-therapists__getStarted {
+  //
+  @media (min-width: 600px) {
+    //
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      display: block;
+    }
+    //
+    &::after {
+      width: 426px;
+      height: 262px;
+      bottom: -170px;
+      left: -140px;
+      height: 200px;
+      background-color: var(--tenth);
+      z-index: -2;
+    }
+    //
+    &::before {
+      width: 480px;
+      height: 173px;
+      bottom: -217px;
+      left: 70px;
+      height: 137px;
+      border: 1px dashed var(--fortenth);
+      z-index: -1;
+    }
+  }
+}
+</style>

@@ -5,7 +5,7 @@
     variant="thirdenth"
     class="px-0 justify-content-lg-around"
   >
-    <b-container class="px-2 px-md-0 bg-thirdenth">
+    <b-container fluid="lg" class="px-2 px-lg-0 bg-thirdenth">
       <!-- 1) - Logo -->
       <b-navbar-brand :to="localePath('/')" class="p-0 col col-lg-2">
         <Logo src-image="logo2.png" />
@@ -32,7 +32,7 @@
           >
         </b-navbar-nav>
         <!-- 2) - Navbar options -->
-        <OptionsUser class="col-lg-4" />
+        <OptionsUser class="col-lg-4 mb-2 mb-lg-0" />
       </b-collapse>
     </b-container>
   </b-navbar>
@@ -59,7 +59,8 @@ nav.navbar {
     right: 0;
     display: block;
     z-index: 10;
-    height: 100px;
+    max-height: 100px;
+    height: 50px;
   }
 }
 //
@@ -117,6 +118,15 @@ nav.navbar {
 
     &:hover::after {
       width: 80%;
+    }
+  }
+
+  //
+  .logo {
+    //
+    @media (max-width: 992px) {
+      height: 50px;
+      width: 40px;
     }
   }
 }

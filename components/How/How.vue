@@ -1,7 +1,7 @@
 <template>
-  <section class="how mt-5">
+  <section class="how mt-5 position-relative">
     <!-- Start Container -->
-    <b-container class="p-lg-0">
+    <b-container fluid="lg" class="px-2 px-lg-0">
       <!-- 1) - How Info -->
       <div class="how__info text-capitalize text-center mb-5">
         <h2 class="text-large weight-bolder text-fifth">
@@ -56,7 +56,32 @@ export default {
 //
 .how {
   //
-  &__info {
+  @media (min-width: 600px) {
+    //
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      display: block;
+    }
+    //
+    &::after {
+      width: 156px;
+      bottom: -170px;
+      right: 0;
+      height: 254px;
+      background-color: var(--tenth);
+      z-index: -2;
+    }
+    //
+    &::before {
+      width: 440px;
+      height: 173px;
+      bottom: -134px;
+      right: 70px;
+      border: 1px dashed var(--fortenth);
+      z-index: -1;
+    }
   }
 }
 </style>

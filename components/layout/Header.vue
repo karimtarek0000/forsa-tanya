@@ -1,7 +1,7 @@
 <template>
   <header class="header bg-primary">
     <!-- Start container -->
-    <b-container class="px-2 px-md-0">
+    <b-container fluid="lg" class="px-2 px-lg-0">
       <!-- Start row -->
       <b-row
         no-gutters
@@ -30,7 +30,11 @@
         </b-col>
         <!-- Col - 2 -->
         <b-col lg="7" class="mt-2 mt-lg-0">
-          <img class="img-fluid" src="@/assets/images/header/1.png" alt="" />
+          <img
+            class="img-fluid obj-img"
+            src="@/assets/images/header/1.png"
+            alt=""
+          />
         </b-col>
       </b-row>
     </b-container>

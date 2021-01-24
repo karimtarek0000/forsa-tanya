@@ -2,7 +2,16 @@
   "meta": {
     "name": "فرصة تانية"
   },
-  "pages": {},
+  "titles": {
+    "home": "الرئيسية",
+    "aboutus": "عنا"
+  },
+  "pages": {
+    "home": {
+      "session": "جلسة",
+      "sessions": "جلسات"
+    }
+  },
   "footer": {
     "contactsUs": "التواصل معنا",
     "help": "المساعدة",
@@ -19,15 +28,12 @@
   },
   "button": {
     "getStarted": "ابــدا الأن",
-    "join": "إنضم"
+    "join": "انضم"
   },
   "labels": {
     "updates": "استلم بريد الكتروني بالتحديثات"
   },
   "placeHolder": {
     "email": "ادخل بريدك الألكتروني"
-  },
-  "therapists": {
-    "session": "جنية/الجلسة"
   }
 }
