@@ -67,7 +67,7 @@
     <!--  -->
     <b-row no-gutters class="bg-twelveth py-3">
       <b-container fluid="lg" class="px-2 px-lg-0">
-        <p class="m-0 text-sixth text-center">
+        <p class="m-0 text-sixth text-center text-xxsmall">
           {{ $t('footer.copyright') }} &copy; {{ year }} {{ $t('meta.name') }}
           {{ $t('footer.allRights') }}
         </p>

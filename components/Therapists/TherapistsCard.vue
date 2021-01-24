@@ -31,12 +31,7 @@
         class="our-therapists__card__other justify-content-center"
       >
         <!-- 1) -  -->
-        <b-col
-          cols="7"
-          md="8"
-          lg="9"
-          class="d-flex align-items-center direction-ltr"
-        >
+        <b-col cols="7" md="8" lg="9" class="d-flex align-items-center">
           <!-- 1) - Rating -->
           <b-form-rating
             v-model="rating"
