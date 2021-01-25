@@ -9,7 +9,7 @@
           payment method
         </h3>
         <!--  -->
-        <p class="text-sixth weight-light">
+        <p class="text-sixth weight-bolder">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's
         </p>
