@@ -17,16 +17,16 @@
       <b-row
         slot="actions"
         no-gutters
-        class="our-therapists__card__action d-flex align-items-center justify-content-center flex-column h-110 bg-primary px-1"
+        class="our-therapists__card__action d-flex align-items-center justify-content-center h-110 bg-primary mt-2 mb-5 mt-md-0 mb-md-0 px-1"
       >
-        <b-col class="d-flex align-items-center">
+        <b-col cols="12" class="d-flex px-1 align-items-center">
           <b-row no-gutters class="justify-content-between w-100">
             <!--  -->
             <b-col class="basis-47 flex-grow-0">
               <b-button
                 pill
                 variant="facebook"
-                class="w-100 bg-primary border-sevententh text-sevententh text-14 weight-bolder text-capitalize"
+                class="w-100 bg-primary border-sevententh mb-2 mb-md-0 text-sevententh text-14 weight-bolder text-capitalize"
                 >video</b-button
               >
             </b-col>
@@ -35,14 +35,14 @@
               <b-button
                 pill
                 variant="facebook"
-                class="w-100 bg-primary border-sevententh text-sevententh text-14 weight-bolder text-capitalize"
+                class="w-100 bg-primary border-sevententh mb-2 mb-md-0 text-sevententh text-14 weight-bolder text-capitalize"
                 >view</b-button
               >
             </b-col>
           </b-row>
         </b-col>
         <!--  -->
-        <b-col class="d-flex align-items-center">
+        <b-col cols="12" class="d-flex align-items-center">
           <b-button
             pill
             variant="primary"

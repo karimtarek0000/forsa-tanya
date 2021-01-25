@@ -1,6 +1,6 @@
 <template>
   <b-col
-    class="our-therapists__card shadow-card text-center position-relative flex-grow-0 overflow-hidden bg-primary rounded basis-28"
+    class="our-therapists__card shadow-card text-center position-relative flex-grow-0 overflow-hidden bg-primary rounded basis-30"
   >
     <!-- 1) - Image -->
     <div class="our-therapists__card__image text-center h-269">
