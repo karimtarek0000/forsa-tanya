@@ -1,6 +1,6 @@
 <template>
   <b-col
-    class="our-therapists__card mb-3 mb-lg-0 text-center flex-grow-0 overflow-hidden rounded basis-large"
+    class="our-therapists__card mb-3 mb-lg-0 text-center flex-grow-0 bg-primary rounded basis-large"
   >
     <!-- 1) - Image -->
     <div class="our-therapists__card__image text-center">
@@ -11,9 +11,7 @@
       />
     </div>
     <!-- 2) - Info -->
-    <div
-      class="our-therapists__card__info text-capitalize py-3 px-2 bg-primary"
-    >
+    <div class="our-therapists__card__info text-capitalize py-3 px-2">
       <!-- 1) - Title -->
       <h3
         class="our-therapists__card__info__title our-therapists__card__info--color weight-extraBold text-mid"
@@ -52,7 +50,7 @@
               name-icon="users"
               title="users"
             />
-            <p class="mb-0 mx-1 text-10">
+            <p class="mb-0 mx-1 text-12">
               {{ total }}
             </p>
             )
@@ -80,7 +78,7 @@
             <p
               class="m-0 text-xxxsmall our-therapists__card__info__sessions our-therapists__card__info--sessions text-capitalize"
             >
-              {{ $t('pages.home.session') }}
+              /{{ $t('pages.home.session') }}
             </p>
           </div>
         </b-col>
@@ -151,6 +149,24 @@ export default {
 
   // Info
   &__info {
+    position: relative;
+    z-index: 1;
+    transition: all 0.5s ease;
+
+    //
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 0;
+      background-image: linear-gradient(to top, #046c54 57%, #045744, #033f31);
+      opacity: 0;
+      transition: all 0.5s ease;
+    }
+
     //
     &__job {
       min-height: 50px;
@@ -203,9 +219,15 @@ export default {
 
   //////////////////////////
   //// Hover
+  &:hover &__info::after {
+    @media (hover: hover) {
+      height: 100%;
+      opacity: 1;
+      z-index: -1;
+    }
+  }
   &:hover &__info {
     @media (hover: hover) {
-      background-image: linear-gradient(to top, #046c54 57%, #045744, #033f31);
     }
   }
 

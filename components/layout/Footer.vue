@@ -37,7 +37,7 @@
               <b-row no-gutters>
                 <!--  -->
                 <b-col md="6" class="text-capitalize">
-                  <h4 class="text-mid text-eleventh xxsmall weight-extraBold">
+                  <h4 class="text-eleventh text-20 weight-extraBold">
                     {{ $t('footer.contactsUs') }}
                   </h4>
                   <ul class="list-unstyled">
@@ -47,7 +47,7 @@
                 </b-col>
                 <!--  -->
                 <b-col md="6" class="text-capitalize">
-                  <h4 class="text-mid text-eleventh weight-extraBold">
+                  <h4 class="text-eleventh text-20 weight-extraBold">
                     {{ $t('footer.help') }}
                   </h4>
                   <ul class="list-unstyled text-capitalize">

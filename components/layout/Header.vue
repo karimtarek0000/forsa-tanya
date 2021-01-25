@@ -1,5 +1,5 @@
 <template>
-  <header class="header position-relative">
+  <header class="header">
     <!-- Start container -->
     <b-container fluid="lg" class="px-2 px-lg-0">
       <!-- Start row -->
@@ -82,19 +82,6 @@ export default {
   //
   a.text-third:focus {
     color: var(--primary) !important;
-  }
-
-  //
-  &::after {
-    content: '';
-    position: absolute;
-    display: block;
-    top: 208px;
-    right: 0;
-    width: 683px;
-    height: 644px;
-    background-color: var(--tenth);
-    z-index: -1;
   }
 }
 </style>

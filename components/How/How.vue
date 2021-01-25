@@ -59,7 +59,7 @@ export default {
 .how {
   //
   @media (min-width: 600px) {
-    //
+    // Sudo element
     &__sudo-element {
       display: block;
       width: 156px;
@@ -93,6 +93,18 @@ export default {
         width: 300px;
         height: 120px;
       }
+    }
+    // After
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      top: -90%;
+      right: 0;
+      width: 683px;
+      height: 644px;
+      background-color: var(--tenth);
+      z-index: -1;
     }
   }
 }

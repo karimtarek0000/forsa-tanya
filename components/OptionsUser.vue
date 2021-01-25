@@ -1,7 +1,7 @@
 <template>
-  <b-row no-gutters class="p-0 justify-content-between">
+  <b-row no-gutters class="p-0 justify-content-between basis-130">
     <!-- 1) - Options User -->
-    <b-col>
+    <b-col lg="5">
       <template v-if="userIn">
         <b-row
           no-gutters
@@ -32,7 +32,7 @@
       </div>
     </b-col>
     <!-- 2) - Change Lang -->
-    <b-col col lg="2" class="ml-2 flex-shrink-0">
+    <b-col lg="4" class="flex-shrink-0">
       <ChangeLang />
     </b-col>
   </b-row>

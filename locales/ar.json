@@ -9,7 +9,7 @@
   "pages": {
     "home": {
       "session": "جلسة",
-      "sessions": "جلسات"
+      "sessions": "جلسة"
     }
   },
   "footer": {
@@ -22,7 +22,7 @@
     "home": "الرئيسية",
     "about us": "عنا",
     "therapists": "المعالجين",
-    "signIn": "تسجيل الدخول",
+    "signIn": "الدخول",
     "logOut": "الخروج",
     "profile": "ملفك الشخصي"
   },

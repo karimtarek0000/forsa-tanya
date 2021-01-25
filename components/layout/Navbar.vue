@@ -8,7 +8,7 @@
     <b-container fluid="lg" class="px-2 px-lg-0 bg-thirdenth">
       <!-- 1) - Logo -->
       <b-navbar-brand :to="localePath('/')" class="p-0 col col-lg-2">
-        <Logo src-image="logo1.png" />
+        <Logo src-image="logo1.jpg" />
       </b-navbar-brand>
 
       <!-- 2) - Navbar toggler -->
