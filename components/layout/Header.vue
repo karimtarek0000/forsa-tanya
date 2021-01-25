@@ -1,5 +1,5 @@
 <template>
-  <header class="header bg-primary">
+  <header class="header position-relative">
     <!-- Start container -->
     <b-container fluid="lg" class="px-2 px-lg-0">
       <!-- Start row -->
@@ -10,8 +10,8 @@
         <!-- Col - 1 -->
         <b-col lg="4">
           <!--  -->
-          <h1 class="text-large text-secondary weight-bolder text-uppercase">
-            test
+          <h1 class="text-large text-secondary weight-extraBold text-uppercase">
+            title
           </h1>
           <!--  -->
           <p class="text-xsmall mb-lg-5 text-forth">
@@ -23,7 +23,7 @@
           </p>
           <!--  -->
           <b-link
-            class="text-decoration-none weight-bolder border border-third rounded text-small text-third py-2 px-4 overflow-hidden text-capitalize"
+            class="text-decoration-none border border-third rounded text-small text-third py-2 px-4 w-172 h-50 overflow-hidden weight-extraBold text-capitalize"
             :to="localePath('therapists')"
             >{{ $t('button.getStarted') }}</b-link
           >
@@ -62,26 +62,6 @@ export default {
     position: relative;
     background-color: transparent;
     z-index: 2;
-
-    //
-    @media (hover: hover) {
-      //
-      &::after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        display: block;
-        background-color: var(--third);
-        z-index: -1;
-        transform: scaleY(0);
-        transition: transform 0.3s ease;
-        transform-origin: bottom;
-        will-change: transform;
-      }
-    }
   }
 
   //
@@ -94,15 +74,27 @@ export default {
   a.text-third:hover,
   a.text-third:active {
     @media (hover: hover) {
-      transform: scaleY(1);
       color: var(--primary) !important;
-      transform-origin: top;
+      background-color: var(--third);
     }
   }
 
   //
   a.text-third:focus {
     color: var(--primary) !important;
+  }
+
+  //
+  &::after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 208px;
+    right: 0;
+    width: 683px;
+    height: 644px;
+    background-color: var(--tenth);
+    z-index: -1;
   }
 }
 </style>

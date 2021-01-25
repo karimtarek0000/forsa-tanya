@@ -3,12 +3,12 @@
     toggleable="lg"
     type="light"
     variant="thirdenth"
-    class="px-0 justify-content-lg-around"
+    class="px-0 py-0 justify-content-lg-around"
   >
     <b-container fluid="lg" class="px-2 px-lg-0 bg-thirdenth">
       <!-- 1) - Logo -->
       <b-navbar-brand :to="localePath('/')" class="p-0 col col-lg-2">
-        <Logo src-image="logo2.png" />
+        <Logo src-image="logo1.png" />
       </b-navbar-brand>
 
       <!-- 2) - Navbar toggler -->
@@ -25,7 +25,7 @@
           <b-nav-item
             v-for="item in navbar"
             :key="item"
-            class="text-capitalize text-xsmall weight-extraBold"
+            class="text-capitalize text-xsmall weight-bolder"
             :to="localePath(item == 'home' ? '/' : item)"
             :exact="true"
             >{{ $t(`navbar.${item.replace('-', ' ')}`) }}</b-nav-item
@@ -49,6 +49,18 @@ export default {
 </script>
 
 <style lang="scss">
+//
+.navbar {
+  height: 100px;
+
+  //
+  img {
+    //
+    @media (min-width: 992px) {
+      transform: scale(1.8);
+    }
+  }
+}
 //
 nav.navbar {
   @media only screen and (max-width: 992px) {
@@ -118,15 +130,6 @@ nav.navbar {
 
     &:hover::after {
       width: 80%;
-    }
-  }
-
-  //
-  .logo {
-    //
-    @media (max-width: 992px) {
-      height: 50px;
-      width: 40px;
     }
   }
 

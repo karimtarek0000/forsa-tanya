@@ -32,7 +32,7 @@
       </div>
     </b-col>
     <!-- 2) - Change Lang -->
-    <b-col col lg="3" class="ml-2 flex-shrink-0">
+    <b-col col lg="2" class="ml-2 flex-shrink-0">
       <ChangeLang />
     </b-col>
   </b-row>

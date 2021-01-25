@@ -1,5 +1,7 @@
 <template>
-  <section class="how mt-5 position-relative">
+  <section class="how mt-5 mt-lg-10 position-relative">
+    <!-- Sudo element -->
+    <span class="how__sudo-element position-absolute"></span>
     <!-- Start Container -->
     <b-container fluid="lg" class="px-2 px-lg-0">
       <!-- 1) - How Info -->
@@ -58,29 +60,39 @@ export default {
   //
   @media (min-width: 600px) {
     //
-    &::after,
-    &::before {
-      content: '';
-      position: absolute;
+    &__sudo-element {
       display: block;
-    }
-    //
-    &::after {
       width: 156px;
       bottom: -170px;
       right: 0;
       height: 254px;
       background-color: var(--tenth);
       z-index: -2;
-    }
-    //
-    &::before {
-      width: 440px;
-      height: 173px;
-      bottom: -134px;
-      right: 70px;
-      border: 1px dashed var(--fortenth);
-      z-index: -1;
+
+      //
+      &::after,
+      &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        border: 1px dashed var(--fortenth);
+        z-index: -1;
+      }
+
+      //
+      &::after {
+        width: 440px;
+        height: 173px;
+      }
+
+      //
+      &::before {
+        width: 300px;
+        height: 120px;
+      }
     }
   }
 }

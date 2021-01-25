@@ -16,13 +16,13 @@
     >
       <!-- 1) - Title -->
       <h3
-        class="our-therapists__card__info__title our-therapists__card__info--color weight-bolder text-mid"
+        class="our-therapists__card__info__title our-therapists__card__info--color weight-extraBold text-mid"
       >
         dr. {{ title }}
       </h3>
       <!-- 2) - Job -->
       <p
-        class="our-therapists__card__info__job text-xxsmall m-0"
+        class="our-therapists__card__info__job weight-light text-xxsmall m-0"
         v-text="job"
       />
       <!-- 3) - Other Options -->
@@ -48,11 +48,11 @@
           >
             (
             <GSvg
-              class="our-therapists__card--svg"
+              class="svg-size svg-people our-therapists__card--svg"
               name-icon="users"
               title="users"
             />
-            <p class="mb-0 mx-1">
+            <p class="mb-0 mx-1 text-10">
               {{ total }}
             </p>
             )
@@ -68,7 +68,7 @@
         >
           <!--  -->
           <GSvg
-            class="our-therapists__card--svg mx-2"
+            class="svg-other mx-2 our-therapists__card--svg"
             name-icon="mony"
             title="mony"
           />
@@ -91,7 +91,7 @@
         >
           <!--  -->
           <GSvg
-            class="our-therapists__card--svg mx-2"
+            class="mx-2 svg-other svg-session our-therapists__card--svg"
             name-icon="sessions"
             title="sessions"
           />
@@ -176,11 +176,24 @@ export default {
     }
   }
 
-  // svg
-  &--svg {
-    width: 25px;
-    height: 25px;
-    fill: var(--secondary);
+  //
+  .svg-people {
+    width: 31px;
+    height: 32px;
+    fill: #317668;
+  }
+
+  .svg {
+    //
+    &-other {
+      width: 40px;
+      height: 30px;
+    }
+
+    //
+    &-session {
+      fill: #317666;
+    }
   }
 
   //
@@ -207,7 +220,8 @@ export default {
   }
 
   //
-  &:hover &--svg {
+  &:hover .svg-session,
+  &:hover .svg-people {
     //
     @media (hover: hover) {
       fill: var(--primary);

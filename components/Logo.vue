@@ -8,7 +8,7 @@ export default {
   props: {
     srcImage: {
       type: String,
-      default: 'logo.png',
+      default: 'logo2.png',
     },
   },
 }

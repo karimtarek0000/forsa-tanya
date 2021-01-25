@@ -10,8 +10,8 @@
     </div>
     <!-- 2) - Info -->
     <div class="how__card__info text-capitalize">
-      <h3 class="text-seventh text-mid mb-2" v-text="title" />
-      <p class="text-sixth m-0" v-text="description" />
+      <h3 class="text-seventh text-mid mb-2 weight-extraBold" v-text="title" />
+      <p class="text-sixth m-0 weight-light" v-text="description" />
       <ButtonPrimary
         :title="$t('button.getStarted')"
         path="about-us"

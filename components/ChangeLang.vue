@@ -34,10 +34,13 @@ export default {
 </script>
 
 <style lang="scss">
+//
 .select-lang {
-  width: 66px;
+  width: 36px;
+  height: 36px;
   background: transparent;
   color: var(--primary);
-  padding: 0px 17px;
+  padding: 0px 6px;
+  border-radius: 0;
 }
 </style>

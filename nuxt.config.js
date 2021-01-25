@@ -78,7 +78,7 @@ export default {
   },
   i18n: {
     locales: [
-      { code: 'ar', iso: 'ar-EG', name: 'عربي', file: 'ar.json' },
+      { code: 'ar', iso: 'ar-EG', name: 'ع', file: 'ar.json' },
       { code: 'en', iso: 'en-US', name: 'en', file: 'en.json' },
     ],
     lazy: true,
