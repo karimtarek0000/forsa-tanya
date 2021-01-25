@@ -9,7 +9,7 @@
           <!-- 1) - Logo -->
           <Logo />
           <!-- 2) - Description -->
-          <p class="width-90 mt-3 weight-light">
+          <p class="width-90 mt-3 text-xxsmall weight-light">
             We earned a reputation of being good at what we do. Let us take your
             online shop to new dimension in success!
           </p>

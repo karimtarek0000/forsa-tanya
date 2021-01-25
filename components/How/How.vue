@@ -64,7 +64,7 @@ export default {
       display: block;
       width: 156px;
       bottom: -170px;
-      right: 0;
+      right: -5px;
       height: 254px;
       background-color: var(--tenth);
       z-index: -2;
