@@ -10,11 +10,11 @@
         <!-- Col - 1 -->
         <b-col lg="4">
           <!--  -->
-          <h1 class="text-large text-secondary weight-extraBold text-uppercase">
+          <h1 class="text-40 text-secondary weight-extraBold text-uppercase">
             title
           </h1>
           <!--  -->
-          <p class="text-xsmall mb-lg-5 text-forth">
+          <p class="text-16 mb-lg-5 text-forth">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam ab
             omnis excepturi voluptas facilis. Consequatur esse eius maxime totam
             voluptatum corrupti deleniti perferendis quisquam quasi sed deserunt
@@ -23,7 +23,7 @@
           </p>
           <!--  -->
           <b-link
-            class="text-decoration-none border border-third rounded text-small text-third py-2 px-4 w-172 h-50 overflow-hidden weight-extraBold text-capitalize"
+            class="text-decoration-none border border-third rounded text-18 text-third py-2 px-4 w-172 h-50 overflow-hidden weight-extraBold text-capitalize"
             :to="localePath('therapists')"
             >{{ $t('button.getStarted') }}</b-link
           >

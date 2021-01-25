@@ -1,4 +1,4 @@
-//
+// Add class Shadow
 @each $nameBasis, $basis in $basis {
   .basis-#{$nameBasis} {
     flex-basis: #{$basis};
@@ -10,5 +10,12 @@
     @media only screen and (max-width: 600px) {
       flex-basis: 100%;
     }
+  }
+}
+
+// Add class shadow
+@each $nameShadow, $shadow in $shadow {
+  .shadow-#{$nameShadow} {
+    box-shadow: #{$shadow};
   }
 }

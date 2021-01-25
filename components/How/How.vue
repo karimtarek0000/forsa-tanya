@@ -6,10 +6,8 @@
     <b-container fluid="lg" class="px-2 px-lg-0">
       <!-- 1) - How Info -->
       <div class="how__info text-capitalize text-center mb-5">
-        <h2 class="text-large weight-bolder text-fifth">
-          how forsa tanya works
-        </h2>
-        <p class="text-small text-sixth">3 simple steps to get your therapy</p>
+        <h2 class="text-40 weight-bolder text-fifth">how forsa tanya works</h2>
+        <p class="text-18 text-sixth">3 simple steps to get your therapy</p>
       </div>
 
       <!-- 2) - How Box -->

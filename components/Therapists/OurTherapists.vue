@@ -4,8 +4,8 @@
     <b-container fluid="lg" class="px-2 px-lg-0">
       <!-- 1) - Therapists Info -->
       <div class="our__therapists__info text-capitalize text-center mb-5">
-        <h2 class="text-large weight-bolder text-fifth">Our Therapists</h2>
-        <p class="text-small text-sixth weight-light">
+        <h2 class="text-40 weight-bolder text-fifth">Our Therapists</h2>
+        <p class="text-18 text-sixth weight-light">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's
         </p>
@@ -22,6 +22,7 @@
           :total="card.total"
           :rating="card.rating"
           :price="card.price"
+          class="mb-3 mb-lg-0"
         />
       </b-row>
 

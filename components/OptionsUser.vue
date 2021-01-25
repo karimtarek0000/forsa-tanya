@@ -9,12 +9,12 @@
         >
           <!-- 1) - Log out -->
           <b-link
-            class="text-capitalize text-xsmall weight-bolder text-primary p-0 text-decoration-none"
+            class="text-capitalize text-16 weight-bolder text-primary p-0 text-decoration-none"
             >log out</b-link
           >
           <!-- 2) - Profile -->
           <b-link
-            class="text-capitalize text-xsmall p-0 weight-bolder text-primary text-decoration-none"
+            class="text-capitalize text-16 p-0 weight-bolder text-primary text-decoration-none"
             :to="localePath('sign-in')"
             >profile</b-link
           >
@@ -25,7 +25,7 @@
         class="d-flex justify-content-center align-items-center h-100"
       >
         <b-link
-          class="text-capitalize text-xsmall weight-bolder text-primary text-decoration-none"
+          class="text-capitalize text-16 weight-bolder text-primary text-decoration-none"
           :to="localePath('sign-in')"
           >{{ $t('navbar.signIn') }}</b-link
         >

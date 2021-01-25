@@ -25,7 +25,7 @@
           <b-nav-item
             v-for="item in navbar"
             :key="item"
-            class="text-capitalize text-xsmall weight-bolder"
+            class="text-capitalize text-16 weight-bolder"
             :to="localePath(item == 'home' ? '/' : item)"
             :exact="true"
             >{{ $t(`navbar.${item.replace('-', ' ')}`) }}</b-nav-item

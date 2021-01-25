@@ -5,7 +5,7 @@
       <!-- Payment Info -->
       <b-col class="text-center">
         <!--  -->
-        <h3 class="text-fifth text-large weight-bolder text-capitalize">
+        <h3 class="text-fifth text-40 weight-bolder text-capitalize">
           payment method
         </h3>
         <!--  -->

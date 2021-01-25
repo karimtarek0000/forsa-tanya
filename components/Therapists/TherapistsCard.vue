@@ -1,26 +1,29 @@
 <template>
   <b-col
-    class="our-therapists__card mb-3 mb-lg-0 text-center flex-grow-0 overflow-hidden bg-primary rounded basis-large"
+    class="our-therapists__card shadow-card text-center position-relative flex-grow-0 overflow-hidden bg-primary rounded basis-28"
   >
     <!-- 1) - Image -->
-    <div class="our-therapists__card__image text-center">
+    <div class="our-therapists__card__image text-center h-269">
       <img
         class="img-fluid obj-img"
         :src="require(`@/assets/images/therapists/${img}`)"
         alt=""
       />
     </div>
+
     <!-- 2) - Info -->
-    <div class="our-therapists__card__info text-capitalize py-3 px-2">
+    <div
+      class="our-therapists__card__info text-capitalize bg-primary h-188 py-2 px-2"
+    >
       <!-- 1) - Title -->
       <h3
-        class="our-therapists__card__info__title our-therapists__card__info--color weight-extraBold text-mid"
+        class="our-therapists__card__info__title m-0 our-therapists__card__info--color weight-extraBold text-22"
       >
         dr. {{ title }}
       </h3>
       <!-- 2) - Job -->
       <p
-        class="our-therapists__card__info__job weight-light text-xxsmall m-0"
+        class="our-therapists__card__info__job weight-light text-14 m-0"
         v-text="job"
       />
       <!-- 3) - Other Options -->
@@ -29,7 +32,7 @@
         class="our-therapists__card__other justify-content-center"
       >
         <!-- 1) -  -->
-        <b-col cols="7" md="8" lg="9" class="d-flex align-items-center">
+        <b-col cols="7" md="8" lg="9" class="d-flex h-33 align-items-center">
           <!-- 1) - Rating -->
           <b-form-rating
             v-model="rating"
@@ -72,11 +75,9 @@
           />
           <!--  -->
           <div class="weight-bolder">
-            <p class="m-0 text-xxsmall our-therapists__card__info--color">
-              250 EGP
-            </p>
+            <p class="m-0 text-14 our-therapists__card__info--color">250 EGP</p>
             <p
-              class="m-0 text-xxxsmall our-therapists__card__info__sessions our-therapists__card__info--sessions text-capitalize"
+              class="m-0 text-12 our-therapists__card__info__sessions our-therapists__card__info--sessions text-capitalize"
             >
               /{{ $t('pages.home.session') }}
             </p>
@@ -95,11 +96,9 @@
           />
           <!--  -->
           <div class="weight-bolder">
-            <p class="m-0 text-xxsmall our-therapists__card__info--color">
-              200
-            </p>
+            <p class="m-0 text-14 our-therapists__card__info--color">200</p>
             <p
-              class="m-0 text-xxxsmall text our-therapists__card__info__sessions our-therapists__card__info--sessions text-capitalize"
+              class="m-0 text-12 text our-therapists__card__info__sessions our-therapists__card__info--sessions text-capitalize"
             >
               {{ $t('pages.home.sessions') }}
             </p>
@@ -107,6 +106,9 @@
         </b-col>
       </b-row>
     </div>
+
+    <!-- 3) - Slot will be render actions card -->
+    <slot name="actions" />
   </b-col>
 </template>
 
@@ -145,13 +147,20 @@ export default {
 <style lang="scss">
 //
 .our-therapists__card {
-  box-shadow: 0 12px 12px 0 rgba(0, 0, 0, 0.07);
+  transition: all 0.2s ease-in;
+  height: auto;
+
+  //
+  @media (hover: hover) {
+    height: 457px;
+  }
 
   // Info
   &__info {
     position: relative;
     z-index: 1;
     transition: all 0.5s ease;
+    will-change: transform;
 
     //
     @media (hover: hover) {
@@ -171,13 +180,14 @@ export default {
           #033f31
         );
         opacity: 0;
+        will-change: transform;
         transition: all 0.5s ease;
       }
     }
 
     //
     &__job {
-      min-height: 50px;
+      min-height: 44px;
     }
 
     //
@@ -198,6 +208,17 @@ export default {
     &__price,
     &__total {
       color: var(--secondary);
+    }
+  }
+
+  //
+  &__action {
+    //
+    @media (hover: hover) {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      left: 0;
     }
   }
 
@@ -233,6 +254,13 @@ export default {
       height: 100%;
       opacity: 1;
       z-index: -1;
+    }
+  }
+
+  //
+  &:hover {
+    @media (hover: hover) {
+      box-shadow: none;
     }
   }
 
