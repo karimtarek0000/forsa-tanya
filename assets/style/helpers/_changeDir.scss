@@ -12,4 +12,9 @@ html[dir='rtl'] {
       text-align: right;
     }
   }
+
+  .how::after {
+    left: 0;
+    right: auto;
+  }
 }
