@@ -40,10 +40,13 @@ export default {
   height: 36px;
   background: transparent;
   color: var(--primary);
-  padding: 0px;
+  padding: 0px 7px;
   border-radius: 0;
-  text-align: center;
-  text-align-last: center;
-  -moz-text-align-last: center;
+
+  //
+  @supports (text-align-last: center) {
+    text-align-last: center;
+    padding: 0;
+  }
 }
 </style>
