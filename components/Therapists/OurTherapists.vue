@@ -5,7 +5,7 @@
       <!-- 1) - Therapists Info -->
       <div class="our__therapists__info text-capitalize text-center mb-5">
         <h2 class="text-large weight-light text-fifth">Our Therapists</h2>
-        <p class="text-small text-sixth weight-extraBold">
+        <p class="text-small text-sixth weight-light">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's
         </p>
