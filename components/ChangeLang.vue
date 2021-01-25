@@ -42,6 +42,8 @@ export default {
   color: var(--primary);
   padding: 0px;
   border-radius: 0;
+  text-align: center;
   text-align-last: center;
+  -moz-text-align-last: center;
 }
 </style>

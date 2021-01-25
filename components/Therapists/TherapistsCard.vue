@@ -1,6 +1,6 @@
 <template>
   <b-col
-    class="our-therapists__card mb-3 mb-lg-0 text-center flex-grow-0 bg-primary rounded basis-large"
+    class="our-therapists__card mb-3 mb-lg-0 text-center flex-grow-0 overflow-hidden bg-primary rounded basis-large"
   >
     <!-- 1) - Image -->
     <div class="our-therapists__card__image text-center">
@@ -154,23 +154,32 @@ export default {
     transition: all 0.5s ease;
 
     //
-    &::after {
-      content: '';
-      position: absolute;
-      display: block;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 0;
-      background-image: linear-gradient(to top, #046c54 57%, #045744, #033f31);
-      opacity: 0;
-      transition: all 0.5s ease;
+    @media (hover: hover) {
+      //
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background-image: linear-gradient(
+          to top,
+          #046c54 57%,
+          #045744,
+          #033f31
+        );
+        opacity: 0;
+        transition: all 0.5s ease;
+      }
     }
 
     //
     &__job {
       min-height: 50px;
     }
+
     //
     &__job,
     &__sessions {
@@ -224,10 +233,6 @@ export default {
       height: 100%;
       opacity: 1;
       z-index: -1;
-    }
-  }
-  &:hover &__info {
-    @media (hover: hover) {
     }
   }
 
