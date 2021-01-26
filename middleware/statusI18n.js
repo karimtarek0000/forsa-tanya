@@ -1,3 +1,5 @@
+import * as Type from '@/type/index.js'
+
 export default function ({ app }) {
   // onLanguageSwitched called right after a new locale has been set
   app.i18n.onLanguageSwitched = (oldLocale, newLocale) => {
@@ -7,8 +9,8 @@ export default function ({ app }) {
     }
   }
 
-  // 1) -
-  app.store.dispatch('OurTherapists')
-  // 2) - Social media
-  app.store.dispatch('socialMedia')
+  // 1) - Our Therapists
+  app.store.dispatch(Type.OUR_THERAPISTS)
+  // 2) - Social Media
+  app.store.dispatch(Type.SOCIAL_MEDIA)
 }

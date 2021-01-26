@@ -1,6 +1,8 @@
-//
-export const state = () => ({ social: null, ourTherapists: null })
+import * as Type from '../type/index'
 
+//
+// eslint-disable-next-line import/namespace
+export const state = () => ({ social: null, ourTherapists: null })
 // 1) - mutations
 export const mutations = {
   // 1) - Change from state => ourTherapists
@@ -31,13 +33,13 @@ export const actions = {
   //
   async nuxtServerInit({ dispatch }) {
     // 1) - Our Therapists
-    await dispatch('OurTherapists')
+    await dispatch(Type.OUR_THERAPISTS)
     // 2) - Socia Media
-    await dispatch('socialMedia')
+    await dispatch(Type.SOCIAL_MEDIA)
   },
 
   // 1) - Get Our therapists
-  async OurTherapists({ commit, getters }) {
+  async [Type.OUR_THERAPISTS]({ commit, getters }) {
     // 1)
     const { Data } = await this.$axios.$get('/doctors', getters.getLang)
     // 2)
@@ -45,7 +47,7 @@ export const actions = {
   },
 
   // 2) - Get social media footer
-  async socialMedia({ commit, getters }) {
+  async [Type.SOCIAL_MEDIA]({ commit, getters }) {
     // 1)
     const { Data } = await this.$axios.$get('/social', getters.getLang)
     // 2)

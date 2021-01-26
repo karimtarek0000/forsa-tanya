@@ -2,7 +2,7 @@
   <b-form-select
     v-model="selected"
     :options="generateAllLanguages"
-    class="select-lang mx-auto border border-primary text-uppercase"
+    class="select-lang text-primary mx-auto border border-primary text-uppercase"
   ></b-form-select>
 </template>
 
