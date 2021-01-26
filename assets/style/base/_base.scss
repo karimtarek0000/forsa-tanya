@@ -10,7 +10,7 @@
 html {
   box-sizing: border-box;
   // height: 10000px;
-  scrollbar-color: var(--third) var(--primary);
+  scrollbar-color: var(--thirdenth) var(--primary);
   scrollbar-width: 3px;
 }
 
@@ -52,7 +52,7 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: var(--third);
+  background-color: var(--thirdenth);
   border-radius: 0;
 }
 

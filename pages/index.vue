@@ -21,7 +21,4 @@ export default {
 }
 </script>
 
-<style lang="scss">
-main {
-}
-</style>
+<style lang="scss"></style>

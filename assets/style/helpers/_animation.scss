@@ -1,0 +1,33 @@
+//
+.start-enter-active {
+  animation: slideUp 0.6s ease-out both;
+  will-change: animation;
+}
+
+//
+.start-leave-active {
+  animation: slideDown 0.6s ease-in both;
+  will-change: animation;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+}

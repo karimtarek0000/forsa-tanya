@@ -92,8 +92,8 @@ export default {
     vuex: {
       syncLocale: true,
       syncMessages: true,
-      syncRouteParams: true
-    }
+      syncRouteParams: true,
+    },
   },
   bootstrapVue: {
     bootstrapCSS: false,
@@ -111,8 +111,7 @@ export default {
   },
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
-  axios: {
-  },
+  axios: {},
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
@@ -123,13 +122,17 @@ export default {
         loader: 'eslint-loader',
         exclude: /(node_modules)/,
         options: {
-          fix: true
-        }
+          fix: true,
+        },
       })
-    }
+    },
   },
   router: {
-    middleware: 'statusI18n'
+    middleware: 'statusI18n',
+  },
+  pageTransition: {
+    name: 'start',
+    mode: 'out-in',
   },
   generate: {
     fallback: true,
