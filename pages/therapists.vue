@@ -28,10 +28,11 @@
 <script>
 export default {
   name: 'Therapists',
-  data() {
-    return {}
+  head() {
+    return {
+      title: this.$t('titles.therapists'),
+    }
   },
-  provide: {},
 }
 </script>
 

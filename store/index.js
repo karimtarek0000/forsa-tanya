@@ -38,20 +38,17 @@ export const actions = {
 
   // 1) - Get Our therapists
   async OurTherapists({ commit, getters }) {
-    //
-    const dataOurTherapists = await this.$axios.$get(
-      '/doctors',
-      getters.getLang
-    )
-    //
-    commit('changeOurTherapists', dataOurTherapists.Data)
+    // 1)
+    const { Data } = await this.$axios.$get('/doctors', getters.getLang)
+    // 2)
+    commit('changeOurTherapists', Data)
   },
 
   // 2) - Get social media footer
   async socialMedia({ commit, getters }) {
-    //
-    const dataSocial = await this.$axios.$get('/social', getters.getLang)
-    //
-    commit('changeAllSocial', dataSocial.Data)
+    // 1)
+    const { Data } = await this.$axios.$get('/social', getters.getLang)
+    // 2)
+    commit('changeAllSocial', Data)
   },
 }

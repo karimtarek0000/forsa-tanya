@@ -1,7 +1,6 @@
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'Forsa Tanya',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -44,6 +43,12 @@ export default {
     ],
   },
 
+  // Loading
+  loading: {
+    color: '#707070',
+    height: '7px',
+  },
+
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [{ src: '~/assets/style/style.scss', lang: 'scss' }],
 
@@ -70,12 +75,14 @@ export default {
     // Style Resources
     '@nuxtjs/style-resources',
   ],
+
   styleResources: {
     scss: [
       '~/assets/style/base/_base.scss',
       '~/assets/style/helpers/_design-system.scss',
     ],
   },
+
   i18n: {
     locales: [
       { code: 'ar', iso: 'ar-EG', name: 'ع', file: 'ar.json' },
@@ -95,6 +102,7 @@ export default {
       syncRouteParams: true,
     },
   },
+
   bootstrapVue: {
     bootstrapCSS: false,
     bootstrapVueCSS: false,
@@ -127,13 +135,16 @@ export default {
       })
     },
   },
+
   router: {
     middleware: 'statusI18n',
   },
+
   pageTransition: {
     name: 'start',
     mode: 'out-in',
   },
+
   generate: {
     fallback: true,
   },
