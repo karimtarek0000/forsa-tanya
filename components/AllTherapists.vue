@@ -65,7 +65,8 @@ export default {
     return {
       therapists: [
         {
-          img: '1.png',
+          img:
+            'https://sam-construction.com/forsa_tanya/uploads/users/a31dd77c3aa88ca4a89f7e7f85899e7d.jpeg',
           title: 'sara ahmed',
           job: 'psychotherapist',
           rating: 3,
@@ -73,7 +74,8 @@ export default {
           price: 250,
         },
         {
-          img: '2.png',
+          img:
+            'https://sam-construction.com/forsa_tanya/uploads/users/a31dd77c3aa88ca4a89f7e7f85899e7d.jpeg',
           title: 'ahmed ali',
           job: 'doctorate mental health and psychological therapy',
           rating: 3,
@@ -81,7 +83,8 @@ export default {
           price: 266,
         },
         {
-          img: '3.png',
+          img:
+            'https://sam-construction.com/forsa_tanya/uploads/users/a31dd77c3aa88ca4a89f7e7f85899e7d.jpeg',
           title: 'alaa amr',
           job: 'mental health consultant',
           rating: 4,
@@ -89,7 +92,8 @@ export default {
           price: 240,
         },
         {
-          img: '1.png',
+          img:
+            'https://sam-construction.com/forsa_tanya/uploads/users/a31dd77c3aa88ca4a89f7e7f85899e7d.jpeg',
           title: 'sara ahmed',
           job: 'psychotherapist',
           rating: 3,
@@ -97,7 +101,8 @@ export default {
           price: 250,
         },
         {
-          img: '2.png',
+          img:
+            'https://sam-construction.com/forsa_tanya/uploads/users/a31dd77c3aa88ca4a89f7e7f85899e7d.jpeg',
           title: 'ahmed ali',
           job: 'doctorate mental health and psychological therapy',
           rating: 3,
@@ -105,7 +110,8 @@ export default {
           price: 266,
         },
         {
-          img: '3.png',
+          img:
+            'https://sam-construction.com/forsa_tanya/uploads/users/a31dd77c3aa88ca4a89f7e7f85899e7d.jpeg',
           title: 'alaa amr',
           job: 'mental health consultant',
           rating: 4,
@@ -113,7 +119,8 @@ export default {
           price: 240,
         },
         {
-          img: '1.png',
+          img:
+            'https://sam-construction.com/forsa_tanya/uploads/users/a31dd77c3aa88ca4a89f7e7f85899e7d.jpeg',
           title: 'sara ahmed',
           job: 'psychotherapist',
           rating: 3,
@@ -121,7 +128,8 @@ export default {
           price: 250,
         },
         {
-          img: '2.png',
+          img:
+            'https://sam-construction.com/forsa_tanya/uploads/users/a31dd77c3aa88ca4a89f7e7f85899e7d.jpeg',
           title: 'ahmed ali',
           job: 'doctorate mental health and psychological therapy',
           rating: 3,
@@ -129,7 +137,8 @@ export default {
           price: 266,
         },
         {
-          img: '3.png',
+          img:
+            'https://sam-construction.com/forsa_tanya/uploads/users/a31dd77c3aa88ca4a89f7e7f85899e7d.jpeg',
           title: 'alaa amr',
           job: 'mental health consultant',
           rating: 4,
@@ -137,7 +146,8 @@ export default {
           price: 240,
         },
         {
-          img: '1.png',
+          img:
+            'https://sam-construction.com/forsa_tanya/uploads/users/a31dd77c3aa88ca4a89f7e7f85899e7d.jpeg',
           title: 'sara ahmed',
           job: 'psychotherapist',
           rating: 3,
@@ -145,7 +155,8 @@ export default {
           price: 250,
         },
         {
-          img: '2.png',
+          img:
+            'https://sam-construction.com/forsa_tanya/uploads/users/a31dd77c3aa88ca4a89f7e7f85899e7d.jpeg',
           title: 'ahmed ali',
           job: 'doctorate mental health and psychological therapy',
           rating: 3,
@@ -153,7 +164,8 @@ export default {
           price: 266,
         },
         {
-          img: '3.png',
+          img:
+            'https://sam-construction.com/forsa_tanya/uploads/users/a31dd77c3aa88ca4a89f7e7f85899e7d.jpeg',
           title: 'alaa amr',
           job: 'mental health consultant',
           rating: 4,
@@ -161,7 +173,8 @@ export default {
           price: 240,
         },
         {
-          img: '1.png',
+          img:
+            'https://sam-construction.com/forsa_tanya/uploads/users/a31dd77c3aa88ca4a89f7e7f85899e7d.jpeg',
           title: 'sara ahmed',
           job: 'psychotherapist',
           rating: 3,
@@ -169,7 +182,8 @@ export default {
           price: 250,
         },
         {
-          img: '2.png',
+          img:
+            'https://sam-construction.com/forsa_tanya/uploads/users/a31dd77c3aa88ca4a89f7e7f85899e7d.jpeg',
           title: 'ahmed ali',
           job: 'doctorate mental health and psychological therapy',
           rating: 3,
@@ -177,7 +191,8 @@ export default {
           price: 266,
         },
         {
-          img: '3.png',
+          img:
+            'https://sam-construction.com/forsa_tanya/uploads/users/a31dd77c3aa88ca4a89f7e7f85899e7d.jpeg',
           title: 'alaa amr',
           job: 'mental health consultant',
           rating: 4,
@@ -185,7 +200,8 @@ export default {
           price: 240,
         },
         {
-          img: '1.png',
+          img:
+            'https://sam-construction.com/forsa_tanya/uploads/users/a31dd77c3aa88ca4a89f7e7f85899e7d.jpeg',
           title: 'sara ahmed',
           job: 'psychotherapist',
           rating: 3,
@@ -193,7 +209,8 @@ export default {
           price: 250,
         },
         {
-          img: '2.png',
+          img:
+            'https://sam-construction.com/forsa_tanya/uploads/users/a31dd77c3aa88ca4a89f7e7f85899e7d.jpeg',
           title: 'ahmed ali',
           job: 'doctorate mental health and psychological therapy',
           rating: 3,
@@ -201,7 +218,8 @@ export default {
           price: 266,
         },
         {
-          img: '3.png',
+          img:
+            'https://sam-construction.com/forsa_tanya/uploads/users/a31dd77c3aa88ca4a89f7e7f85899e7d.jpeg',
           title: 'alaa amr',
           job: 'mental health consultant',
           rating: 4,

@@ -38,7 +38,7 @@
         <ButtonPrimary
           :title="$t('button.getStarted')"
           class="mx-auto"
-          path="about-us"
+          path="therapists"
         />
       </b-col>
     </b-container>
