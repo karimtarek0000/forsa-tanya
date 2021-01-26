@@ -4,11 +4,7 @@
   >
     <!-- 1) - Image -->
     <div class="our-therapists__card__image text-center h-269">
-      <img
-        class="img-fluid obj-img"
-        :src="require(`@/assets/images/therapists/${img}`)"
-        alt=""
-      />
+      <img class="img-fluid obj-img" :src="img" :alt="title" />
     </div>
 
     <!-- 2) - Info -->
@@ -19,7 +15,7 @@
       <h3
         class="our-therapists__card__info__title m-0 our-therapists__card__info--color weight-extraBold text-22"
       >
-        dr. {{ title }}
+        {{ $t('placeHolder.dr') }}. {{ title }}
       </h3>
       <!-- 2) - Job -->
       <p
@@ -75,7 +71,9 @@
           />
           <!--  -->
           <div class="weight-bolder">
-            <p class="m-0 text-14 our-therapists__card__info--color">250 EGP</p>
+            <p class="m-0 text-14 our-therapists__card__info--color">
+              {{ +price }} {{ $t('placeHolder.egp') }}
+            </p>
             <p
               class="m-0 text-12 our-therapists__card__info__sessions our-therapists__card__info--sessions text-capitalize"
             >
@@ -129,7 +127,7 @@ export default {
       required: true,
     },
     rating: {
-      type: Number,
+      type: [Number, String],
       required: true,
     },
     total: {
@@ -137,7 +135,7 @@ export default {
       required: true,
     },
     price: {
-      type: Number,
+      type: [Number, String],
       required: true,
     },
   },

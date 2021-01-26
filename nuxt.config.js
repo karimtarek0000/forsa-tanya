@@ -48,7 +48,7 @@ export default {
   css: [{ src: '~/assets/style/style.scss', lang: 'scss' }],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: ['@/plugins/statusI18n.js'],
+  plugins: ['@/plugins/axios.js'],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
@@ -89,6 +89,11 @@ export default {
     parsePages: true,
     detectBrowserLanguage: false,
     seo: false,
+    vuex: {
+      syncLocale: true,
+      syncMessages: true,
+      syncRouteParams: true
+    }
   },
   bootstrapVue: {
     bootstrapCSS: false,
@@ -106,10 +111,26 @@ export default {
   },
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
-  axios: {},
+  axios: {
+  },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {},
+  build: {
+    extend(config, ctx) {
+      config.module.rules.push({
+        enforce: 'pre',
+        test: /\.(js|vue)$/,
+        loader: 'eslint-loader',
+        exclude: /(node_modules)/,
+        options: {
+          fix: true
+        }
+      })
+    }
+  },
+  router: {
+    middleware: 'statusI18n'
+  },
   generate: {
     fallback: true,
   },

@@ -6,4 +6,9 @@ export default function ({ app }) {
       document.dir = newLocale === 'en' ? 'ltr' : 'rtl'
     }
   }
+
+  // 1) -
+  app.store.dispatch('OurTherapists')
+  // 2) - Social media
+  app.store.dispatch('socialMedia')
 }

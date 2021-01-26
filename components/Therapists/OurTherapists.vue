@@ -14,15 +14,15 @@
       <!-- 2) - Therapists Box -->
       <b-row no-gutters class="justify-content-between align-items-center">
         <TherapistsCard
-          v-for="(card, index) in therapists"
-          :key="index"
-          :img="card.img"
-          :title="card.title"
-          :job="card.job"
-          :total="card.total"
-          :rating="card.rating"
-          :price="card.price"
-          class="mb-3 mb-lg-0"
+          v-for="therapists in dataOurTherapists"
+          :key="therapists.id"
+          :title="therapists['doctor_name']"
+          :job="therapists['job_title']"
+          :img="therapists.image"
+          :total="0"
+          :rating="therapists.rating"
+          :price="therapists.price"
+          class="mb-3"
         />
       </b-row>
 
@@ -48,35 +48,40 @@
 <script>
 export default {
   name: 'OurTherapists',
-  data() {
-    return {
-      therapists: [
-        {
-          img: '1.png',
-          title: 'sara ahmed',
-          job: 'psychotherapist',
-          rating: 3,
-          total: 300,
-          price: 250,
-        },
-        {
-          img: '2.png',
-          title: 'ahmed ali',
-          job: 'doctorate mental health and psychological therapy',
-          rating: 3,
-          total: 300,
-          price: 266,
-        },
-        {
-          img: '3.png',
-          title: 'alaa amr',
-          job: 'mental health consultant',
-          rating: 4,
-          total: 3.245,
-          price: 240,
-        },
-      ],
-    }
+  // data() {
+  //   return {
+  //     therapists: [
+  //       {
+  //         img: '1.png',
+  //         title: 'sara ahmed',
+  //         job: 'psychotherapist',
+  //         rating: 3,
+  //         total: 300,
+  //         price: 250,
+  //       },
+  //       {
+  //         img: '2.png',
+  //         title: 'ahmed ali',
+  //         job: 'doctorate mental health and psychological therapy',
+  //         rating: 3,
+  //         total: 300,
+  //         price: 266,
+  //       },
+  //       {
+  //         img: '3.png',
+  //         title: 'alaa amr',
+  //         job: 'mental health consultant',
+  //         rating: 4,
+  //         total: 3.245,
+  //         price: 240,
+  //       },
+  //     ],
+  //   }
+  // },
+  computed: {
+    dataOurTherapists() {
+      return this.$store.state.ourTherapists
+    },
   },
 }
 </script>

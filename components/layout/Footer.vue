@@ -16,12 +16,12 @@
           <!-- 3) - Social media -->
           <b-row no-gutters class="width-80 mt-4">
             <b-link
-              v-for="icon in socialMedia"
-              :key="icon"
-              :class="`wrapper-icon d-flex justify-content-center align-items-center rounded-circle bg-${icon}`"
-              href="#"
+              v-for="(social, index) in socialMedia"
+              :key="social.name"
+              :class="`wrapper-icon d-flex justify-content-center align-items-center rounded-circle bg-${socialIcons[index]}`"
+              :href="social.value"
             >
-              <GSvg :name-icon="icon" :title="icon" />
+              <GSvg :name-icon="socialIcons[index]" :title="social.name" />
             </b-link>
           </b-row>
         </b-col>
@@ -81,10 +81,13 @@ export default {
   name: 'Footer',
   data() {
     return {
-      socialMedia: ['facebook', 'linkedin', 'twitter', 'instagram', 'youtube'],
+      socialIcons: ['twitter', 'facebook', 'instagram', 'youtube'],
     }
   },
   computed: {
+    socialMedia() {
+      return this.$store.state.social
+    },
     year() {
       return new Date().getFullYear()
     },
