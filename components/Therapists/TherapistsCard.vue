@@ -50,8 +50,8 @@
             (
             <GSvg
               class="svg-size svg-people our-therapists__card--svg"
-              name-icon="users"
-              title="users"
+              name-icon="people"
+              title="people"
             />
             <p class="mb-0 mx-1 text-12">
               {{ total }}

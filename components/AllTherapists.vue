@@ -19,29 +19,32 @@
         no-gutters
         class="our-therapists__card__action d-flex align-items-center justify-content-center h-110 bg-primary mt-2 mb-5 mt-md-0 mb-md-0 px-1"
       >
+        <!-- 1) - Video, View -->
         <b-col cols="12" class="d-flex px-1 align-items-center">
           <b-row no-gutters class="justify-content-between w-100">
-            <!--  -->
+            <!-- 1) - Video -->
             <b-col class="basis-47 flex-grow-0">
               <b-button
                 pill
-                variant="facebook"
-                class="w-100 bg-primary border-sevententh mb-2 mb-md-0 text-sevententh text-14 weight-bolder text-capitalize"
-                >video</b-button
+                variant="primary"
+                class="w-100 d-flex align-items-center justify-content-center border-sevententh mb-2 mb-md-0 text-sevententh text-14 weight-bolder text-capitalize"
               >
+                <GSvg name-icon="play" title="play" class="svg-13 mx-1" /> video
+              </b-button>
             </b-col>
-            <!--  -->
+            <!-- 2) - View -->
             <b-col class="basis-47 flex-grow-0">
               <b-button
                 pill
-                variant="facebook"
-                class="w-100 bg-primary border-sevententh mb-2 mb-md-0 text-sevententh text-14 weight-bolder text-capitalize"
-                >view</b-button
+                variant="primary"
+                class="w-100 border-sevententh d-flex align-items-center justify-content-center mb-2 mb-md-0 text-sevententh text-14 weight-bolder text-capitalize"
               >
+                <GSvg name-icon="view" title="view" class="svg-13 mx-1" /> view
+              </b-button>
             </b-col>
           </b-row>
         </b-col>
-        <!--  -->
+        <!-- 2) - Book -->
         <b-col cols="12" class="d-flex align-items-center">
           <b-button
             pill

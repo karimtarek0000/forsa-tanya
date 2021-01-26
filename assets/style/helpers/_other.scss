@@ -19,3 +19,11 @@
     box-shadow: #{$shadow};
   }
 }
+
+// Add class resize svg
+@each $nameSizeSvg, $size in $svg {
+  .svg-#{$nameSizeSvg} {
+    width: #{$size};
+    height: #{$size};
+  }
+}
