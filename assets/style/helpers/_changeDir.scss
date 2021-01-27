@@ -18,4 +18,15 @@ html[dir='rtl'] {
     left: 0;
     right: auto;
   }
+
+  .details {
+    margin-right: auto;
+    margin-left: 0 !important;
+  }
+
+  //
+  .button-play {
+    margin-left: 10px;
+    margin-right: 0 !important;
+  }
 }

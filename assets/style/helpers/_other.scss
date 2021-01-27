@@ -3,12 +3,14 @@
   .basis-#{$nameBasis} {
     flex-basis: #{$basis};
 
-    // Responsive
-    @media only screen and (max-width: 992px) {
-      flex-basis: 49%;
-    }
-    @media only screen and (max-width: 600px) {
-      flex-basis: 100%;
+    @if ($nameBasis == '30' or $nameBasis == '47') {
+      // Responsive
+      @media only screen and (max-width: 992px) {
+        flex-basis: 49%;
+      }
+      @media only screen and (max-width: 600px) {
+        flex-basis: 100%;
+      }
     }
   }
 }

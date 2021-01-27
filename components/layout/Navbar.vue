@@ -23,11 +23,11 @@
         <!-- 1) - Navbar nav -->
         <b-navbar-nav class="col-lg-6 justify-content-between">
           <b-nav-item
-            v-for="item in navbar"
+            v-for="(item, index) in navbar"
             :key="item"
             class="text-capitalize text-16 weight-bolder"
             :to="localePath(item == 'home' ? '/' : item)"
-            :exact="true"
+            :exact="index == 0"
             >{{ $t(`navbar.${item.replace('-', ' ')}`) }}</b-nav-item
           >
         </b-navbar-nav>

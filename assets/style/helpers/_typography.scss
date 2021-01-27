@@ -13,6 +13,12 @@
   }
 }
 //
+@each $nameLineHeight, $size in $line-height {
+  .line-#{$nameLineHeight} {
+    line-height: #{$size};
+  }
+}
+//
 @each $nameWeight, $size in $font-weight {
   .weight-#{$nameWeight} {
     font-weight: #{$size};

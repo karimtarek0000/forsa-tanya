@@ -45,7 +45,7 @@
           >
             (
             <GSvg
-              class="svg-size svg-people our-therapists__card--svg"
+              class="svg-people our-therapists__card--svg"
               name-icon="people"
               title="people"
             />
