@@ -29,7 +29,12 @@
                 variant="primary"
                 class="w-100 d-flex align-items-center justify-content-center border-sevententh mb-2 mb-md-0 text-sevententh text-14 weight-bolder text-capitalize"
               >
-                <GSvg name-icon="play" title="play" class="svg-13 mx-1" /> video
+                <GSvg
+                  name-icon="play"
+                  title="play"
+                  class="svg-13 svg-play mx-1"
+                />
+                video
               </b-button>
             </b-col>
             <!-- 2) - View -->
@@ -38,6 +43,14 @@
                 pill
                 variant="primary"
                 class="w-100 border-sevententh d-flex align-items-center justify-content-center mb-2 mb-md-0 text-sevententh text-14 weight-bolder text-capitalize"
+                :to="
+                  localeRoute({
+                    name: 'therapists-doctor',
+                    params: {
+                      doctor: 'osama',
+                    },
+                  })
+                "
               >
                 <GSvg name-icon="view" title="view" class="svg-13 mx-1" /> view
               </b-button>
@@ -244,6 +257,11 @@ export default {
         box-shadow: 0 12px 12px 0 rgba(0, 0, 0, 0.07);
       }
     }
+  }
+
+  //
+  .svg-play {
+    fill: var(--third);
   }
 }
 </style>

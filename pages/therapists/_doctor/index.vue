@@ -199,21 +199,29 @@
             >
               <!--  -->
               <div class="shadow-card-review rounded">
-                <img
-                  class="img-fluid image-avatar mx-auto obj-img w-110 h-110 position-relative"
-                  src="@/assets/images/d.png"
+                <!-- SVG -->
+                <GSvg
+                  name-icon="quotes"
+                  title="quotes"
+                  class="svg-70 quotes position-absolute mx-1"
                 />
-                <!--  -->
+                <!-- 1) - Image -->
+                <div
+                  class="mx-auto w-110 h-110 rounded-circle position-relative image-avatar"
+                >
+                  <img class="img-fluid obj-img" src="@/assets/images/d.png" />
+                </div>
+                <!-- 2) - Title -->
                 <h4 class="text-17 weight-bolder marginTop--35 text-seventh">
                   hany ali
                 </h4>
-                <!--  -->
+                <!-- 3) - Quote -->
                 <p class="text-14 line-2 px-3 weight-light">
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi
                   cupiditate eligendi, pariatur provident expedita esse
                   molestiae aliquid incidunt doloribus quos.
                 </p>
-                <!--  -->
+                <!-- 4) - Other options -->
                 <b-row
                   no-gutters
                   class="align-items-center justify-content-between"
@@ -241,21 +249,29 @@
             >
               <!--  -->
               <div class="shadow-card-review rounded">
-                <img
-                  class="img-fluid image-avatar mx-auto obj-img w-110 h-110 position-relative"
-                  src="@/assets/images/d.png"
+                <!-- SVG -->
+                <GSvg
+                  name-icon="quotes"
+                  title="quotes"
+                  class="svg-70 quotes position-absolute mx-1"
                 />
-                <!--  -->
+                <!-- 1) - Image -->
+                <div
+                  class="mx-auto w-110 h-110 rounded-circle position-relative image-avatar"
+                >
+                  <img class="img-fluid obj-img" src="@/assets/images/d.png" />
+                </div>
+                <!-- 2) - Title -->
                 <h4 class="text-17 weight-bolder marginTop--35 text-seventh">
                   hany ali
                 </h4>
-                <!--  -->
+                <!-- 3) - Quote -->
                 <p class="text-14 line-2 px-3 weight-light">
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi
                   cupiditate eligendi, pariatur provident expedita esse
                   molestiae aliquid incidunt doloribus quos.
                 </p>
-                <!--  -->
+                <!-- 4) - Other options -->
                 <b-row
                   no-gutters
                   class="align-items-center justify-content-between"
@@ -283,21 +299,29 @@
             >
               <!--  -->
               <div class="shadow-card-review rounded">
-                <img
-                  class="img-fluid image-avatar mx-auto obj-img w-110 h-110 position-relative"
-                  src="@/assets/images/d.png"
+                <!-- SVG -->
+                <GSvg
+                  name-icon="quotes"
+                  title="quotes"
+                  class="svg-70 quotes position-absolute mx-1"
                 />
-                <!--  -->
+                <!-- 1) - Image -->
+                <div
+                  class="mx-auto w-110 h-110 rounded-circle position-relative image-avatar"
+                >
+                  <img class="img-fluid obj-img" src="@/assets/images/d.png" />
+                </div>
+                <!-- 2) - Title -->
                 <h4 class="text-17 weight-bolder marginTop--35 text-seventh">
                   hany ali
                 </h4>
-                <!--  -->
+                <!-- 3) - Quote -->
                 <p class="text-14 line-2 px-3 weight-light">
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi
                   cupiditate eligendi, pariatur provident expedita esse
                   molestiae aliquid incidunt doloribus quos.
                 </p>
-                <!--  -->
+                <!-- 4) - Other options -->
                 <b-row
                   no-gutters
                   class="align-items-center justify-content-between"
@@ -325,21 +349,29 @@
             >
               <!--  -->
               <div class="shadow-card-review rounded">
-                <img
-                  class="img-fluid image-avatar mx-auto obj-img w-110 h-110 position-relative"
-                  src="@/assets/images/d.png"
+                <!-- SVG -->
+                <GSvg
+                  name-icon="quotes"
+                  title="quotes"
+                  class="svg-70 quotes position-absolute mx-1"
                 />
-                <!--  -->
+                <!-- 1) - Image -->
+                <div
+                  class="mx-auto w-110 h-110 rounded-circle position-relative image-avatar"
+                >
+                  <img class="img-fluid obj-img" src="@/assets/images/d.png" />
+                </div>
+                <!-- 2) - Title -->
                 <h4 class="text-17 weight-bolder marginTop--35 text-seventh">
                   hany ali
                 </h4>
-                <!--  -->
+                <!-- 3) - Quote -->
                 <p class="text-14 line-2 px-3 weight-light">
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi
                   cupiditate eligendi, pariatur provident expedita esse
                   molestiae aliquid incidunt doloribus quos.
                 </p>
-                <!--  -->
+                <!-- 4) - Other options -->
                 <b-row
                   no-gutters
                   class="align-items-center justify-content-between"
@@ -370,17 +402,19 @@
 </template>
 
 <script>
+//
 const sharePropertyScroll = {
   lazyLoad: 'ondemand',
   pauseOnDotsHover: true,
   pauseOnFocus: true,
   pauseOnHover: true,
-  autoplaySpeed: 2000,
+  autoplaySpeed: 5000,
   autoplay: true,
   dots: true,
   arrows: false,
   infinite: true,
 }
+//
 export default {
   data() {
     return {
@@ -499,13 +533,16 @@ export default {
   }
 }
 
+///////////////
 //
 .certifications.img-wrapper {
   padding: 0 30px;
 }
+
 .reviews.img-wrapper {
   width: 400px;
-  padding: 0 70px;
+  padding: 0 50px;
+  position: relative;
 
   @media (max-width: 992px) {
     padding: 0 30px;
@@ -521,5 +558,15 @@ export default {
 
 .marginTop--35 {
   margin-top: -35px;
+}
+
+.quotes {
+  left: 80px;
+  top: 0;
+  fill: var(--seventh);
+
+  @media (max-width: 900px) {
+    left: 50px;
+  }
 }
 </style>
