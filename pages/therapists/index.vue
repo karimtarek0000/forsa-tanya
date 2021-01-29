@@ -28,6 +28,19 @@
 <script>
 export default {
   name: 'Therapists',
+  async asyncData({ app }) {
+    const { Data } = await app.$axios.$get(
+      '/doctors',
+      app.store.getters.getLang
+    )
+
+    return { dataAllTherapists: Data }
+  },
+  provide() {
+    return {
+      allTherapists: this.dataAllTherapists,
+    }
+  },
   head() {
     return {
       title: this.$t('titles.therapists'),

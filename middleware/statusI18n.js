@@ -9,8 +9,6 @@ export default function ({ app }) {
     }
   }
 
-  // 1) - Our Therapists
-  app.store.dispatch(Type.OUR_THERAPISTS)
   // 2) - Social Media
   app.store.dispatch(Type.SOCIAL_MEDIA)
 }

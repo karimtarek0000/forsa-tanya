@@ -4,14 +4,14 @@
     class="all-therapists justify-content-between align-items-center mb-123 mt-55"
   >
     <TherapistsCard
-      v-for="(card, index) in therapists"
-      :key="index"
-      :img="card.img"
-      :title="card.title"
-      :job="card.job"
-      :total="card.total"
-      :rating="card.rating"
-      :price="card.price"
+      v-for="therapists in allTherapists"
+      :key="therapists.id"
+      :title="therapists['doctor_name']"
+      :job="therapists['job_title']"
+      :img="therapists.image"
+      :total="0"
+      :rating="therapists.rating"
+      :price="therapists.price"
       class="mb-3 mb-lg-64"
     >
       <b-row
@@ -74,174 +74,7 @@
 <script>
 export default {
   name: 'AllTherapists',
-  data() {
-    return {
-      therapists: [
-        {
-          img:
-            'https://sam-construction.com/forsa_tanya/uploads/users/a31dd77c3aa88ca4a89f7e7f85899e7d.jpeg',
-          title: 'sara ahmed',
-          job: 'psychotherapist',
-          rating: 3,
-          total: 300,
-          price: 250,
-        },
-        {
-          img:
-            'https://sam-construction.com/forsa_tanya/uploads/users/a31dd77c3aa88ca4a89f7e7f85899e7d.jpeg',
-          title: 'ahmed ali',
-          job: 'doctorate mental health and psychological therapy',
-          rating: 3,
-          total: 300,
-          price: 266,
-        },
-        {
-          img:
-            'https://sam-construction.com/forsa_tanya/uploads/users/a31dd77c3aa88ca4a89f7e7f85899e7d.jpeg',
-          title: 'alaa amr',
-          job: 'mental health consultant',
-          rating: 4,
-          total: 3.245,
-          price: 240,
-        },
-        {
-          img:
-            'https://sam-construction.com/forsa_tanya/uploads/users/a31dd77c3aa88ca4a89f7e7f85899e7d.jpeg',
-          title: 'sara ahmed',
-          job: 'psychotherapist',
-          rating: 3,
-          total: 300,
-          price: 250,
-        },
-        {
-          img:
-            'https://sam-construction.com/forsa_tanya/uploads/users/a31dd77c3aa88ca4a89f7e7f85899e7d.jpeg',
-          title: 'ahmed ali',
-          job: 'doctorate mental health and psychological therapy',
-          rating: 3,
-          total: 300,
-          price: 266,
-        },
-        {
-          img:
-            'https://sam-construction.com/forsa_tanya/uploads/users/a31dd77c3aa88ca4a89f7e7f85899e7d.jpeg',
-          title: 'alaa amr',
-          job: 'mental health consultant',
-          rating: 4,
-          total: 3.245,
-          price: 240,
-        },
-        {
-          img:
-            'https://sam-construction.com/forsa_tanya/uploads/users/a31dd77c3aa88ca4a89f7e7f85899e7d.jpeg',
-          title: 'sara ahmed',
-          job: 'psychotherapist',
-          rating: 3,
-          total: 300,
-          price: 250,
-        },
-        {
-          img:
-            'https://sam-construction.com/forsa_tanya/uploads/users/a31dd77c3aa88ca4a89f7e7f85899e7d.jpeg',
-          title: 'ahmed ali',
-          job: 'doctorate mental health and psychological therapy',
-          rating: 3,
-          total: 300,
-          price: 266,
-        },
-        {
-          img:
-            'https://sam-construction.com/forsa_tanya/uploads/users/a31dd77c3aa88ca4a89f7e7f85899e7d.jpeg',
-          title: 'alaa amr',
-          job: 'mental health consultant',
-          rating: 4,
-          total: 3.245,
-          price: 240,
-        },
-        {
-          img:
-            'https://sam-construction.com/forsa_tanya/uploads/users/a31dd77c3aa88ca4a89f7e7f85899e7d.jpeg',
-          title: 'sara ahmed',
-          job: 'psychotherapist',
-          rating: 3,
-          total: 300,
-          price: 250,
-        },
-        {
-          img:
-            'https://sam-construction.com/forsa_tanya/uploads/users/a31dd77c3aa88ca4a89f7e7f85899e7d.jpeg',
-          title: 'ahmed ali',
-          job: 'doctorate mental health and psychological therapy',
-          rating: 3,
-          total: 300,
-          price: 266,
-        },
-        {
-          img:
-            'https://sam-construction.com/forsa_tanya/uploads/users/a31dd77c3aa88ca4a89f7e7f85899e7d.jpeg',
-          title: 'alaa amr',
-          job: 'mental health consultant',
-          rating: 4,
-          total: 3.245,
-          price: 240,
-        },
-        {
-          img:
-            'https://sam-construction.com/forsa_tanya/uploads/users/a31dd77c3aa88ca4a89f7e7f85899e7d.jpeg',
-          title: 'sara ahmed',
-          job: 'psychotherapist',
-          rating: 3,
-          total: 300,
-          price: 250,
-        },
-        {
-          img:
-            'https://sam-construction.com/forsa_tanya/uploads/users/a31dd77c3aa88ca4a89f7e7f85899e7d.jpeg',
-          title: 'ahmed ali',
-          job: 'doctorate mental health and psychological therapy',
-          rating: 3,
-          total: 300,
-          price: 266,
-        },
-        {
-          img:
-            'https://sam-construction.com/forsa_tanya/uploads/users/a31dd77c3aa88ca4a89f7e7f85899e7d.jpeg',
-          title: 'alaa amr',
-          job: 'mental health consultant',
-          rating: 4,
-          total: 3.245,
-          price: 240,
-        },
-        {
-          img:
-            'https://sam-construction.com/forsa_tanya/uploads/users/a31dd77c3aa88ca4a89f7e7f85899e7d.jpeg',
-          title: 'sara ahmed',
-          job: 'psychotherapist',
-          rating: 3,
-          total: 300,
-          price: 250,
-        },
-        {
-          img:
-            'https://sam-construction.com/forsa_tanya/uploads/users/a31dd77c3aa88ca4a89f7e7f85899e7d.jpeg',
-          title: 'ahmed ali',
-          job: 'doctorate mental health and psychological therapy',
-          rating: 3,
-          total: 300,
-          price: 266,
-        },
-        {
-          img:
-            'https://sam-construction.com/forsa_tanya/uploads/users/a31dd77c3aa88ca4a89f7e7f85899e7d.jpeg',
-          title: 'alaa amr',
-          job: 'mental health consultant',
-          rating: 4,
-          total: 3.245,
-          price: 240,
-        },
-      ],
-    }
-  },
+  inject: ['allTherapists'],
 }
 </script>
 

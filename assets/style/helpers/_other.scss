@@ -3,7 +3,8 @@
   .basis-#{$nameBasis} {
     flex-basis: #{$basis};
 
-    @if ($nameBasis == '30' or $nameBasis == '47') {
+    //
+    @if ($nameBasis == 30 or $nameBasis == 47) {
       // Responsive
       @media only screen and (max-width: 992px) {
         flex-basis: 49%;
