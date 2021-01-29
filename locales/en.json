@@ -11,6 +11,10 @@
     "home": {
       "session": "session",
       "sessions": "sessions"
+    },
+    "therapists": {
+      "head": "therapists",
+      "spec&qual": "specialized & qualified"
     }
   },
   "footer": {

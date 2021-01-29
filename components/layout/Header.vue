@@ -8,7 +8,7 @@
         class="header__inner justify-content-between align-items-center"
       >
         <!-- Col - 1 -->
-        <b-col lg="4">
+        <b-col lg="4" class="order-1 order-lg-0">
           <!--  -->
           <h1 class="text-40 text-secondary weight-extraBold text-uppercase">
             title
@@ -29,7 +29,7 @@
           >
         </b-col>
         <!-- Col - 2 -->
-        <b-col lg="7" class="mt-2 mt-lg-0">
+        <b-col lg="7" class="order-0 order-lg-1 mt-2 mt-lg-0">
           <img
             class="img-fluid obj-img"
             src="@/assets/images/header/1.png"

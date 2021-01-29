@@ -11,6 +11,10 @@
     "home": {
       "session": "جلسة",
       "sessions": "جلسة"
+    },
+    "therapists": {
+      "head": "المعالجين",
+      "spec&qual": "متخصصون و مؤهلون"
     }
   },
   "footer": {

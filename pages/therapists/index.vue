@@ -7,10 +7,12 @@
         <!-- 1) - Info -->
         <div class="therapists__info text-center text-capitalize">
           <!--  -->
-          <p class="m-0 text-sixtenth text-20">specialized & qualified</p>
+          <p class="m-0 text-sixtenth text-20">
+            {{ $t('pages.therapists.spec&qual') }}
+          </p>
           <!--  -->
           <h1 class="weight-extraBold m-0 text-60 text-seventh text-capitalize">
-            therapists
+            {{ $t('pages.therapists.head') }}
           </h1>
           <!--  -->
           <p class="text-sixth text-light text-18 mt-29">
