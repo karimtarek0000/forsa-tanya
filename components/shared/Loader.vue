@@ -15,7 +15,6 @@ export default {
 <style lang="scss">
 //
 .loader {
-  height: 90vh;
   //
   &__wrapper {
     width: 50px;

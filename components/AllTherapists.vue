@@ -3,6 +3,7 @@
     no-gutters
     class="all-therapists justify-content-between align-items-center mb-123 mt-55"
   >
+    <!-- 1) - Therapists Card -->
     <TherapistsCard
       v-for="therapists in allTherapists"
       :key="therapists.id"
@@ -68,24 +69,35 @@
             pill
             variant="primary"
             class="w-100 weight-extraBold hover-btn-book text-capitalize text-sevententh text-18 shadow-btn btn-primary"
+            @click="checkAndOpenBook(therapists.id)"
             >{{ $t('button.book') }}</b-button
           >
         </b-col>
       </b-row>
     </TherapistsCard>
-    <!--  -->
+    <!-- 2) - Book Now -->
+    <LazyBookNow v-if="show" :id="idDoctor" />
   </b-row>
 </template>
 
 <script>
+//
+//
 export default {
   name: 'AllTherapists',
   inject: ['allTherapists'],
   data() {
     return {
-      btnDate: ['today', 'tomorrow'],
-      rating: 3,
+      show: false,
+      idDoctor: null,
     }
+  },
+  methods: {
+    //
+    checkAndOpenBook(id) {
+      this.show = true
+      this.idDoctor = id
+    },
   },
 }
 </script>
@@ -141,65 +153,5 @@ export default {
       fill: var(--ninetenth);
     }
   }
-}
-
-.svg-people {
-  width: 31px;
-  height: 32px;
-  fill: var(--twentyOne);
-}
-
-.svg-session {
-  width: 25px;
-  height: 25px;
-  fill: var(--eightenth);
-}
-
-.svg-calendar {
-  width: 39px;
-  height: 41px;
-}
-
-//
-.view-book {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(black, 0.5);
-  z-index: 9999;
-
-  //
-  &__wrapper {
-    width: 673px;
-    background-color: white;
-    top: 100px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 20px;
-    max-height: 497px;
-    overflow-y: auto;
-
-    //
-    @media (max-width: 992px) {
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: 90%;
-      max-width: 90%;
-    }
-  }
-}
-
-//
-.view-book-btn:hover {
-  @media (hover: hover) {
-    background-color: var(--third);
-    color: var(--primary) !important;
-  }
-}
-
-.view-book-btn:active {
-  background-color: var(--third);
-  color: var(--primary) !important;
 }
 </style>
