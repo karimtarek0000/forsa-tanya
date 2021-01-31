@@ -33,7 +33,10 @@
   },
   "button": {
     "getStarted": "get started",
-    "join": "join"
+    "join": "join",
+    "video": "video",
+    "book": "book",
+    "view": "view"
   },
   "labels": {
     "updates": "recive email updates"

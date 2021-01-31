@@ -3,6 +3,7 @@ import * as Type from '../type/index'
 //
 // eslint-disable-next-line import/namespace
 export const state = () => ({ social: null })
+
 // 1) - mutations
 export const mutations = {
   // 1) - Change from state => social
@@ -13,13 +14,9 @@ export const mutations = {
 
 // 2) - Getters
 export const getters = {
-  //
+  // 1) Get Language
   getLang(state) {
-    return {
-      headers: {
-        'Accept-Language': state.i18n.locale,
-      },
-    }
+    return state.i18n.locale
   },
 }
 
@@ -32,9 +29,9 @@ export const actions = {
   },
 
   // 1) - Get social media footer
-  async [Type.SOCIAL_MEDIA]({ commit, getters }) {
+  async [Type.SOCIAL_MEDIA]({ commit }) {
     // 1)
-    const { Data } = await this.$axios.$get('/social', getters.getLang)
+    const { Data } = await this.$axios.$get('/social')
     // 2)
     commit('changeAllSocial', Data)
   },

@@ -14,10 +14,7 @@
 <script>
 export default {
   async asyncData({ app }) {
-    const { Data } = await app.$axios.$get(
-      '/doctors',
-      app.store.getters.getLang
-    )
+    const { Data } = await app.$axios.$get('/doctors')
 
     return { dataOurTherapists: Data }
   },

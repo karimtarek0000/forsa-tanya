@@ -34,7 +34,7 @@
                   title="play"
                   class="svg-13 svg-play mx-1"
                 />
-                video
+                {{ $t('button.video') }}
               </b-button>
             </b-col>
             <!-- 2) - View -->
@@ -47,12 +47,13 @@
                   localeRoute({
                     name: 'therapists-doctor',
                     params: {
-                      doctor: 'osama',
+                      doctor: therapists.id,
                     },
                   })
                 "
               >
-                <GSvg name-icon="view" title="view" class="svg-13 mx-1" /> view
+                <GSvg name-icon="view" title="view" class="svg-13 mx-1" />
+                {{ $t('button.view') }}
               </b-button>
             </b-col>
           </b-row>
@@ -63,7 +64,7 @@
             pill
             variant="primary"
             class="w-100 weight-extraBold text-capitalize text-sevententh text-18 shadow-btn btn-primary"
-            >book</b-button
+            >{{ $t('button.book') }}</b-button
           >
         </b-col>
       </b-row>
