@@ -172,22 +172,22 @@
           <div class="carousel-wrapper">
             <!--  -->
             <VueSlickCarousel v-bind="slickOptions1">
-              <div class="certifications img-wrapper">
+              <div class="certifications img-wrapper" @click="toggle">
                 <img class="img-fluid obj-img" src="@/assets/images/s.png" />
               </div>
-              <div class="certifications img-wrapper">
+              <div class="certifications img-wrapper" @click="toggle">
                 <img class="img-fluid obj-img" src="@/assets/images/s.png" />
               </div>
-              <div class="certifications img-wrapper">
+              <div class="certifications img-wrapper" @click="toggle">
                 <img class="img-fluid obj-img" src="@/assets/images/s.png" />
               </div>
-              <div class="certifications img-wrapper">
+              <div class="certifications img-wrapper" @click="toggle">
                 <img class="img-fluid obj-img" src="@/assets/images/s.png" />
               </div>
-              <div class="certifications img-wrapper">
+              <div class="certifications img-wrapper" @click="toggle">
                 <img class="img-fluid obj-img" src="@/assets/images/s.png" />
               </div>
-              <div class="certifications img-wrapper">
+              <div class="certifications img-wrapper" @click="toggle">
                 <img class="img-fluid obj-img" src="@/assets/images/s.png" />
               </div>
             </VueSlickCarousel>
@@ -426,6 +426,8 @@
         </b-container>
       </section>
     </template>
+    <!-- 3) - View Certifications -->
+    <ViewCertification v-if="toggleView" @close="toggleView = $event" />
   </main>
 </template>
 
@@ -500,7 +502,13 @@ export default {
       },
       rating: 3,
       loader: true,
+      toggleView: false,
     }
+  },
+  methods: {
+    toggle() {
+      return (this.toggleView = !this.toggleView)
+    },
   },
   head() {
     return {
@@ -608,6 +616,35 @@ export default {
 
   @media (max-width: 900px) {
     left: 50px;
+  }
+}
+
+//
+.view {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: rgba(black, 0.5);
+  z-index: 9999;
+  //
+  &-certifications {
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 735.5px;
+    height: 557px;
+
+    //
+    @media (max-width: 800px) {
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 95%;
+      height: auto;
+    }
   }
 }
 </style>
