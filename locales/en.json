@@ -36,10 +36,14 @@
     "join": "join",
     "video": "video",
     "book": "book",
-    "view": "view"
+    "view": "view",
+    "bookNow": "book now",
+    "today": "today",
+    "tomorrow": "tomorrow"
   },
   "labels": {
-    "updates": "recive email updates"
+    "updates": "recive email updates",
+    "appointments": "available appointments"
   },
   "placeHolder": {
     "email": "Your Email Address",

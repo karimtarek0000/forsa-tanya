@@ -1,5 +1,5 @@
 <template>
-  <div class="view-book position-fixed">
+  <div class="view-book position-fixed" @click="$emit('closeViewBook', false)">
     <!--  -->
     <div class="view-book__wrapper position-absolute p-4">
       <!-- Handling Panding, Error -->
@@ -104,7 +104,9 @@
                   ]"
                   @click.stop="pickedInDay(index)"
                 >
-                  {{ day }}
+                  {{
+                    day === 'today' ? $t('button.today') : $t('button.tomorrow')
+                  }}
                 </b-button>
               </b-col>
             </b-row>
@@ -130,7 +132,7 @@
         <div class="mt-4">
           <!-- 1) - Title -->
           <h4 class="text-capitalize text-seventh text-16 weight-extraBold">
-            available appointments
+            {{ $t('labels.appointments') }}
           </h4>
           <!--  -->
           <b-row no-gutters class="justify-content-between mt-3">
@@ -166,7 +168,7 @@
           class="btn-block border-third mb-2 mb-md-0 text-primary text-18 weight-extraBold text-capitalize"
           :disabled="true"
         >
-          book now
+          {{ $t('button.bookNow') }}
         </b-button>
       </template>
     </div>

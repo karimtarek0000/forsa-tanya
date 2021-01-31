@@ -76,7 +76,7 @@
       </b-row>
     </TherapistsCard>
     <!-- 2) - Book Now -->
-    <LazyBookNow v-if="show" :id="idDoctor" />
+    <LazyBookNow v-if="show" :id="idDoctor" @closeViewBook="show = $event" />
   </b-row>
 </template>
 
