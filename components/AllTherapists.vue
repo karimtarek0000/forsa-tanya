@@ -73,6 +73,7 @@
         </b-col>
       </b-row>
     </TherapistsCard>
+    <!--  -->
   </b-row>
 </template>
 
