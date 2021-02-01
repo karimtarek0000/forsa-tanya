@@ -1,7 +1,16 @@
 <template>
-  <div class="view-book position-fixed" @click="$emit('closeViewBook', false)">
+  <div class="view-book position-fixed">
     <!--  -->
-    <div class="view-book__wrapper position-absolute p-4" @click.stop>
+    <div @click="closeView">
+      <GSvg class="view-book-close" name-icon="close" title="close" />
+    </div>
+    <!--  -->
+    <div class="view-book__wrapper d-block position-absolute p-4">
+      <span
+        v-if="trigger"
+        class="overlay position-absolute d-block"
+        @click="trigger = false"
+      />
       <!-- Handling Panding, Error -->
       <!--  -->
       <Loader v-if="$fetchState.pending" />
@@ -116,25 +125,24 @@
           <b-col class="d-flex justify-content-center align-items-center">
             <!-- 1) - Show Calendar -->
             <span
-              class="shadow-calendar flex-grow-1 position-relative text-center text-twentyTwo weight-bolder px-4 py-1"
+              class="shadow-calendar flex-grow-1 position-relative text-center text-twentyTwo weight-bolder text-capitalize px-4 py-1"
             >
               <!--  -->
               <AirbnbStyleDatepicker
                 :trigger-element-id="'datepicker-trigger'"
                 :mode="'single'"
                 :fullscreen-mobile="false"
+                :trigger="trigger"
                 :show-shortcuts-menu-trigger="false"
-                :date-one="dateOne"
+                :date-one="date"
                 :months-to-show="1"
                 :enabled-dates="ard"
-                @date-one-selected="
-                  (val) => {
-                    dateOne = val
-                  }
-                "
+                @closed="trigger = false"
+                @opened="trigger = true"
+                @date-one-selected="date = $event"
               />
               <!--  -->
-              {{ dateOne }}
+              {{ date || 'select date' }}
             </span>
             <!-- 2) -->
 
@@ -197,7 +205,7 @@
 <script>
 //
 import Moment from 'moment'
-import format from 'date-fns/format'
+// import format from 'date-fns/format'
 
 //
 export default {
@@ -207,6 +215,7 @@ export default {
       type: Number,
       required: true,
     },
+    show: Boolean,
   },
   async fetch() {
     const { Data } = await this.$axios.$get(`/doctors/${this.id}`)
@@ -225,10 +234,25 @@ export default {
       },
       value: '',
       dateFormat: 'D MMM',
-      dateOne: '',
+      date: '',
       ard: ['2021-02-19', '2021-02-20'],
       trigger: false,
     }
+  },
+  created() {
+    //
+    const closeView = (e) => {
+      if (e.key === 'Escape' && this.show) {
+        this.closeView()
+      }
+    }
+    // eslint-disable-next-line nuxt/no-globals-in-created
+    document.addEventListener('keydown', closeView)
+    //
+    this.$once('hook:destroyed', () =>
+      // eslint-disable-next-line nuxt/no-globals-in-created
+      document.removeEventListener('keydown', closeView)
+    )
   },
   mounted() {
     //
@@ -255,42 +279,22 @@ export default {
       this.selectedUser.time = time
     },
     //
-    formatDates(dateOne) {
-      let formattedDates = ''
-      if (dateOne) {
-        formattedDates = format(dateOne, this.dateFormat)
-      }
-      return formattedDates
-    },
-    triggerDatePicker() {
-      this.trigger = !this.trigger
+    // formatDates(dateOne) {
+    //   let formattedDates = ''
+    //   if (dateOne) {
+    //     formattedDates = format(dateOne, this.dateFormat)
+    //   }
+    //   return formattedDates
+    // },
+    // Close view
+    closeView() {
+      this.$emit('closeViewBook', false)
     },
   },
 }
 </script>
 
 <style lang="scss">
-//
-.svg-people {
-  width: 31px;
-  height: 32px;
-  fill: var(--twentyOne);
-}
-
-//
-.svg-session {
-  width: 25px;
-  height: 25px;
-  fill: var(--eightenth);
-}
-
-//
-.svg-calendar {
-  width: 39px;
-  height: 41px;
-  pointer-events: none;
-}
-
 //
 .view-book {
   top: 0;
@@ -320,6 +324,45 @@ export default {
       max-width: 90%;
     }
   }
+
+  ///////////////////////////
+  // SVG
+  .svg {
+    //
+    &-session {
+      width: 25px;
+      height: 25px;
+      fill: var(--eightenth);
+    }
+    //
+    &-calendar {
+      width: 39px;
+      height: 41px;
+      pointer-events: none;
+    }
+  }
+
+  //
+  .overlay {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 2;
+  }
+
+  &-close {
+    width: 40px;
+    height: 40px;
+    fill: var(--primary);
+    position: absolute;
+    top: 80px;
+    right: 100px;
+    cursor: pointer;
+  }
 }
 
 //
@@ -346,6 +389,11 @@ export default {
     left: -100px !important;
     transform: translateX(0);
   }
-  // width: 500px !important;
+
+  @media (max-width: 444px) {
+    top: 44px !important;
+    left: 60% !important;
+    transform: translateX(-50%);
+  }
 }
 </style>

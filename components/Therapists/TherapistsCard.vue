@@ -221,13 +221,18 @@ export default {
   }
 
   //
-  .svg-people {
-    width: 31px;
-    height: 32px;
-    fill: #317668;
+  .form-control {
+    background-color: transparent;
   }
 
+  ///////////////////
+  // SVG
   .svg {
+    &-people {
+      width: 31px;
+      height: 32px;
+      fill: var(--twentyOne);
+    }
     //
     &-other {
       width: 40px;
@@ -236,17 +241,12 @@ export default {
 
     //
     &-session {
-      fill: #317666;
+      fill: var(--twenty);
     }
   }
 
-  //
-  .form-control {
-    background-color: transparent;
-  }
-
   //////////////////////////
-  //// Hover
+  //// HOVER
   &:hover &__info::after {
     @media (hover: hover) {
       height: 100%;

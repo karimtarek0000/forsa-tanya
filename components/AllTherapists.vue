@@ -76,7 +76,12 @@
       </b-row>
     </TherapistsCard>
     <!-- 2) - Book Now -->
-    <LazyBookNow v-if="show" :id="idDoctor" @closeViewBook="show = $event" />
+    <LazyBookNow
+      v-if="show"
+      :id="idDoctor"
+      :show="show"
+      @closeViewBook="show = $event"
+    />
   </b-row>
 </template>
 
@@ -116,7 +121,8 @@ export default {
     }
   }
 
-  //
+  /////////////////////////
+  // SVG
   .svg-play {
     fill: var(--third);
   }
@@ -127,7 +133,8 @@ export default {
     fill: var(--third);
   }
 
-  //
+  /////////////////////////
+  // HOVER
   .hover-btn:hover {
     //
     @media (hover: hover) {
