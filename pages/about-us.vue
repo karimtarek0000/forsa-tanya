@@ -1,5 +1,5 @@
 <template>
-  <h1>about us</h1>
+  <DatePicker />
 </template>
 
 <script>

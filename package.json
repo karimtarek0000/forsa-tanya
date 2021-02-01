@@ -15,9 +15,11 @@
     "bootstrap": "^4.5.2",
     "bootstrap-vue": "^2.17.3",
     "core-js": "^3.6.5",
+    "date-fns": "^1.29.0",
     "moment": "^2.29.1",
     "nuxt": "^2.14.6",
     "nuxt-i18n": "^6.18.0",
+    "vue-airbnb-style-datepicker": "^2.7.1",
     "vue-slick-carousel": "^1.0.6"
   },
   "devDependencies": {

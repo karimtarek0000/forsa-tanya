@@ -1,7 +1,7 @@
 <template>
   <div class="view-book position-fixed" @click="$emit('closeViewBook', false)">
     <!--  -->
-    <div class="view-book__wrapper position-absolute p-4">
+    <div class="view-book__wrapper position-absolute p-4" @click.stop>
       <!-- Handling Panding, Error -->
       <!--  -->
       <Loader v-if="$fetchState.pending" />
@@ -116,16 +116,35 @@
           <b-col class="d-flex justify-content-center align-items-center">
             <!-- 1) - Show Calendar -->
             <span
-              v-if="true"
-              class="shadow-calendar flex-grow-1 text-center text-twentyTwo weight-bolder px-4 py-1"
-              >{{ selectedUser.date }}</span
+              class="shadow-calendar flex-grow-1 position-relative text-center text-twentyTwo weight-bolder px-4 py-1"
             >
+              <!--  -->
+              <AirbnbStyleDatepicker
+                :trigger-element-id="'datepicker-trigger'"
+                :mode="'single'"
+                :fullscreen-mobile="false"
+                :show-shortcuts-menu-trigger="false"
+                :date-one="dateOne"
+                :months-to-show="1"
+                :enabled-dates="ard"
+                @date-one-selected="
+                  (val) => {
+                    dateOne = val
+                  }
+                "
+              />
+              <!--  -->
+              {{ dateOne }}
+            </span>
             <!-- 2) -->
-            <GSvg
-              class="svg-calendar mx-2"
-              name-icon="calendar"
-              title="calendar"
-            />
+
+            <div id="datepicker-trigger">
+              <GSvg
+                class="svg-calendar mx-2"
+                name-icon="calendar"
+                title="calendar"
+              />
+            </div>
           </b-col>
         </b-row>
         <!-- 3) - Appointments -->
@@ -178,6 +197,8 @@
 <script>
 //
 import Moment from 'moment'
+import format from 'date-fns/format'
+
 //
 export default {
   name: 'BookNow',
@@ -202,6 +223,11 @@ export default {
         date: null,
         time: null,
       },
+      value: '',
+      dateFormat: 'D MMM',
+      dateOne: '',
+      ard: ['2021-02-19', '2021-02-20'],
+      trigger: false,
     }
   },
   mounted() {
@@ -228,6 +254,17 @@ export default {
       this.clickedAppointments = index
       this.selectedUser.time = time
     },
+    //
+    formatDates(dateOne) {
+      let formattedDates = ''
+      if (dateOne) {
+        formattedDates = format(dateOne, this.dateFormat)
+      }
+      return formattedDates
+    },
+    triggerDatePicker() {
+      this.trigger = !this.trigger
+    },
   },
 }
 </script>
@@ -251,6 +288,7 @@ export default {
 .svg-calendar {
   width: 39px;
   height: 41px;
+  pointer-events: none;
 }
 
 //
@@ -294,5 +332,19 @@ export default {
 .view-book-btn:active {
   background-color: var(--third);
   color: var(--primary) !important;
+}
+
+.asd__wrapper {
+  z-index: 99999 !important;
+  top: 35px !important;
+  left: 50% !important;
+  transform: translateX(-50%);
+  //
+  @media (min-width: 992px) {
+    top: -25px !important;
+    left: -100px !important;
+    transform: translateX(0);
+  }
+  // width: 500px !important;
 }
 </style>
