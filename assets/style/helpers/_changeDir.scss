@@ -29,4 +29,24 @@ html[dir='rtl'] {
     margin-left: 10px;
     margin-right: 0 !important;
   }
+
+  .asd__wrapper {
+    z-index: 99999 !important;
+    top: 35px !important;
+    left: 50% !important;
+    transform: translateX(-50%);
+    //
+    @media (min-width: 992px) {
+      top: -25px !important;
+      right: -100px !important;
+      transform: translateX(0);
+    }
+
+    @media (max-width: 444px) {
+      top: 44px !important;
+      left: 38% !important;
+      transform: translateX(-50%);
+      right: auto !important;
+    }
+  }
 }
