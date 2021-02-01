@@ -309,6 +309,7 @@ export default {
     transform: translateX(-50%);
     border-radius: 20px;
     max-height: 497px;
+    min-height: 497px;
     overflow-y: auto;
 
     //
