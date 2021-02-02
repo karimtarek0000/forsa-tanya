@@ -1,16 +1,11 @@
 <template>
   <div
-    class="my-3 d-flex justify-content-center text-12 text-center weight-light"
+    class="my-3 text-capitalize d-flex justify-content-center text-12 text-center weight-light"
   >
     <!--  -->
     <p class="text-sixth" v-text="message" />
     <!--  -->
-    <b-link
-      class="text-third mx-1 text-capitalize"
-      :to="localePath(path)"
-      v-text="titleBtn"
-    />
-    >
+    <b-link class="text-third mx-1" :to="localePath(path)" v-text="titleBtn" />
   </div>
 </template>
 

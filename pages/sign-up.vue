@@ -129,7 +129,7 @@
       >
 
       <!-- Go to another page -->
-      <toAnotherPage
+      <ToAnotherPage
         title-btn="sign in"
         path="sign-in"
         message="already have an account ?"
@@ -188,9 +188,7 @@
 </template>
 
 <script>
-import toAnotherPage from '~/components/shared/toAnotherPage.vue'
 export default {
-  components: { toAnotherPage },
   layout: 'auth',
   data() {
     return {
