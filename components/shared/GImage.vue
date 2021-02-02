@@ -1,6 +1,6 @@
 <template>
   <img
-    class="img-fluid"
+    class="img-fluid obj-img"
     :src="require(`@/assets/images/${srcImage}`)"
     :alt="alt"
   />

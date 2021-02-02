@@ -17,10 +17,15 @@ $theme-colors: (
   sevententh: #04634d,
   eightenth: #045845,
   ninetenth: #c5dad5,
-  bookNow: rgba(112, 112, 112, 0.72),
   twenty: #317666,
   twentyOne: #317668,
   twentyTwo: #04654e,
+  twentyThree: #c4c4c4,
+  twentyFour: #616161,
+  twentySix: #6cb2a3,
+  twentySeven: #eceff1,
+  twentyEight: #475993,
+  bookNow: rgba(112, 112, 112, 0.72),
   facebook: #3b5997,
   twitter: #55acee,
   linkedin: #0079b9,
@@ -39,6 +44,9 @@ $spacers: (
   40: 40px,
   35: 35px,
   52: 52px,
+  84: 84px,
+  48: 48px,
+  53: 53px,
 );
 
 //
@@ -76,6 +84,7 @@ $font-size: (
   16: 16,
   17: 17,
   15: 15,
+  13: 13,
   14: 14,
   12: 12,
   20: 20,
@@ -122,4 +131,7 @@ $shadow: (
   card-review: 0 5px 6px 0 rgba(0, 0, 0, 0.16),
   image: 2px 5px 10px 0 rgba(0, 0, 0, 0.6),
   calendar: 0 3px 6px 0 rgba(0, 0, 0, 0.13),
+  google: 0 3px 6px 0 rgba(0, 0, 0, 0.16),
+  facebook: 0 3px 6px 0 rgba(71, 89, 147, 0.16),
+  apple: 0 3px 6px 0 rgba(0, 0, 0, 0.16),
 );

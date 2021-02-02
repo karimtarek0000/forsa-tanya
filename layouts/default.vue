@@ -31,4 +31,12 @@ export default {
   },
 }
 </script>
-<style></style>
+<style lang="scss" scoped>
+//
+body {
+  //
+  @media (max-width: 992px) {
+    margin-top: 70px;
+  }
+}
+</style>

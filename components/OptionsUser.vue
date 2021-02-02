@@ -26,8 +26,8 @@
       >
         <b-link
           class="text-capitalize text-16 weight-bolder text-primary text-decoration-none"
-          :to="localePath('sign-in')"
-          >{{ $t('navbar.signIn') }}</b-link
+          :to="localePath('sign-up')"
+          >sign</b-link
         >
       </div>
     </b-col>
