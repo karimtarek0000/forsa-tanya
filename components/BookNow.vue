@@ -35,8 +35,8 @@
             >
               <img
                 class="img-fluid obj-img"
-                :src="dataTheriabist.image"
-                :alt="dataTheriabist.doctor_name"
+                :src="infoTherabist.image"
+                :alt="infoTherabist.doctor_name"
               />
             </b-col>
             <!-- Info -->
@@ -45,11 +45,11 @@
               <h3
                 class="m-0 text-secondary text-capitalize weight-extraBold text-20"
               >
-                {{ $t('placeHolder.dr') }}. {{ dataTheriabist.doctor_name }}
+                {{ $t('placeHolder.dr') }}. {{ infoTherabist.doctor_name }}
               </h3>
               <!-- 2) - Job -->
               <p class="text-eightenth mb-1 weight-bolder text-14">
-                {{ dataTheriabist.job_title }}
+                {{ infoTherabist.job_title }}
               </p>
               <!--  -->
               <b-col
@@ -59,7 +59,7 @@
               >
                 <!-- 1) - Rating -->
                 <b-form-rating
-                  v-model="dataTheriabist.rating"
+                  v-model="infoTherabist.rating"
                   class="p-0"
                   readonly
                   size="lg"
@@ -79,7 +79,7 @@
               </b-col>
               <!--  -->
               <p class="text-15 weight-extraBold mb-1 text-secondary">
-                {{ +dataTheriabist.price }} EGP/Session
+                {{ +infoTherabist.price }} EGP/Session
               </p>
               <!--  -->
               <b-col
@@ -146,7 +146,7 @@
                   :show-shortcuts-menu-trigger="false"
                   :date-one="date"
                   :months-to-show="1"
-                  :enabled-dates="ard"
+                  :enabled-dates="sessionsDates"
                   @closed="trigger = false"
                   @opened="trigger = true"
                   @date-one-selected="date = $event"
@@ -175,9 +175,7 @@
             <b-row no-gutters class="justify-content-between mt-3">
               <!--  -->
               <b-col
-                v-for="(
-                  appointments, index
-                ) in dataTheriabist.all_doctor_sessions"
+                v-for="(appointments, index) in allSessions"
                 :key="appointments.id"
                 class="basis-182 flex-sm-grow-0 mb-3"
               >
@@ -228,12 +226,19 @@ export default {
   },
   async fetch() {
     const { Data } = await this.$axios.$get(`/doctors/${this.id}`)
-    //
-    this.dataTheriabist = Data
+    // 1)
+    this.infoTherabist = await Data
+    this.allSessions = await Data.all_doctor_sessions
+    // 2)
+    this.allSessions.forEach((data) =>
+      this.sessionsDates.push(data.session_date)
+    )
   },
   data() {
     return {
-      dataTheriabist: null,
+      allSessions: null,
+      infoTherabist: null,
+      sessionsDates: [],
       days: ['today', 'tomorrow'],
       clickedDay: 0,
       clickedAppointments: null,
@@ -241,14 +246,13 @@ export default {
         date: null,
         time: null,
       },
-      value: '',
       dateFormat: 'D MMM YYYY',
       date: null,
-      ard: ['2021-02-19', '2021-02-20'],
       trigger: false,
     }
   },
   computed: {
+    //
     formatDate() {
       return this.date ? format(this.date, this.dateFormat) : 'select date'
     },
@@ -291,14 +295,6 @@ export default {
       this.clickedAppointments = index
       this.selectedUser.time = time
     },
-    //
-    // formatDates(dateOne) {
-    //   let formattedDates = ''
-    //   if (dateOne) {
-    //     formattedDates = format(dateOne, this.dateFormat)
-    //   }
-    //   return formattedDates
-    // },
     // Close view
     closeView() {
       this.$emit('closeViewBook', false)
