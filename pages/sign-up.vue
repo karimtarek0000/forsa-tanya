@@ -1,5 +1,6 @@
 <template>
   <section class="sign-up overflow-hidden">
+    <!--  -->
     <b-form @submit="onSubmit" @reset="onReset">
       <!--  -->
       <b-form-row no-gutters>
@@ -51,14 +52,27 @@
           >
             <b-form-input
               id="input-3"
-              v-model="form.passord"
-              type="email"
+              v-model="form.password"
+              :type="changeTypePassword"
               placeholder="Enter Your Password"
               class="border-top-0 px-0 border-right-0 border-left-0 rounded-0 border-bottom border-twentyThree"
             ></b-form-input>
             <!--  -->
-            <span class="visible position-absolute cursor" style="opacity: 0.3">
-              <GSvg name-icon="visible" title="visible" />
+            <span
+              class="visible position-absolute cursor"
+              :style="{
+                opacity: optionsTypeInput.visiblePassword ? 1 : 0.3,
+              }"
+              @click="
+                optionsTypeInput.visiblePassword = !optionsTypeInput.visiblePassword
+              "
+            >
+              <GSvg
+                :name-icon="
+                  optionsTypeInput.visiblePassword ? 'visible' : 'unvisible'
+                "
+                title="unvisible"
+              />
             </span>
           </b-form-group>
         </b-col>
@@ -66,7 +80,7 @@
         <!-- 4) - Confirm Password -->
         <b-col md="6" lg="12" class="mb-53">
           <b-form-group
-            id="input-group-3"
+            id="input-group-4"
             label="Confirm Password*"
             label-for="input-4"
             description=""
@@ -74,14 +88,29 @@
           >
             <b-form-input
               id="input-4"
-              v-model="form.passord"
-              type="email"
+              v-model="form.confirmPassword"
+              :type="changeTypeConfirmPassword"
               placeholder="Enter Your Password"
               class="border-top-0 px-0 border-right-0 border-left-0 rounded-0 border-bottom border-twentyThree"
             ></b-form-input>
             <!--  -->
-            <span class="visible position-absolute cursor" style="opacity: 0.3">
-              <GSvg name-icon="visible" title="visible" />
+            <span
+              class="visible position-absolute cursor"
+              :style="{
+                opacity: optionsTypeInput.visibleConfirmPassword ? 1 : 0.3,
+              }"
+              @click="
+                optionsTypeInput.visibleConfirmPassword = !optionsTypeInput.visibleConfirmPassword
+              "
+            >
+              <GSvg
+                :name-icon="
+                  optionsTypeInput.visibleConfirmPassword
+                    ? 'visible'
+                    : 'unvisible'
+                "
+                title="unvisible"
+              />
             </span>
           </b-form-group>
         </b-col>
@@ -91,7 +120,7 @@
           <b-form-group v-slot="{ ariaDescribedby }" label="Gender">
             <b-form-radio-group
               id="radio-group-1"
-              v-model="selected"
+              v-model="form.gender"
               :options="options"
               :aria-describedby="ariaDescribedby"
               name="radio-options"
@@ -123,7 +152,8 @@
       <b-button
         type="submit"
         pill
-        variant="twentySix"
+        :disabled="true"
+        variant="seventh"
         class="text-16 weight-bolder text-capitalize text-primary py-1 w-269 d-block mx-auto"
         >register</b-button
       >
@@ -188,16 +218,21 @@
 </template>
 
 <script>
+// Mixin
+import Form from '@/mixins/form.js'
+//
 export default {
   layout: 'auth',
+  mixins: [Form],
   data() {
     return {
       form: {
         email: '',
         name: '',
         password: '',
+        confirmPassword: '',
+        gender: '',
       },
-      selected: '',
       options: [
         { text: 'female', value: 'female' },
         { text: 'male', value: 'male' },
@@ -227,66 +262,26 @@ export default {
 }
 </script>
 
-<style lang="scss">
-//
-.visible {
-  top: 38px;
-  right: 0px;
-
-  svg {
-    width: 20px;
-    height: 20px;
-  }
+<style>
+.custom-radio .custom-control-label::before {
+  background-color: transparent;
 }
 
-//
-.svg-other-submit {
-  width: 16px;
-  height: 16px;
+/* This is the checked state */
+.custom-radio .custom-control-input:checked ~ .custom-control-label::before,
+.custom-radio .custom-control-input:checked ~ .custom-control-label::after {
+  background-color: var(--secondary);
+  border-radius: 50%;
 }
 
-//
-.form-group {
-  @media (min-width: 992px) {
-    width: 271px;
-  }
-}
-
-//
-.split {
-  width: fit-content;
-
-  &::after,
-  &::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    width: 197px;
-    height: 0.5px;
-    transform: translateY(-50%);
-    background-color: rgba(#c2c2c2, 0.4);
-  }
-  //
-  &::after {
-    right: -250px;
-  }
-  &::before {
-    left: -250px;
-  }
-}
-
-//
-.custom-control-input:checked ~ .custom-control-label:before {
+/* active state i.e. displayed while the mouse is being pressed down */
+/* .custom-radio .custom-control-input:active ~ .custom-control-label::before {
   color: #fff;
-  border-color: var(--twentyFour);
-  background-color: var(--twentyFour);
-}
+  background-color: #ff0000;
+} */
 
-.custom-control-label::before {
-  border: 1px solid var(--twentyFour);
-}
-
-.col-form-label {
-  font-size: 18px;
+/* the shadow; displayed while the element is in focus */
+.custom-radio .custom-control-input:focus ~ .custom-control-label::before {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(255, 123, 255, 0.25);
 }
 </style>

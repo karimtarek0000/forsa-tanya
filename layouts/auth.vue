@@ -2,9 +2,10 @@
   <!--  -->
   <div class="auth">
     <!--  -->
-    <b-row no-gutters class="auth__wrapper">
+    <b-row ref="wrapper" no-gutters class="auth__wrapper">
       <!-- 1) -->
       <b-col lg="6" class="px-4 px-sm-84 position-relative form">
+        <!--  -->
         <div class="sticky">
           <!-- 1) - Back -->
           <b-row no-gutters class="justify-content-start py-4">
@@ -114,6 +115,59 @@ export default {
       color: var(--twentyThree);
     }
   }
+}
+
+//
+.visible {
+  top: 38px;
+  right: 0px;
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+//
+.svg-other-submit {
+  width: 16px;
+  height: 16px;
+}
+
+//
+.form-group {
+  @media (min-width: 992px) {
+    width: 271px;
+  }
+}
+
+//
+.split {
+  width: fit-content;
+
+  //
+  &::after,
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 197px;
+    height: 0.5px;
+    transform: translateY(-50%);
+    background-color: rgba(#c2c2c2, 0.4);
+  }
+  //
+  &::after {
+    right: -250px;
+  }
+  &::before {
+    left: -250px;
+  }
+}
+
+//
+.col-form-label {
+  font-size: 18px;
 }
 
 //////////////////////////////

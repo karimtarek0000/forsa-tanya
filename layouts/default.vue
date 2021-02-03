@@ -3,7 +3,9 @@
     <!-- 1) - Navbar -->
     <Navbar />
     <!-- 2) - Routing -->
-    <Nuxt />
+    <div class="mt-70 mt-lg-0">
+      <Nuxt />
+    </div>
     <!-- 3) - Footer -->
     <Footer />
   </div>
@@ -31,12 +33,4 @@ export default {
   },
 }
 </script>
-<style lang="scss" scoped>
-//
-body {
-  //
-  @media (max-width: 992px) {
-    margin-top: 70px;
-  }
-}
-</style>
+<style></style>
