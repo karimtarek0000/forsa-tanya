@@ -1,24 +1,48 @@
 <template>
   <section class="sign-up overflow-hidden">
     <!--  -->
-    <b-form @submit="onSubmit" @reset="onReset">
+    <b-form @submit="onSubmit">
       <!--  -->
       <b-form-row no-gutters>
         <!-- 1) - Name -->
         <b-col md="6" lg="12" class="mb-53">
           <b-form-group
             id="input-group-1"
-            description=""
-            label="Name*"
+            :label="`${$t('form.label.name')}*`"
             label-for="input-1"
             class="text-18"
           >
+            <!-- 1) - Input -->
             <b-form-input
               id="input-1"
-              v-model="form.name"
-              placeholder="Enter Your Name"
+              v-model.trim="$v.form.name.$model"
+              :placeholder="$t('form.placeholder.name')"
               class="border-top-0 px-0 border-right-0 border-left-0 rounded-0 border-bottom border-twentyThree"
             ></b-form-input>
+            <!-- 2) - Message Required -->
+            <small
+              v-if="!$v.form.name.required && $v.form.name.$dirty"
+              class="text-12 text-secondary weight-light bg-thirty px-3 py-2 d-block w-100"
+            >
+              <!-- Icon -->
+              <GSvg name-icon="wrong" class="svg-validate" title="wrong" />
+              {{ $t('validation.require.name') }}
+            </small>
+            <!-- 3) - Message Error -->
+            <small
+              v-if="!$v.form.name.minLength && $v.form.name.$dirty"
+              dir="auto"
+              class="text-12 text-secondary weight-light bg-thirty px-3 py-2 d-block w-100"
+            >
+              <!-- Icon -->
+              <GSvg name-icon="wrong" class="svg-validate" title="wrong" />
+
+              {{
+                $t('validation.error.name', {
+                  min: $v.form.name.$params.minLength.min,
+                })
+              }}
+            </small>
           </b-form-group>
         </b-col>
 
@@ -26,7 +50,7 @@
         <b-col md="6" lg="12" class="mb-53">
           <b-form-group
             id="input-group-2"
-            label="Email*"
+            :label="`${$t('form.label.email')}*`"
             label-for="input-2"
             description=""
             class="text-18"
@@ -35,9 +59,31 @@
               id="input-2"
               v-model="form.email"
               type="email"
-              placeholder="Enter Your Email"
+              :placeholder="$t('form.placeholder.email')"
               class="border-top-0 px-0 border-right-0 border-left-0 rounded-0 border-bottom border-twentyThree"
+              autocomplete="off"
+              @input="$v.form.email.$touch()"
             ></b-form-input>
+            <!-- 2) - Message Required -->
+            <small
+              v-if="!$v.form.email.required && $v.form.email.$dirty"
+              dir="auto"
+              class="text-12 text-secondary weight-light bg-thirty px-3 py-2 d-block w-100"
+            >
+              <!-- Icon -->
+              <GSvg name-icon="wrong" class="svg-validate" title="wrong" />
+              {{ $t('validation.require.email') }}
+            </small>
+            <!-- 3) - Message Error -->
+            <small
+              v-if="!$v.form.email.email"
+              dir="auto"
+              class="text-12 text-secondary weight-light bg-thirty px-3 py-2 d-block w-100"
+            >
+              <!-- Icon -->
+              <GSvg name-icon="wrong" class="svg-validate" title="wrong" />
+              {{ $t('validation.error.email') }}
+            </small>
           </b-form-group>
         </b-col>
 
@@ -45,19 +91,19 @@
         <b-col md="6" lg="12" class="mb-53">
           <b-form-group
             id="input-group-3"
-            label="Password*"
+            :label="`${$t('form.label.password')}*`"
             label-for="input-3"
             description=""
             class="position-relative text-18"
           >
             <b-form-input
               id="input-3"
-              v-model="form.password"
+              v-model.trim="$v.form.password.$model"
               :type="changeTypePassword"
-              placeholder="Enter Your Password"
+              :placeholder="$t('form.placeholder.password')"
               class="border-top-0 px-0 border-right-0 border-left-0 rounded-0 border-bottom border-twentyThree"
             ></b-form-input>
-            <!--  -->
+            <!-- 1) - Icon visible -->
             <span
               class="visible position-absolute cursor"
               :style="{
@@ -74,6 +120,30 @@
                 title="unvisible"
               />
             </span>
+            <!-- 2) - Message Required -->
+            <small
+              v-if="!$v.form.password.required && $v.form.password.$dirty"
+              dir="auto"
+              class="text-12 text-secondary weight-light bg-thirty px-3 py-2 d-block w-100"
+            >
+              <!-- Icon -->
+              <GSvg name-icon="wrong" class="svg-validate" title="wrong" />
+              {{ $t('validation.require.password') }}
+            </small>
+            <!-- 3) - Message Error -->
+            <small
+              v-if="!$v.form.password.minLength && $v.form.password.$dirty"
+              dir="auto"
+              class="text-12 text-secondary weight-light bg-thirty px-3 py-2 d-block w-100"
+            >
+              <!-- Icon -->
+              <GSvg name-icon="wrong" class="svg-validate" title="wrong" />
+              {{
+                $t('validation.error.password', {
+                  length: $v.form.password.$params.minLength.min,
+                })
+              }}
+            </small>
           </b-form-group>
         </b-col>
 
@@ -81,19 +151,19 @@
         <b-col md="6" lg="12" class="mb-53">
           <b-form-group
             id="input-group-4"
-            label="Confirm Password*"
+            :label="`${$t('form.label.confirmPassword')}*`"
             label-for="input-4"
             description=""
             class="position-relative text-18"
           >
             <b-form-input
               id="input-4"
-              v-model="form.confirmPassword"
+              v-model.trim="$v.form.confirmPassword.$model"
               :type="changeTypeConfirmPassword"
-              placeholder="Enter Your Password"
+              :placeholder="$t('form.placeholder.password')"
               class="border-top-0 px-0 border-right-0 border-left-0 rounded-0 border-bottom border-twentyThree"
             ></b-form-input>
-            <!--  -->
+            <!-- 1) - Icon Visible -->
             <span
               class="visible position-absolute cursor"
               :style="{
@@ -112,12 +182,28 @@
                 title="unvisible"
               />
             </span>
+            <!-- 2) - Message Error -->
+            <small
+              v-if="
+                !$v.form.confirmPassword.sameAsPassword &&
+                $v.form.confirmPassword.$dirty
+              "
+              dir="auto"
+              class="text-12 text-secondary weight-light bg-thirty px-3 py-2 d-block w-100"
+            >
+              <!-- Icon -->
+              <GSvg name-icon="wrong" class="svg-validate" title="wrong" />
+              {{ $t('validation.error.confirmPassword') }}
+            </small>
           </b-form-group>
         </b-col>
 
         <!-- 5) - Gender -->
         <b-col md="6" lg="12" class="mb-53">
-          <b-form-group v-slot="{ ariaDescribedby }" label="Gender">
+          <b-form-group
+            v-slot="{ ariaDescribedby }"
+            :label="$t('form.label.gender')"
+          >
             <b-form-radio-group
               id="radio-group-1"
               v-model="form.gender"
@@ -134,16 +220,41 @@
           <b-form-group
             id="input-group-1"
             description=""
-            label="Age"
+            :label="$t('form.label.age')"
             label-for="input-5"
             class="text-18"
           >
             <b-form-input
               id="input-5"
-              v-model="form.name"
-              placeholder="Enter Your Age"
+              v-model="$v.form.age.$model"
+              :placeholder="$t('form.placeholder.age')"
               class="border-top-0 px-0 border-right-0 border-left-0 rounded-0 border-bottom border-twentyThree"
+              autocomplete="off"
             ></b-form-input>
+            <!-- 2) - Message Error -->
+            <small
+              v-if="!$v.form.age.maxLength && $v.form.age.$dirty"
+              dir="auto"
+              class="text-12 text-secondary weight-light bg-thirty px-3 py-2 d-block w-100"
+            >
+              <!-- Icon -->
+              <GSvg name-icon="wrong" class="svg-validate" title="wrong" />
+              {{
+                $t('validation.error.age.length', {
+                  length: $v.form.age.$params.maxLength.max,
+                })
+              }}
+            </small>
+            <!-- 3) - Message Error -->
+            <small
+              v-if="!$v.form.age.numeric && $v.form.age.$dirty"
+              dir="auto"
+              class="text-12 text-secondary weight-light bg-thirty px-3 py-2 d-block w-100"
+            >
+              <!-- Icon -->
+              <GSvg name-icon="wrong" class="svg-validate" title="wrong" />
+              {{ $t('validation.error.age.number') }}
+            </small>
           </b-form-group>
         </b-col>
       </b-form-row>
@@ -155,14 +266,14 @@
         :disabled="true"
         variant="seventh"
         class="text-16 weight-bolder text-capitalize text-primary py-1 w-269 d-block mx-auto"
-        >register</b-button
+        >{{ $t('button.register') }}</b-button
       >
 
       <!-- Go to another page -->
       <ToAnotherPage
-        title-btn="sign in"
+        :title-btn="$t('button.signIn')"
         path="sign-in"
-        message="already have an account ?"
+        :message="$t('form.label.haveAccount')"
       />
 
       <!--  -->
@@ -202,37 +313,19 @@
         />
         <span>continue with facebook</span>
       </b-button>
-
-      <!-- Apple -->
-      <b-button
-        type="button"
-        pill
-        variant="secondary"
-        class="text-13 weight-light text-capitalize text-primary shadow-apple py-1 w-269 d-flex align-items-center justify-content-center mx-auto"
-      >
-        <GSvg class="svg-other-submit mx-1" name-icon="apple" title="apple" />
-        <span>continue with facebook</span>
-      </b-button>
     </b-form>
   </section>
 </template>
 
 <script>
 // Mixin
-import Form from '@/mixins/form.js'
+import * as Form from '@/mixins/form.js'
 //
 export default {
   layout: 'auth',
-  mixins: [Form],
+  mixins: [Form.dataForm, Form.actionsForm],
   data() {
     return {
-      form: {
-        email: '',
-        name: '',
-        password: '',
-        confirmPassword: '',
-        gender: '',
-      },
       options: [
         { text: 'female', value: 'female' },
         { text: 'male', value: 'male' },
@@ -244,19 +337,6 @@ export default {
     onSubmit(event) {
       event.preventDefault()
       alert(JSON.stringify(this.form))
-    },
-    onReset(event) {
-      event.preventDefault()
-      // Reset our form values
-      this.form.email = ''
-      this.form.name = ''
-      this.form.food = null
-      this.form.checked = []
-      // Trick to reset/clear native browser form validation state
-      this.show = false
-      this.$nextTick(() => {
-        this.show = true
-      })
     },
   },
 }

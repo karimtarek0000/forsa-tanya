@@ -8,7 +8,7 @@
         <b-col md="6" lg="12" class="mb-53">
           <b-form-group
             id="input-group-2"
-            label="Email*"
+            :label="`${$t('form.label.email')}*`"
             label-for="input-2"
             description=""
             class="text-18"
@@ -17,9 +17,31 @@
               id="input-2"
               v-model="form.email"
               type="email"
-              placeholder="Enter Your Email"
+              :placeholder="$t('form.placeholder.email')"
               class="border-top-0 px-0 border-right-0 border-left-0 rounded-0 border-bottom border-twentyThree"
+              autocomplete="off"
+              @input="$v.form.email.$touch()"
             ></b-form-input>
+            <!-- 2) - Message Required -->
+            <small
+              v-if="!$v.form.email.required && $v.form.email.$dirty"
+              dir="auto"
+              class="text-12 text-secondary weight-light bg-thirty px-3 py-2 d-block w-100"
+            >
+              <!-- Icon -->
+              <GSvg name-icon="wrong" class="svg-validate" title="wrong" />
+              {{ $t('validation.require.email') }}
+            </small>
+            <!-- 3) - Message Error -->
+            <small
+              v-if="!$v.form.email.email"
+              dir="auto"
+              class="text-12 text-secondary weight-light bg-thirty px-3 py-2 d-block w-100"
+            >
+              <!-- Icon -->
+              <GSvg name-icon="wrong" class="svg-validate" title="wrong" />
+              {{ $t('validation.error.email') }}
+            </small>
           </b-form-group>
         </b-col>
 
@@ -85,14 +107,14 @@
         :disabled="true"
         variant="seventh"
         class="text-16 weight-bolder text-capitalize text-primary py-1 w-269 d-block mx-auto"
-        >sign in</b-button
+        >{{ $t('button.signIn') }}</b-button
       >
 
       <!-- Go to another page -->
       <ToAnotherPage
-        title-btn="sign up"
+        :title-btn="$t('button.signUp')"
         path="sign-up"
-        message="don't have an account ?"
+        :message="$t('form.label.dontHaveAccount')"
       />
 
       <!--  -->
@@ -153,13 +175,9 @@ import Form from '@/mixins/form.js'
 //
 export default {
   layout: 'auth',
-  mixins: [Form],
+  mixins: [Form.dataForm, Form.actionsForm],
   data() {
     return {
-      form: {
-        email: '',
-        password: '',
-      },
       selectedCheck: [],
       status: 'not_remember',
       options: [

@@ -110,9 +110,15 @@ export default {
     }
   }
 
+  label,
+  legend {
+    text-transform: capitalize;
+  }
+
   input {
     &::placeholder {
       color: var(--twentyThree);
+      text-transform: capitalize;
     }
   }
 }
@@ -132,6 +138,12 @@ export default {
 .svg-other-submit {
   width: 16px;
   height: 16px;
+}
+
+.svg-validate {
+  width: 20px;
+  height: 17px;
+  fill: var(--youtube);
 }
 
 //
