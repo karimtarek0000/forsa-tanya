@@ -5,7 +5,12 @@
   "titles": {
     "home": "Home",
     "aboutus": "about us",
-    "therapists": "therapists"
+    "therapists": "therapists",
+    "signIn": "sign in",
+    "signUp": "sign up"
+  },
+  "description": {
+    "register": "register to site forsa tanya"
   },
   "pages": {
     "home": {
@@ -42,7 +47,8 @@
     "tomorrow": "tomorrow",
     "register": "register",
     "signIn": "sign in",
-    "signUp": "sign up"
+    "signUp": "sign up",
+    "back": "back"
   },
   "labels": {
     "updates": "recive email updates",
@@ -58,7 +64,14 @@
       "name": "enter your name",
       "email": "enter your email",
       "password": "enter your password",
-      "age": "enter your age"
+      "age": "enter your age",
+      "address": "enter your address",
+      "ques": {
+        "whatIsYourDiagnosis": "enter your diagnosis",
+        "howDidYouKnowForsaTanya": "enter..."
+      },
+      "yes": "yes",
+      "no": "no"
     },
     "label": {
       "name": "name",
@@ -67,15 +80,32 @@
       "confirmPassword": "confirm password",
       "gender": "gender",
       "age": "age",
+      "address": "address",
       "haveAccount": "already have an account ?",
-      "dontHaveAccount": "don't have An account"
+      "dontHaveAccount": "don't have An account",
+      "remember": "remember me",
+      "ques": {
+        "hadPsychotherapyBefore": "Have you ever had psychotherapy before?",
+        "whatIsYourDiagnosis": "what is your diagnosis ?",
+        "howDidYouKnowForsaTanya": "how did you know site forsa tanya ?"
+      }
+    },
+    "gender": {
+      "female": "female",
+      "male": "male",
+      "notSay": "prefer not to say"
     }
   },
   "validation": {
     "require": {
       "name": "You shoul'd write your name.",
       "email": "You shoul'd write your email",
-      "password": "You shoul'd write your password"
+      "password": "You shoul'd write your password",
+      "address": "You shoul'd write your address",
+      "age": "You shoul'd write your age",
+      "ques": {
+        "whatIsYourDiagnosis": "You shoul'd write your diagnosis ?"
+      }
     },
     "error": {
       "name": "Name must have at least {min} latters.",
@@ -83,9 +113,12 @@
       "password": "The length must be at least {length}",
       "confirmPassword": "Not match password",
       "age": {
-        "length": "The length must be max {length}",
+        "length": "The length must be max {length} numbers",
         "number": "Must be only numbers"
       }
     }
+  },
+  "alert": {
+    "register": "Please fill all input required"
   }
 }

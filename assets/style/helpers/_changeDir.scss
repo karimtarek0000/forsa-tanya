@@ -49,4 +49,19 @@ html[dir='rtl'] {
       right: auto !important;
     }
   }
+
+  .visible {
+    left: 0;
+    right: auto;
+  }
+
+  .custom-control-inline {
+    margin-left: 1rem;
+    margin-right: 0;
+  }
+
+  .check-box {
+    margin-right: -8px;
+    margin-left: 5px;
+  }
 }

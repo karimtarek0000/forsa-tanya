@@ -1,21 +1,25 @@
 <template>
   <!--  -->
   <div class="auth">
-    <!--  -->
+    <!-- 1) - Alert -->
+    <transition name="alert" mode="out-in">
+      <Alert v-if="statusAlert" @closeAlert="changeStatusAlert" />
+    </transition>
+    <!-- 2) - Wrapper -->
     <b-row ref="wrapper" no-gutters class="auth__wrapper">
       <!-- 1) -->
-      <b-col lg="6" class="px-4 px-sm-84 position-relative form">
+      <b-col lg="6" class="px-4 px-lg-84 position-relative form">
         <!--  -->
         <div class="sticky">
           <!-- 1) - Back -->
           <b-row no-gutters class="justify-content-start py-4">
             <b-button
               variant="primary"
-              class="d-flex justify-content-center align-items-center px-0 text-third text-capitalize text-14 weight-light"
+              class="d-flex justify-content-center align-items-center px-0 text-third text-capitalize text-14 weight-light direction-ltr"
               @click="back"
             >
               <GSvg class="svg" name-icon="angle-left" title="angle-left" />
-              <span class="mt-1">back</span>
+              <span class="mt-1 mx-2">{{ $t('button.back') }}</span>
             </b-button>
           </b-row>
           <!-- 2) - Logo -->
@@ -27,14 +31,13 @@
               <h1
                 class="weight-extraBold auth__title position-relative mx-auto text-secondary text-17 text-capitalize my-2"
               >
-                <!-- {{ $router.currentRoute.path.replace(/([en ar]|[/-])/g, ' ') }} -->
-                sign up
+                {{ titlePage }}
               </h1>
             </b-col>
           </b-row>
         </div>
         <!-- 2) - Routing -->
-        <div class="mb-48">
+        <div ref="s" class="dd mb-48">
           <Nuxt />
         </div>
       </b-col>
@@ -48,10 +51,29 @@
 
 <script>
 export default {
+  data() {
+    return {
+      status: false,
+    }
+  },
+  computed: {
+    // 1) - status alert
+    statusAlert() {
+      return this.$store.state.statusAlert
+    },
+    // 2) - title page
+    titlePage() {
+      return this.$store.state.titlePage
+    },
+  },
   methods: {
-    //
+    // 1) - Back
     back() {
       this.$router.go(-1)
+    },
+    // 2) - Change status alert
+    changeStatusAlert(status) {
+      this.$store.commit('changeStatusAlert', status)
     },
   },
   head() {
@@ -66,7 +88,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: 's',
+          content: this.$t('description.register'),
         },
         ...i18nSeo.meta,
       ],
@@ -84,7 +106,7 @@ export default {
   }
 
   .svg {
-    width: 20px;
+    width: 10px;
     height: 20px;
     fill: var(--third);
   }
@@ -116,10 +138,25 @@ export default {
   }
 
   input {
+    // width: 271px;
+    //
     &::placeholder {
       color: var(--twentyThree);
       text-transform: capitalize;
     }
+  }
+
+  .require > label::after {
+    content: '*';
+    color: var(--twentyThree);
+  }
+
+  .btn-primary:not(:disabled):not(.disabled):active,
+  .btn-primary:not(:disabled):not(.disabled).active,
+  .show > .btn-primary.dropdown-toggle,
+  .btn-primary:hover {
+    background-color: transparent;
+    border-color: transparent;
   }
 }
 
@@ -207,5 +244,35 @@ export default {
   background: var(--primary);
   overflow: hidden;
   top: 0;
+}
+
+.alert-enter-active {
+  animation: alertVisible 0.5s ease forwards;
+}
+
+.alert-leave-to {
+  animation: alertHidden 0.5s ease forwards;
+}
+
+@keyframes alertVisible {
+  from {
+    top: -100px;
+    opacity: 0;
+  }
+  to {
+    top: 40px;
+    opacity: 1;
+  }
+}
+
+@keyframes alertHidden {
+  from {
+    top: 40px;
+    opacity: 0;
+  }
+  to {
+    top: -100px;
+    opacity: 1;
+  }
 }
 </style>

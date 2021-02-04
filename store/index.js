@@ -2,13 +2,25 @@ import * as Type from '../type/index'
 
 //
 // eslint-disable-next-line import/namespace
-export const state = () => ({ social: null })
+export const state = () => ({
+  social: null,
+  statusAlert: false,
+  titlePage: null,
+})
 
 // 1) - mutations
 export const mutations = {
   // 1) - Change from state => social
   changeAllSocial(state, payload) {
     state.social = payload
+  },
+  // 2) - Change status alert
+  changeStatusAlert(state, payload) {
+    state.statusAlert = payload
+  },
+  // 3) - Change title page
+  changeTitlePage(state, payload) {
+    state.titlePage = payload
   },
 }
 

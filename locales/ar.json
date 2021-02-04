@@ -5,7 +5,12 @@
   "titles": {
     "home": "الرئيسية",
     "aboutus": "عنا",
-    "therapists": "المعالجين"
+    "therapists": "المعالجين",
+    "signIn": "تسجيل الدخول",
+    "signUp": "التسجيل"
+  },
+  "description": {
+    "register": "التسجيل في موقع فرصة تانية"
   },
   "pages": {
     "home": {
@@ -42,7 +47,8 @@
     "tomorrow": "الغد",
     "register": "التسجيل",
     "signIn": "تسجيل الدخول",
-    "signUp": "التسجيل"
+    "signUp": "التسجيل",
+    "back": "الرجوع"
   },
   "labels": {
     "updates": "استلم بريد الكتروني بالتحديثات",
@@ -58,7 +64,14 @@
       "name": "ادخل اسمك",
       "email": "ادخل بريدك الألكتروني",
       "password": "ادخل كلمه المرور",
-      "age": "ادخل عمرك"
+      "age": "ادخل عمرك",
+      "address": "ادخل عنوانك",
+      "ques": {
+        "whatIsYourDiagnosis": "قم بكتابه تشخيصك",
+        "howDidYouKnowForsaTanya": "ادخل..."
+      },
+      "yes": "نعم",
+      "no": "لا"
     },
     "label": {
       "name": "الأسم",
@@ -67,15 +80,32 @@
       "confirmPassword": "تاكيد كلمه المرور",
       "gender": "النوع",
       "age": "العمر",
+      "address": "العنوان",
       "haveAccount": "هل لديك حساب بالفعل ؟",
-      "dontHaveAccount": "ليس لديك حساب ؟"
+      "dontHaveAccount": "ليس لديك حساب ؟",
+      "remember": "تذكرني",
+      "ques": {
+        "hadPsychotherapyBefore": "هل قمت بزياره طبيب نفسي من قبل ؟",
+        "whatIsYourDiagnosis": "ما هو تشخيصك ؟",
+        "howDidYouKnowForsaTanya": "كيف عرفت بموقع فرصه تانية ؟"
+      }
+    },
+    "gender": {
+      "female": "انثي",
+      "male": "ذكر",
+      "notSay": "افضل عدم القول"
     }
   },
   "validation": {
     "require": {
       "name": "يجب ادخال الاسم",
       "password": "يجب ادخال كلمة المرور",
-      "email": "يجب ادخال البريد الألكتروني"
+      "email": "يجب ادخال البريد الألكتروني",
+      "address": "يجب ادخال العنوان",
+      "age": "يجب ادخال عمرك",
+      "ques": {
+        "whatIsYourDiagnosis": "يجب كتابه التشخيص"
+      }
     },
     "error": {
       "name": "الأسم يجب ان لايقل عن {min} حروف",
@@ -83,9 +113,12 @@
       "password": "يجب ان لايقل الطول عن {length}",
       "confirmPassword": "غير مطابق لكلمة المرور",
       "age": {
-        "length": "يجب ان لا يزيد الطول عن {length}",
+        "length": "يجب ان لا يزيد عدد الأرقام عن {length}",
         "number": "يجب ان يكون ارقام فقط"
       }
     }
+  },
+  "alert": {
+    "register": "من فضلك قم بملئ كافه الحقول المطلوبة"
   }
 }
