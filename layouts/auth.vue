@@ -8,7 +8,11 @@
     <!-- 2) - Wrapper -->
     <b-row ref="wrapper" no-gutters class="auth__wrapper">
       <!-- 1) -->
-      <b-col lg="6" class="px-4 px-lg-84 position-relative form">
+      <b-col
+        ref="wrapperRoute"
+        lg="6"
+        class="px-4 px-lg-84 position-relative form"
+      >
         <!--  -->
         <div class="sticky">
           <!-- 1) - Back -->
@@ -37,7 +41,7 @@
           </b-row>
         </div>
         <!-- 2) - Routing -->
-        <div ref="s" class="dd mb-48">
+        <div class="mb-48">
           <Nuxt />
         </div>
       </b-col>
@@ -64,6 +68,12 @@ export default {
     // 2) - title page
     titlePage() {
       return this.$store.state.titlePage
+    },
+  },
+  watch: {
+    // 1) - Title page
+    titlePage() {
+      this.$refs.wrapperRoute.scrollTop = 0
     },
   },
   methods: {
