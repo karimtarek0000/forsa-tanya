@@ -52,8 +52,20 @@
                   </h4>
                   <ul class="list-unstyled text-capitalize">
                     <li class="text-uppercase mb-2">faq</li>
-                    <li class="mb-2">privacy policy</li>
-                    <li>terms & conditions</li>
+                    <li class="mb-2">
+                      <b-link
+                        class="text-secondary"
+                        :to="localePath('privacy-policy')"
+                        >privacy policy</b-link
+                      >
+                    </li>
+                    <li>
+                      <b-link
+                        class="text-secondary"
+                        :to="localePath('terms-conditions')"
+                        >terms & conditions</b-link
+                      >
+                    </li>
                   </ul>
                 </b-col>
               </b-row>

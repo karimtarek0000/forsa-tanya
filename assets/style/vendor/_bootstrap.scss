@@ -1,5 +1,9 @@
+///// Global Bootstrap
 // Helpers
-@import '~bootstrap';
+@import 'node_modules/bootstrap/scss/bootstrap';
 @import 'node_modules/bootstrap-vue/src/variables.scss';
 @import 'node_modules/bootstrap-vue/src/utilities.scss';
 @import 'node_modules/bootstrap-vue/src/custom-controls.scss';
+// Components
+@import 'node_modules/bootstrap-vue/src/components/form-input/index.scss';
+@import 'node_modules/bootstrap-vue/src/components/sidebar/index.scss';

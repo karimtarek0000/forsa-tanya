@@ -20,13 +20,25 @@
         class="align-items-center justify-content-center mt-3 mt-lg-5"
       >
         <b-col md="4" lg="3" class="text-center mb-2 mb-md-0">
-          <GImage src-image="payment/visa.png" alt="visa" />
+          <GImage
+            class="obj-image-auto"
+            src-image="payment/visa.png"
+            alt="visa"
+          />
         </b-col>
         <b-col md="4" lg="3" class="text-center mb-4 mb-md-0">
-          <GImage src-image="payment/master-card.png" alt="master-card" />
+          <GImage
+            class="obj-image-auto"
+            src-image="payment/master-card.png"
+            alt="master-card"
+          />
         </b-col>
         <b-col md="4" lg="3" class="text-center mb-4 mb-md-0">
-          <GImage src-image="payment/fawry.png" alt="fawry" />
+          <GImage
+            class="obj-image-auto"
+            src-image="payment/fawry.png"
+            alt="fawry"
+          />
         </b-col>
       </b-row>
     </b-container>

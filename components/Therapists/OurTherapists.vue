@@ -27,9 +27,7 @@
       </b-row>
 
       <!-- 3) - Therapists get started -->
-      <b-col
-        class="our-therapists__getStarted width-80 mt-5 mx-auto text-center"
-      >
+      <b-col class="our-therapists__getStarted mt-5 mx-auto text-center">
         <p class="text-ninth weight-light">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text.
@@ -56,7 +54,7 @@ export default {
 //
 .our-therapists {
   //
-  @media (min-width: 600px) {
+  @media (min-width: 992px) {
     //
     &::after,
     &::before {
@@ -82,6 +80,14 @@ export default {
       left: 251px;
       border: 1px dashed var(--fortenth);
       z-index: -1;
+    }
+  }
+  //
+  &__getStarted {
+    width: 80%;
+    //
+    @media (max-width: 600px) {
+      width: 100%;
     }
   }
 }

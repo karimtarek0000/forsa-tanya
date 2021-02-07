@@ -6,6 +6,7 @@ export const state = () => ({
   social: null,
   statusAlert: false,
   titlePage: null,
+  userLogIn: null,
 })
 
 // 1) - mutations

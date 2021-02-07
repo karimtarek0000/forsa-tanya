@@ -13,6 +13,11 @@ html[dir='rtl'] {
     }
   }
 
+  h1[data-v-3b9de42f]::after {
+    right: 0;
+    left: auto;
+  }
+
   //
   .how::after {
     left: 0;
@@ -63,5 +68,42 @@ html[dir='rtl'] {
   .check-box {
     margin-right: -8px;
     margin-left: 5px;
+  }
+
+  .all-notification {
+    //
+    p {
+      // Before
+      &::before {
+        right: 10px;
+        left: auto;
+      }
+    }
+  }
+
+  .notification {
+    right: -100px;
+  }
+
+  .count-notification {
+    right: -4px;
+  }
+
+  .options-user {
+    right: -62px;
+
+    & a {
+      direction: rtl;
+    }
+
+    & > div {
+      direction: rtl;
+    }
+  }
+
+  .all-notification {
+    @media (max-width: 992px) {
+      right: 30px;
+    }
   }
 }

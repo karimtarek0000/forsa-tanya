@@ -50,6 +50,8 @@ $spacers: (
   48: 48px,
   53: 53px,
   70: 70px,
+  80: 80px,
+  20: 20px,
 );
 
 //
@@ -64,10 +66,12 @@ $sizes: (
   262: 262px,
   221: 221px,
   145: 145px,
+  25: 25px,
   88: 88%,
   39: 39px,
   90: 90%,
   167: 167px,
+  80: 80%,
 );
 
 //
@@ -136,4 +140,5 @@ $shadow: (
   calendar: 0 3px 6px 0 rgba(0, 0, 0, 0.13),
   google: 0 3px 6px 0 rgba(0, 0, 0, 0.16),
   facebook: 0 3px 6px 0 rgba(71, 89, 147, 0.16),
+  optionsUser: 0 3px 6px 0 rgba(0, 0, 0, 0.16),
 );

@@ -5,10 +5,18 @@
   object-fit: cover;
 }
 
+.obj-image-auto {
+  width: auto !important;
+}
+
 .direction-ltr {
   direction: ltr;
 }
 
 .cursor {
   cursor: pointer;
+}
+
+.cursor-default {
+  cursor: default;
 }

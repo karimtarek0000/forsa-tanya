@@ -56,7 +56,7 @@ export default {
 //
 .how {
   //
-  @media (min-width: 600px) {
+  @media (min-width: 992px) {
     // Sudo element
     &__sudo-element {
       display: block;

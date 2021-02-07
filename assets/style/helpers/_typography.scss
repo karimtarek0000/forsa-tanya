@@ -4,10 +4,10 @@
     font-size: #{$size}px;
     line-height: #{$size * 1.7}px;
 
-    @if $nameSize == 'large' {
+    @if $nameSize == 40 {
       @media only screen and (max-width: 600px) {
-        font-size: #{$size - 15}px;
-        line-height: #{($size - 15) * 1.7}px;
+        font-size: #{$size - 10}px;
+        line-height: #{($size - 10) * 1.7}px;
       }
     }
   }
