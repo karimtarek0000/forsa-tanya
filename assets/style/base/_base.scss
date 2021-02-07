@@ -37,17 +37,8 @@ html[dir='ltr'] {
 ///////////////////////////////
 //// Change style scrollbar
 //
-body::-webkit-scrollbar {
-  width: 7px;
-}
-
-body::-webkit-scrollbar-track {
-  background-color: var(--primary);
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: var(--thirdenth);
-  border-radius: 0;
+body {
+  @include changeScrollBar();
 }
 
 //

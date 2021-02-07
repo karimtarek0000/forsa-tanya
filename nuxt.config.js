@@ -82,7 +82,6 @@ export default {
   styleResources: {
     scss: [
       '~/assets/style/helpers/_design-system.scss',
-      '~/assets/style/base/_base.scss',
       '~/assets/style/helpers/_other.scss',
     ],
   },

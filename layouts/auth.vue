@@ -46,7 +46,7 @@
         </div>
       </b-col>
       <!-- 2) - Image -->
-      <b-col lg="6" class="d-none d-md-block">
+      <b-col v-if="removeImage" lg="6" class="d-none d-md-block">
         <GImage src-image="auth/1.jpg" alt="auth" />
       </b-col>
     </b-row>
@@ -58,6 +58,7 @@ export default {
   data() {
     return {
       status: false,
+      removeImage: false,
     }
   },
   computed: {
@@ -75,6 +76,11 @@ export default {
     titlePage() {
       this.$refs.wrapperRoute.scrollTop = 0
     },
+  },
+  mounted() {
+    if (window.innerWidth > 992) {
+      this.removeImage = true
+    }
   },
   methods: {
     // 1) - Back
@@ -107,7 +113,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 //
 .auth {
   //
@@ -233,19 +239,8 @@ export default {
 // Form Change Scrollbar
 .form {
   scrollbar-color: var(--thirdenth) var(--primary);
-}
-
-.form::-webkit-scrollbar {
-  width: 4px;
-}
-
-.form::-webkit-scrollbar-track {
-  background-color: var(--primary);
-}
-
-.form::-webkit-scrollbar-thumb {
-  background-color: var(--thirdenth);
-  border-radius: 0;
+  //
+  @include changeScrollBar($width: 4);
 }
 
 .sticky {

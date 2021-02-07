@@ -137,6 +137,48 @@ export default {
       //     date: '21 Jun 2021',
       //     time: '09:00 Am',
       //   },
+      //   {
+      //     message: 'You have session with',
+      //     doctor: 'Sara Ahmed',
+      //     date: '21 Jun 2021',
+      //     time: '09:00 Am',
+      //   },
+      //   {
+      //     message: 'You have session with',
+      //     doctor: 'Sara Ahmed',
+      //     date: '21 Jun 2021',
+      //     time: '09:00 Am',
+      //   },
+      //   {
+      //     message: 'You have session with',
+      //     doctor: 'Sara Ahmed',
+      //     date: '21 Jun 2021',
+      //     time: '09:00 Am',
+      //   },
+      //   {
+      //     message: 'You have session with',
+      //     doctor: 'Sara Ahmed',
+      //     date: '21 Jun 2021',
+      //     time: '09:00 Am',
+      //   },
+      //   {
+      //     message: 'You have session with',
+      //     doctor: 'Sara Ahmed',
+      //     date: '21 Jun 2021',
+      //     time: '09:00 Am',
+      //   },
+      //   {
+      //     message: 'You have session with',
+      //     doctor: 'Sara Ahmed',
+      //     date: '21 Jun 2021',
+      //     time: '09:00 Am',
+      //   },
+      //   {
+      //     message: 'You have session with',
+      //     doctor: 'Sara Ahmed',
+      //     date: '21 Jun 2021',
+      //     time: '09:00 Am',
+      //   },
       // ],
       d: [],
     }
@@ -166,7 +208,10 @@ export default {
     },
     //
     statusToggle(n) {
-      if (!n) this.statusNotifi = false
+      if (!n) {
+        this.statusNotifi = false
+        this.statusOptionsUser = false
+      }
     },
   },
   mounted() {
@@ -204,6 +249,10 @@ a.text-secondary:hover,
 a.text-secondary:focus {
   color: var(--primary) !important;
   text-decoration: none;
+
+  @media (max-width: 992px) {
+    color: var(--secondary) !important;
+  }
 }
 
 //
@@ -216,7 +265,12 @@ svg {
 //
 .count-notification {
   top: -7px;
-  right: 49px;
+  right: -5px;
+
+  //
+  @media (max-width: 992px) {
+    right: 49px;
+  }
 }
 
 //
@@ -268,7 +322,7 @@ svg {
   @media (max-width: 992px) {
     position: absolute;
     top: 60px;
-    right: -155px;
+    right: -154px;
     width: 100%;
     //
     svg {

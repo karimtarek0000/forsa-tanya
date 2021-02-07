@@ -82,11 +82,14 @@ html[dir='rtl'] {
   }
 
   .notification {
-    right: -100px;
+    //
+    @media (max-width: 992px) {
+      right: -100px;
+    }
   }
 
   .count-notification {
-    right: -4px;
+    right: -5px;
   }
 
   .options-user {
@@ -105,5 +108,9 @@ html[dir='rtl'] {
     @media (max-width: 992px) {
       right: 30px;
     }
+  }
+
+  .navbarVue1__items {
+    direction: rtl;
   }
 }

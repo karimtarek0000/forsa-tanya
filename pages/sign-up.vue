@@ -199,7 +199,76 @@
           </b-form-group>
         </b-col>
 
-        <!-- 5) - Gender -->
+        <!-- 5) - Phone number -->
+        <b-col md="6" lg="12" class="mb-53">
+          <b-form-group
+            id="input-group-5"
+            :label="`${$t('form.label.phone')}`"
+            label-for="input-1"
+            class="text-18 require"
+          >
+            <!-- 1) - Input -->
+            <b-form-input
+              id="input-5"
+              v-model.trim="$v.form.phone.$model"
+              autocomplete="off"
+              :placeholder="$t('form.placeholder.phone')"
+              class="border-top-0 px-0 border-right-0 border-left-0 rounded-0 border-bottom border-twentyThree"
+            ></b-form-input>
+            <!-- 2) - Message Required -->
+            <small
+              v-if="!$v.form.phone.required && $v.form.phone.$dirty"
+              class="text-12 text-secondary weight-light bg-thirty px-3 py-2 d-block w-100"
+            >
+              <!-- Icon -->
+              <GSvg name-icon="wrong" class="svg-validate" title="wrong" />
+              {{ $t('validation.require.phone') }}
+            </small>
+            <!-- 3) - Message Error -->
+            <small
+              v-if="!$v.form.phone.minLength && $v.form.phone.$dirty"
+              dir="auto"
+              class="text-12 text-secondary weight-light bg-thirty px-3 py-2 d-block w-100"
+            >
+              <!-- Icon -->
+              <GSvg name-icon="wrong" class="svg-validate" title="wrong" />
+
+              {{
+                $t('validation.error.phone-min', {
+                  min: $v.form.phone.$params.minLength.min,
+                })
+              }}
+            </small>
+            <!-- 3) - Message Error -->
+            <small
+              v-if="!$v.form.phone.maxLength && $v.form.phone.$dirty"
+              dir="auto"
+              class="text-12 text-secondary weight-light bg-thirty px-3 py-2 d-block w-100"
+            >
+              <!-- Icon -->
+              <GSvg name-icon="wrong" class="svg-validate" title="wrong" />
+
+              {{
+                $t('validation.error.phone-max', {
+                  max: $v.form.phone.$params.maxLength.max,
+                })
+              }}
+            </small>
+            <!-- 4) - Message Error -->
+            <small
+              v-if="!$v.form.phone.numeric && $v.form.phone.$dirty"
+              dir="auto"
+              class="text-12 text-secondary weight-light bg-thirty px-3 py-2 d-block w-100"
+            >
+              <!-- Icon -->
+              <GSvg name-icon="wrong" class="svg-validate" title="wrong" />
+
+              {{ $t('validation.error.age.number') }}
+            </small>
+          </b-form-group>
+        </b-col>
+
+        <!-- 6) - Gender -->
         <b-col md="6" lg="12" class="mb-53">
           <b-form-group
             v-slot="{ ariaDescribedby }"
@@ -216,17 +285,17 @@
           </b-form-group>
         </b-col>
 
-        <!-- 6) - Age -->
+        <!-- 7) - Age -->
         <b-col md="6" lg="12" class="mb-53">
           <b-form-group
-            id="input-group-5"
+            id="input-group-6"
             description=""
             :label="$t('form.label.age')"
-            label-for="input-5"
+            label-for="input-6"
             class="text-18 require"
           >
             <b-form-input
-              id="input-5"
+              id="input-6"
               v-model="$v.form.age.$model"
               :placeholder="$t('form.placeholder.age')"
               class="border-top-0 px-0 border-right-0 border-left-0 rounded-0 border-bottom border-twentyThree"
@@ -269,17 +338,17 @@
           </b-form-group>
         </b-col>
 
-        <!-- 7) - Address -->
+        <!-- 8) - Address -->
         <b-col md="6" lg="12" class="mb-53">
           <b-form-group
-            id="input-group-6"
+            id="input-group-7"
             :label="`${$t('form.label.address')}`"
-            label-for="input-6"
+            label-for="input-7"
             class="text-18 require"
           >
             <!-- 1) - Input -->
             <b-form-input
-              id="input-6"
+              id="input-7"
               v-model.trim="$v.form.address.$model"
               :placeholder="$t('form.placeholder.address')"
               autocomplete="off"
@@ -297,7 +366,7 @@
           </b-form-group>
         </b-col>
 
-        <!-- 8) - Question - hadPsychotherapyBefore -->
+        <!-- 9) - Question - hadPsychotherapyBefore -->
         <b-col md="6" lg="12" class="mb-53">
           <b-form-group
             v-slot="{ ariaDescribedby }"
@@ -315,17 +384,17 @@
           </b-form-group>
         </b-col>
 
-        <!-- 9) - Question - WhatIsYourDiagnosis -->
+        <!-- 10) - Question - WhatIsYourDiagnosis -->
         <b-col md="6" lg="12" class="mb-53">
           <b-form-group
-            id="input-group-7"
+            id="input-group-8"
             :label="`${$t('form.label.ques.whatIsYourDiagnosis')}`"
-            label-for="input-7"
+            label-for="input-8"
             class="text-18 require"
           >
             <!-- 1) - Input -->
             <b-form-input
-              id="input-7"
+              id="input-8"
               v-model.trim="$v.form.ques.whatIsYourDiagnosis.$model"
               :placeholder="$t('form.placeholder.ques.whatIsYourDiagnosis')"
               autocomplete="off"
@@ -346,17 +415,17 @@
           </b-form-group>
         </b-col>
 
-        <!-- 10) - Question - HowDidYouKnowForsaTanya  -->
+        <!-- 11) - Question - HowDidYouKnowForsaTanya  -->
         <b-col md="6" lg="12" class="mb-53 specific">
           <b-form-group
-            id="input-group-8"
+            id="input-group-9"
             :label="`${$t('form.label.ques.howDidYouKnowForsaTanya')}`"
-            label-for="input-8"
+            label-for="input-9"
             class="text-18"
           >
             <!-- 1) - Input -->
             <b-form-input
-              id="input-8"
+              id="input-9"
               v-model.trim="form.ques.HowDidYouKnowForsaTanya"
               :placeholder="$t('form.placeholder.ques.howDidYouKnowForsaTanya')"
               autocomplete="off"
@@ -445,6 +514,7 @@ export default {
         email: '',
         password: '',
         confirmPassword: '',
+        phone: '',
         gender: 'prefer not to say',
         age: '',
         address: '',
@@ -484,6 +554,12 @@ export default {
       },
       confirmPassword: {
         sameAsPassword: sameAs('password'),
+      },
+      phone: {
+        required,
+        numeric,
+        minLength: minLength(11),
+        maxLength: maxLength(11),
       },
       age: {
         required,
@@ -528,28 +604,29 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .custom-radio .custom-control-label::before {
   background-color: transparent;
 }
 
-/* This is the checked state */
 .custom-radio .custom-control-input:checked ~ .custom-control-label::before,
 .custom-radio .custom-control-input:checked ~ .custom-control-label::after {
   background-color: white;
   border-radius: 50%;
+  content: '';
+  border: 1px solid #00000066;
 }
 
 .custom-radio .custom-control-input:checked ~ .custom-control-label::after {
-  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='%23057d63'/%3E%3C/svg%3E");
+  content: '';
+  width: 10px;
+  height: 10px;
+  background: var(--seventh);
+  top: 49%;
+  left: -21px;
+  transform: translateY(-60%);
   border: 1px solid var(--twentyNine);
 }
-
-/* active state i.e. displayed while the mouse is being pressed down */
-/* .custom-radio .custom-control-input:active ~ .custom-control-label::before {
-  color: #fff;
-  background-color: #ff0000;
-} */
 
 /* the shadow; displayed while the element is in focus */
 .custom-radio .custom-control-input:focus ~ .custom-control-label::before {

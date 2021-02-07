@@ -241,7 +241,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 /*  */
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
   background-color: transparent !important;

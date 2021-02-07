@@ -14,12 +14,15 @@
       <!-- Start inner navbar -->
       <div class="navbarVue1__inner">
         <!-- 1) - Logo -->
-        <div
+        <NuxtLink
+          :to="localePath('/')"
           class="navbarVue1__logo"
           :style="{ 'flex-basis': optionsNavbarVue1.height || '100px' }"
         >
-          <img src="@/assets/images/logo/logo1.jpg" alt="" />
-        </div>
+          <div>
+            <img src="@/assets/images/logo/logo1.jpg" alt="" />
+          </div>
+        </NuxtLink>
         <!-- 2) - Toggler -->
         <div class="navbarVue1__toggler" @click.stop="toggler">
           <!-- Burger -->
@@ -128,7 +131,7 @@ export default {
   // 3) - Logo
   &__logo {
     height: 100%;
-    margin-right: 200px;
+    margin-right: 100px;
 
     //
     img {
@@ -237,7 +240,7 @@ export default {
   &__others {
     display: flex;
     align-items: center;
-    width: 70%;
+    width: 75%;
 
     //
     @media (max-width: 992px) {

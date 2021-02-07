@@ -251,7 +251,7 @@ export default {
   align-items: center;
   list-style: none;
   margin-bottom: 0;
-  margin-top: 50px;
+  margin-top: 0px;
   padding: 0;
   //
   li {
@@ -290,9 +290,5 @@ export default {
   @media (max-width: 992px) {
     padding: 0 30px;
   }
-}
-
-.slick-slide {
-  width: 312px;
 }
 </style>

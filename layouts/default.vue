@@ -75,6 +75,12 @@ export default {
       padding: 10px 20px;
       font-weight: 500;
       font-size: 18px;
+      margin: 0 20px;
+
+      //
+      @media (max-width: 992px) {
+        margin: 0 0;
+      }
 
       //
       &::after {
@@ -82,7 +88,7 @@ export default {
         position: absolute;
         left: 50%;
         bottom: -5px;
-        width: 75%;
+        width: 60%;
         transform: translateX(-50%) scaleX(0);
         transform-origin: center;
         height: 3px;
@@ -93,6 +99,7 @@ export default {
 
         //
         @media (max-width: 992px) {
+          width: 80%;
           bottom: 3px;
         }
       }
