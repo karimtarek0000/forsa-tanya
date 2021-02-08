@@ -1,0 +1,154 @@
+//
+.auth {
+  //
+  .logo {
+    width: 98px;
+  }
+
+  .svg {
+    width: 10px;
+    height: 20px;
+    fill: var(--third);
+  }
+
+  &__title {
+    width: fit-content;
+    //
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 11px;
+      height: 2px;
+      background-color: var(--third);
+    }
+  }
+
+  &__wrapper {
+    > div {
+      max-height: 100vh;
+      overflow-y: auto;
+    }
+  }
+
+  label,
+  legend {
+    text-transform: capitalize;
+  }
+
+  input {
+    // width: 271px;
+    //
+    &::placeholder {
+      color: var(--twentyThree);
+      text-transform: capitalize;
+    }
+  }
+
+  .require > label::after {
+    content: '*';
+    color: var(--twentyThree);
+  }
+
+  .btn-primary:not(:disabled):not(.disabled):active,
+  .btn-primary:not(:disabled):not(.disabled).active,
+  .show > .btn-primary.dropdown-toggle,
+  .btn-primary:hover {
+    background-color: transparent;
+    border-color: transparent;
+  }
+}
+
+//
+.visible {
+  top: 38px;
+  right: 0px;
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+//
+.svg-other-submit {
+  width: 16px;
+  height: 16px;
+}
+
+.svg-validate {
+  width: 20px;
+  height: 17px;
+  fill: var(--youtube);
+}
+
+//
+.form-group {
+  @media (min-width: 992px) {
+    width: 271px;
+  }
+}
+
+//
+.split {
+  width: fit-content;
+
+  //
+  &::after,
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 197px;
+    height: 0.5px;
+    transform: translateY(-50%);
+    background-color: rgba(#c2c2c2, 0.4);
+  }
+  //
+  &::after {
+    right: -250px;
+  }
+  &::before {
+    left: -250px;
+  }
+}
+
+//
+.col-form-label {
+  font-size: 18px;
+}
+
+//
+.specific > .form-group {
+  width: 100%;
+}
+
+//
+.custom-radio .custom-control-label::before {
+  background-color: transparent;
+}
+
+.custom-radio .custom-control-input:checked ~ .custom-control-label::before,
+.custom-radio .custom-control-input:checked ~ .custom-control-label::after {
+  background-color: white;
+  border-radius: 50%;
+  content: '';
+  border: 1px solid #00000066;
+}
+
+.custom-radio .custom-control-input:checked ~ .custom-control-label::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background: var(--seventh);
+  top: 49%;
+  left: -21px;
+  transform: translateY(-60%);
+  border: 1px solid var(--twentyNine);
+}
+
+/* the shadow; displayed while the element is in focus */
+.custom-radio .custom-control-input:focus ~ .custom-control-label::before {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(255, 123, 255, 0.25);
+}

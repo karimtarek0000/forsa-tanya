@@ -141,6 +141,19 @@ export default {
 
   router: {
     middleware: 'statusI18n',
+    //
+    extendRoutes(routes, resolve) {
+      routes.push({
+        name: 'userProfile',
+        path: '/user/profile/:id',
+        component: resolve(__dirname, 'pages/profile.vue'),
+      })
+      routes.push({
+        name: 'editUserProfile',
+        path: '/user/edit-profile/:id',
+        component: resolve(__dirname, 'pages/edit-profile.vue'),
+      })
+    },
   },
 
   pageTransition: {

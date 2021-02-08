@@ -604,37 +604,4 @@ export default {
 }
 </script>
 
-<style>
-.custom-radio .custom-control-label::before {
-  background-color: transparent;
-}
-
-.custom-radio .custom-control-input:checked ~ .custom-control-label::before,
-.custom-radio .custom-control-input:checked ~ .custom-control-label::after {
-  background-color: white;
-  border-radius: 50%;
-  content: '';
-  border: 1px solid #00000066;
-}
-
-.custom-radio .custom-control-input:checked ~ .custom-control-label::after {
-  content: '';
-  width: 10px;
-  height: 10px;
-  background: var(--seventh);
-  top: 49%;
-  left: -21px;
-  transform: translateY(-60%);
-  border: 1px solid var(--twentyNine);
-}
-
-/* the shadow; displayed while the element is in focus */
-.custom-radio .custom-control-input:focus ~ .custom-control-label::before {
-  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(255, 123, 255, 0.25);
-}
-
-/*  */
-.specific > .form-group {
-  width: 100%;
-}
-</style>
+<style></style>

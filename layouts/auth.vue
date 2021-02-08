@@ -54,7 +54,11 @@
 </template>
 
 <script>
+//
+import { goToBack } from '@/mixins/other.js'
+//
 export default {
+  mixins: [goToBack],
   data() {
     return {
       status: false,
@@ -83,11 +87,7 @@ export default {
     }
   },
   methods: {
-    // 1) - Back
-    back() {
-      this.$router.go(-1)
-    },
-    // 2) - Change status alert
+    // 1) - Change status alert
     changeStatusAlert(status) {
       this.$store.commit('changeStatusAlert', status)
     },
@@ -114,127 +114,6 @@ export default {
 </script>
 
 <style lang="scss">
-//
-.auth {
-  //
-  .logo {
-    width: 98px;
-  }
-
-  .svg {
-    width: 10px;
-    height: 20px;
-    fill: var(--third);
-  }
-
-  &__title {
-    width: fit-content;
-    //
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: -3px;
-      left: 0;
-      width: 11px;
-      height: 2px;
-      background-color: var(--third);
-    }
-  }
-
-  &__wrapper {
-    > div {
-      max-height: 100vh;
-      overflow-y: auto;
-    }
-  }
-
-  label,
-  legend {
-    text-transform: capitalize;
-  }
-
-  input {
-    // width: 271px;
-    //
-    &::placeholder {
-      color: var(--twentyThree);
-      text-transform: capitalize;
-    }
-  }
-
-  .require > label::after {
-    content: '*';
-    color: var(--twentyThree);
-  }
-
-  .btn-primary:not(:disabled):not(.disabled):active,
-  .btn-primary:not(:disabled):not(.disabled).active,
-  .show > .btn-primary.dropdown-toggle,
-  .btn-primary:hover {
-    background-color: transparent;
-    border-color: transparent;
-  }
-}
-
-//
-.visible {
-  top: 38px;
-  right: 0px;
-
-  svg {
-    width: 20px;
-    height: 20px;
-  }
-}
-
-//
-.svg-other-submit {
-  width: 16px;
-  height: 16px;
-}
-
-.svg-validate {
-  width: 20px;
-  height: 17px;
-  fill: var(--youtube);
-}
-
-//
-.form-group {
-  @media (min-width: 992px) {
-    width: 271px;
-  }
-}
-
-//
-.split {
-  width: fit-content;
-
-  //
-  &::after,
-  &::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    width: 197px;
-    height: 0.5px;
-    transform: translateY(-50%);
-    background-color: rgba(#c2c2c2, 0.4);
-  }
-  //
-  &::after {
-    right: -250px;
-  }
-  &::before {
-    left: -250px;
-  }
-}
-
-//
-.col-form-label {
-  font-size: 18px;
-}
-
 //////////////////////////////
 // Form Change Scrollbar
 .form {

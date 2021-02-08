@@ -6,6 +6,8 @@
     "home": "Home",
     "aboutus": "about us",
     "therapists": "therapists",
+    "profile": "profile",
+    "editProfile": "edit-profile",
     "signIn": "sign in",
     "signUp": "sign up"
   },
@@ -48,11 +50,16 @@
     "register": "register",
     "signIn": "sign in",
     "signUp": "sign up",
-    "back": "back"
+    "back": "back",
+    "editProfile": "edit profile",
+    "saveChanged": "save changed",
+    "changePassword": "change password",
+    "cancel": "cancel"
   },
   "labels": {
     "updates": "recive email updates",
-    "appointments": "available appointments"
+    "appointments": "available appointments",
+    "personalInformation": "personal info"
   },
   "placeHolder": {
     "email": "Your Email Address",

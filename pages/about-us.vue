@@ -9,7 +9,7 @@
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
       >
         <!-- 4) - Reviews -->
-        <section class="mb-5 my-lg-90">
+        <section class="my-5 my-lg-90 w-100">
           <b-container
             fluid="lg"
             class="px-2 px-lg-0 text-center text-capitalize"
@@ -34,7 +34,7 @@
                   </div>
                   <!-- 2) - Heading -->
                   <div class="mb-35">
-                    <div class="shadow-card-review">
+                    <div class="shadow-card-review px-2">
                       <h4 class="text-22 mb-0 mt-1 weight-bolder text-seventh">
                         mr. ahmed mohamed
                       </h4>
@@ -57,7 +57,7 @@
                   </div>
                   <!-- 2) - Heading -->
                   <div class="mb-35">
-                    <div class="shadow-card-review">
+                    <div class="shadow-card-review px-2">
                       <h4 class="text-22 mb-0 mt-1 weight-bolder text-seventh">
                         mr. ahmed mohamed
                       </h4>
@@ -80,7 +80,7 @@
                   </div>
                   <!-- 2) - Heading -->
                   <div class="mb-35">
-                    <div class="shadow-card-review">
+                    <div class="shadow-card-review px-2">
                       <h4 class="text-22 mb-0 mt-1 weight-bolder text-seventh">
                         mr. ahmed mohamed
                       </h4>
@@ -103,7 +103,7 @@
                   </div>
                   <!-- 2) - Heading -->
                   <div class="mb-35">
-                    <div class="shadow-card-review">
+                    <div class="shadow-card-review px-2">
                       <h4 class="text-22 mb-0 mt-1 weight-bolder text-seventh">
                         mr. ahmed mohamed
                       </h4>
@@ -126,7 +126,7 @@
                   </div>
                   <!-- 2) - Heading -->
                   <div class="mb-35">
-                    <div class="shadow-card-review">
+                    <div class="shadow-card-review px-2">
                       <h4 class="text-22 mb-0 mt-1 weight-bolder text-seventh">
                         mr. ahmed mohamed
                       </h4>
@@ -149,30 +149,7 @@
                   </div>
                   <!-- 2) - Heading -->
                   <div class="mb-35">
-                    <div class="shadow-card-review">
-                      <h4 class="text-22 mb-0 mt-1 weight-bolder text-seventh">
-                        mr. ahmed mohamed
-                      </h4>
-                      <!-- 3) - Title -->
-                      <p
-                        class="text-17 mb-0 text-uppercase line-2 px-3 text-third weight-light"
-                      >
-                        title
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="reviews img-wrapper bg-primary position-relative">
-                  <!-- 1) - Image -->
-                  <div class="mx-auto">
-                    <img
-                      class="img-fluid obj-img"
-                      src="@/assets/images/other/2.jpg"
-                    />
-                  </div>
-                  <!-- 2) - Heading -->
-                  <div class="mb-35">
-                    <div class="shadow-card-review">
+                    <div class="shadow-card-review px-2">
                       <h4 class="text-22 mb-0 mt-1 weight-bolder text-seventh">
                         mr. ahmed mohamed
                       </h4>
@@ -202,9 +179,8 @@ const sharePropertyScroll = {
   pauseOnFocus: true,
   pauseOnHover: true,
   autoplaySpeed: 5000,
-  autoplay: false,
+  autoplay: true,
   dots: true,
-  arrows: false,
   infinite: true,
 }
 //
@@ -214,17 +190,19 @@ export default {
       slickOptions: {
         slidesToShow: 3,
         initialSlide: 1,
-        slidesToScroll: 2,
+        slidesToScroll: 3,
+        arrows: true,
         ...sharePropertyScroll,
         rtl: this.$i18n.locale === 'ar',
         responsive: [
           {
-            breakpoint: 696,
+            breakpoint: 850,
             settings: {
               slidesToShow: 2,
               slidesToScroll: 2,
               infinite: true,
               dots: false,
+              arrows: false,
             },
           },
           {
@@ -234,10 +212,16 @@ export default {
               slidesToScroll: 1,
               infinite: true,
               dots: false,
+              arrows: false,
             },
           },
         ],
       },
+    }
+  },
+  head() {
+    return {
+      title: `${this.$t('titles.aboutus')}`,
     }
   },
 }
@@ -279,6 +263,41 @@ export default {
   .slick-active {
     background-color: #067d62;
     border-radius: 50%;
+  }
+}
+
+//
+.slick-arrow {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  display: block;
+  z-index: 5;
+  font-size: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  border: 0;
+  background-color: transparent;
+}
+
+//
+.slick-prev {
+  left: 0;
+
+  //
+  &::before {
+    content: url(~assets/icon/angle-left.svg);
+  }
+}
+
+.slick-next {
+  right: 0;
+
+  //
+  &::before {
+    content: url(~assets/icon/angle-right.svg);
   }
 }
 
