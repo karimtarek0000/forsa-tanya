@@ -1,18 +1,5 @@
 html[dir='rtl'] {
   //
-  footer .wrapper-icon:not(:last-child) {
-    margin-left: 10px;
-    margin-right: 0;
-  }
-
-  //
-  input {
-    //
-    &::placeholder {
-      text-align: right;
-    }
-  }
-
   h1[data-v-3b9de42f]::after {
     right: 0;
     left: auto;
@@ -112,5 +99,19 @@ html[dir='rtl'] {
 
   .navbarVue1__items {
     direction: rtl;
+  }
+
+  //
+  footer .wrapper-icon:not(:last-child) {
+    margin-left: 10px;
+    margin-right: 0;
+  }
+
+  //
+  input {
+    //
+    &::placeholder {
+      text-align: right;
+    }
   }
 }
