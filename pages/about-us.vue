@@ -10,6 +10,7 @@
       >
         <!-- 4) - Reviews -->
         <section class="my-5 my-lg-90 w-100">
+          <!--  -->
           <b-container
             fluid="lg"
             class="px-2 px-lg-0 text-center text-capitalize"
@@ -23,146 +24,167 @@
             </p>
             <!--  -->
             <div class="carousel-wrapper">
-              <VueSlickCarousel v-bind="slickOptions">
-                <div class="reviews img-wrapper bg-primary position-relative">
-                  <!-- 1) - Image -->
-                  <div class="mx-auto">
-                    <img
-                      class="img-fluid obj-img"
-                      src="@/assets/images/other/2.jpg"
-                    />
-                  </div>
-                  <!-- 2) - Heading -->
-                  <div class="mb-35">
-                    <div class="shadow-card-review px-2">
-                      <h4 class="text-22 mb-0 mt-1 weight-bolder text-seventh">
-                        mr. ahmed mohamed
-                      </h4>
-                      <!-- 3) - Title -->
-                      <p
-                        class="text-17 mb-0 text-uppercase line-2 px-3 text-third weight-light"
-                      >
-                        title
-                      </p>
+              <client-only>
+                <VueSlickCarousel v-bind="slickOptions">
+                  <!--  -->
+                  <div class="reviews img-wrapper bg-primary position-relative">
+                    <!-- 1) - Image -->
+                    <div class="mx-auto">
+                      <img
+                        class="img-fluid obj-img"
+                        src="@/assets/images/other/2.jpg"
+                      />
+                    </div>
+                    <!-- 2) - Heading -->
+                    <div class="mb-35">
+                      <div class="shadow-card-review px-2">
+                        <h6
+                          class="text-22 mb-0 mt-1 weight-bolder text-seventh"
+                        >
+                          mr. ahmed mohamed
+                        </h6>
+                        <!-- 3) - Title -->
+                        <p
+                          class="text-17 mb-0 text-uppercase line-2 px-3 text-third weight-light"
+                        >
+                          title
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="reviews img-wrapper bg-primary position-relative">
-                  <!-- 1) - Image -->
-                  <div class="mx-auto">
-                    <img
-                      class="img-fluid obj-img"
-                      src="@/assets/images/other/2.jpg"
-                    />
-                  </div>
-                  <!-- 2) - Heading -->
-                  <div class="mb-35">
-                    <div class="shadow-card-review px-2">
-                      <h4 class="text-22 mb-0 mt-1 weight-bolder text-seventh">
-                        mr. ahmed mohamed
-                      </h4>
-                      <!-- 3) - Title -->
-                      <p
-                        class="text-17 mb-0 text-uppercase line-2 px-3 text-third weight-light"
-                      >
-                        title
-                      </p>
+                  <!--  -->
+                  <div class="reviews img-wrapper bg-primary position-relative">
+                    <!-- 1) - Image -->
+                    <div class="mx-auto">
+                      <img
+                        class="img-fluid obj-img"
+                        src="@/assets/images/other/2.jpg"
+                      />
+                    </div>
+                    <!-- 2) - Heading -->
+                    <div class="mb-35">
+                      <div class="shadow-card-review px-2">
+                        <h6
+                          class="text-22 mb-0 mt-1 weight-bolder text-seventh"
+                        >
+                          mr. ahmed mohamed
+                        </h6>
+                        <!-- 3) - Title -->
+                        <p
+                          class="text-17 mb-0 text-uppercase line-2 px-3 text-third weight-light"
+                        >
+                          title
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="reviews img-wrapper bg-primary position-relative">
-                  <!-- 1) - Image -->
-                  <div class="mx-auto">
-                    <img
-                      class="img-fluid obj-img"
-                      src="@/assets/images/other/2.jpg"
-                    />
-                  </div>
-                  <!-- 2) - Heading -->
-                  <div class="mb-35">
-                    <div class="shadow-card-review px-2">
-                      <h4 class="text-22 mb-0 mt-1 weight-bolder text-seventh">
-                        mr. ahmed mohamed
-                      </h4>
-                      <!-- 3) - Title -->
-                      <p
-                        class="text-17 mb-0 text-uppercase line-2 px-3 text-third weight-light"
-                      >
-                        title
-                      </p>
+                  <!--  -->
+                  <div class="reviews img-wrapper bg-primary position-relative">
+                    <!-- 1) - Image -->
+                    <div class="mx-auto">
+                      <img
+                        class="img-fluid obj-img"
+                        src="@/assets/images/other/2.jpg"
+                      />
+                    </div>
+                    <!-- 2) - Heading -->
+                    <div class="mb-35">
+                      <div class="shadow-card-review px-2">
+                        <h6
+                          class="text-22 mb-0 mt-1 weight-bolder text-seventh"
+                        >
+                          mr. ahmed mohamed
+                        </h6>
+                        <!-- 3) - Title -->
+                        <p
+                          class="text-17 mb-0 text-uppercase line-2 px-3 text-third weight-light"
+                        >
+                          title
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="reviews img-wrapper bg-primary position-relative">
-                  <!-- 1) - Image -->
-                  <div class="mx-auto">
-                    <img
-                      class="img-fluid obj-img"
-                      src="@/assets/images/other/2.jpg"
-                    />
-                  </div>
-                  <!-- 2) - Heading -->
-                  <div class="mb-35">
-                    <div class="shadow-card-review px-2">
-                      <h4 class="text-22 mb-0 mt-1 weight-bolder text-seventh">
-                        mr. ahmed mohamed
-                      </h4>
-                      <!-- 3) - Title -->
-                      <p
-                        class="text-17 mb-0 text-uppercase line-2 px-3 text-third weight-light"
-                      >
-                        title
-                      </p>
+                  <!--  -->
+                  <div class="reviews img-wrapper bg-primary position-relative">
+                    <!-- 1) - Image -->
+                    <div class="mx-auto">
+                      <img
+                        class="img-fluid obj-img"
+                        src="@/assets/images/other/2.jpg"
+                      />
+                    </div>
+                    <!-- 2) - Heading -->
+                    <div class="mb-35">
+                      <div class="shadow-card-review px-2">
+                        <h6
+                          class="text-22 mb-0 mt-1 weight-bolder text-seventh"
+                        >
+                          mr. ahmed mohamed
+                        </h6>
+                        <!-- 3) - Title -->
+                        <p
+                          class="text-17 mb-0 text-uppercase line-2 px-3 text-third weight-light"
+                        >
+                          title
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="reviews img-wrapper bg-primary position-relative">
-                  <!-- 1) - Image -->
-                  <div class="mx-auto">
-                    <img
-                      class="img-fluid obj-img"
-                      src="@/assets/images/other/2.jpg"
-                    />
-                  </div>
-                  <!-- 2) - Heading -->
-                  <div class="mb-35">
-                    <div class="shadow-card-review px-2">
-                      <h4 class="text-22 mb-0 mt-1 weight-bolder text-seventh">
-                        mr. ahmed mohamed
-                      </h4>
-                      <!-- 3) - Title -->
-                      <p
-                        class="text-17 mb-0 text-uppercase line-2 px-3 text-third weight-light"
-                      >
-                        title
-                      </p>
+                  <!--  -->
+                  <div class="reviews img-wrapper bg-primary position-relative">
+                    <!-- 1) - Image -->
+                    <div class="mx-auto">
+                      <img
+                        class="img-fluid obj-img"
+                        src="@/assets/images/other/2.jpg"
+                      />
+                    </div>
+                    <!-- 2) - Heading -->
+                    <div class="mb-35">
+                      <div class="shadow-card-review px-2">
+                        <h6
+                          class="text-22 mb-0 mt-1 weight-bolder text-seventh"
+                        >
+                          mr. ahmed mohamed
+                        </h6>
+                        <!-- 3) - Title -->
+                        <p
+                          class="text-17 mb-0 text-uppercase line-2 px-3 text-third weight-light"
+                        >
+                          title
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="reviews img-wrapper bg-primary position-relative">
-                  <!-- 1) - Image -->
-                  <div class="mx-auto">
-                    <img
-                      class="img-fluid obj-img"
-                      src="@/assets/images/other/2.jpg"
-                    />
-                  </div>
-                  <!-- 2) - Heading -->
-                  <div class="mb-35">
-                    <div class="shadow-card-review px-2">
-                      <h4 class="text-22 mb-0 mt-1 weight-bolder text-seventh">
-                        mr. ahmed mohamed
-                      </h4>
-                      <!-- 3) - Title -->
-                      <p
-                        class="text-17 mb-0 text-uppercase line-2 px-3 text-third weight-light"
-                      >
-                        title
-                      </p>
+                  <!--  -->
+                  <div class="reviews img-wrapper bg-primary position-relative">
+                    <!-- 1) - Image -->
+                    <div class="mx-auto">
+                      <img
+                        class="img-fluid obj-img"
+                        src="@/assets/images/other/2.jpg"
+                      />
+                    </div>
+                    <!-- 2) - Heading -->
+                    <div class="mb-35">
+                      <div class="shadow-card-review px-2">
+                        <h6
+                          class="text-22 mb-0 mt-1 weight-bolder text-seventh"
+                        >
+                          mr. ahmed mohamed
+                        </h6>
+                        <!-- 3) - Title -->
+                        <p
+                          class="text-17 mb-0 text-uppercase line-2 px-3 text-third weight-light"
+                        >
+                          title
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </VueSlickCarousel>
+                </VueSlickCarousel>
+              </client-only>
+              <!--  -->
             </div>
           </b-container>
         </section>
