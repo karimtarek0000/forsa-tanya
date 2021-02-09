@@ -1,6 +1,10 @@
 <template>
   <div>
-    <!-- 1) - Navbar -->
+    <!-- 1) - Alert -->
+    <transition name="alert" mode="out-in">
+      <Alert v-if="statusAlert" @closeAlert="changeStatusAlert" />
+    </transition>
+    <!-- 2) - Navbar -->
     <NavbarVue1
       :options-navbar-vue1="options"
       :status-toggler="statusToggler"
@@ -14,17 +18,21 @@
       <!-- 2) - Change Language -->
       <Langauge />
     </NavbarVue1>
-    <!-- 2) - Routing -->
+    <!-- 3) - Routing -->
     <div>
       <Nuxt />
     </div>
-    <!-- 3) - Footer -->
+    <!-- 4) - Footer -->
     <Footer />
   </div>
 </template>
 
 <script>
+//
+import { statusAlert } from '@/mixins/other.js'
+
 export default {
+  mixins: [statusAlert],
   data() {
     return {
       options: {

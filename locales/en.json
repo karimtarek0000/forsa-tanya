@@ -54,7 +54,8 @@
     "editProfile": "edit profile",
     "saveChanged": "save changed",
     "changePassword": "change password",
-    "cancel": "cancel"
+    "cancel": "cancel",
+    "done": "done"
   },
   "labels": {
     "updates": "recive email updates",
@@ -71,6 +72,8 @@
       "name": "enter your name",
       "email": "enter your email",
       "password": "enter your password",
+      "oldPassword": "enter old password",
+      "newPassword": "enter new password",
       "age": "enter your age",
       "address": "enter your address",
       "phone": "enter your phone number",
@@ -86,6 +89,8 @@
       "email": "email",
       "password": "password",
       "confirmPassword": "confirm password",
+      "newPassword": "new password",
+      "oldPassword": "old password",
       "gender": "gender",
       "age": "age",
       "address": "address",
@@ -110,6 +115,8 @@
       "name": "You shoul'd write your name.",
       "email": "You shoul'd write your email",
       "password": "You shoul'd write your password",
+      "oldPassword": "You shoul'd write your old password",
+      "newPassword": "You shoul'd write your new password",
       "address": "You shoul'd write your address",
       "age": "You shoul'd write your age",
       "phone": "You shoul'd write your phone",

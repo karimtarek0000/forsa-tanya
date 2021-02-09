@@ -5,10 +5,15 @@ export const actionsForm = {
       optionsTypeInput: {
         visiblePassword: false,
         visibleConfirmPassword: false,
+        visibleOldPassword: false,
       },
     }
   },
   computed: {
+    //
+    changeTypeOldPassword() {
+      return this.optionsTypeInput.visibleOldPassword ? 'text' : 'password'
+    },
     //
     changeTypePassword() {
       return this.optionsTypeInput.visiblePassword ? 'text' : 'password'

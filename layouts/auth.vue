@@ -55,10 +55,10 @@
 
 <script>
 //
-import { goToBack } from '@/mixins/other.js'
+import { goToBack, statusAlert } from '@/mixins/other.js'
 //
 export default {
-  mixins: [goToBack],
+  mixins: [goToBack, statusAlert],
   data() {
     return {
       status: false,
@@ -66,11 +66,7 @@ export default {
     }
   },
   computed: {
-    // 1) - status alert
-    statusAlert() {
-      return this.$store.state.statusAlert
-    },
-    // 2) - title page
+    // 1) - title page
     titlePage() {
       return this.$store.state.titlePage
     },
@@ -85,12 +81,6 @@ export default {
     if (window.innerWidth > 992) {
       this.removeImage = true
     }
-  },
-  methods: {
-    // 1) - Change status alert
-    changeStatusAlert(status) {
-      this.$store.commit('changeStatusAlert', status)
-    },
   },
   head() {
     const i18nSeo = this.$nuxtI18nSeo()
@@ -128,35 +118,5 @@ export default {
   background: var(--primary);
   overflow: hidden;
   top: 0;
-}
-
-.alert-enter-active {
-  animation: alertVisible 0.5s ease forwards;
-}
-
-.alert-leave-to {
-  animation: alertHidden 0.5s ease forwards;
-}
-
-@keyframes alertVisible {
-  from {
-    top: -100px;
-    opacity: 0;
-  }
-  to {
-    top: 40px;
-    opacity: 1;
-  }
-}
-
-@keyframes alertHidden {
-  from {
-    top: 40px;
-    opacity: 0;
-  }
-  to {
-    top: -100px;
-    opacity: 1;
-  }
 }
 </style>

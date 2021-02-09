@@ -27,6 +27,8 @@ $theme-colors: (
   twentyEight: #475993,
   twentyNine: #057d63,
   thirty: #ffe7e6,
+  thirtyOne: #f8f8f8,
+  thirtyTwo: #ee0000,
   bookNow: rgba(112, 112, 112, 0.72),
   facebook: #3b5997,
   twitter: #55acee,
@@ -58,6 +60,7 @@ $spacers: (
 //
 $sizes: (
   172: 172px,
+  162: 162px,
   50: 50px,
   33: 33px,
   269: 269px,
@@ -89,6 +92,7 @@ $font-size: (
   40: 40,
   22: 22,
   18: 18,
+  19: 19,
   16: 16,
   17: 17,
   15: 15,
@@ -125,6 +129,7 @@ $width: (
 $basis: (
   30: 30%,
   47: 47%,
+  100: 100%,
   130: 130px,
   221: 221px,
   178: 178px,

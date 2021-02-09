@@ -322,26 +322,13 @@ svg {
   @media (max-width: 992px) {
     position: absolute;
     top: 60px;
-    right: -154px;
-    width: 100%;
+    right: -100px;
+    width: fit-content;
     //
     svg {
       fill: var(--fifth);
     }
   }
-}
-
-//
-.svg-change {
-  @media (max-width: 992px) {
-    width: 40px;
-    height: 40px;
-  }
-}
-
-.svg-arrow {
-  width: 20px;
-  height: 20px;
 }
 
 //
@@ -374,7 +361,7 @@ svg {
   @media (max-width: 992px) {
     width: 200px;
     top: -60px;
-    right: 85px;
+    right: 30px;
     z-index: 9999;
     max-height: 2000px;
     height: 100vh;
@@ -397,5 +384,18 @@ svg {
       display: none;
     }
   }
+}
+
+//
+.svg-change {
+  @media (max-width: 992px) {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.svg-arrow {
+  width: 20px;
+  height: 20px;
 }
 </style>
