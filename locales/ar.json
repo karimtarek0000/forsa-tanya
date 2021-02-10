@@ -8,6 +8,7 @@
     "therapists": "المعالجين",
     "profile": "الملف الشخصي",
     "editProfile": "تعديل الملف الشخصي",
+    "mySessions": "جلساتي",
     "signIn": "تسجيل الدخول",
     "signUp": "التسجيل"
   },
@@ -55,7 +56,9 @@
     "saveChanged": "حفظ التغييرات",
     "changePassword": "تغيير كلمة المرور",
     "cancel": "الرجوع",
-    "done": "تم"
+    "done": "تم",
+    "firstSession": "قم بحجز الجلسة الاولي",
+    "bookSession": "احجز جلستك"
   },
   "labels": {
     "updates": "استلم بريد الكتروني بالتحديثات",
@@ -65,7 +68,9 @@
   "placeHolder": {
     "email": "ادخل بريدك الألكتروني",
     "egp": "جنية",
-    "dr": "دكتور"
+    "dr": "دكتور",
+    "empty": "فارغ!!",
+    "noBooked": "لا يوجد جلسات سابقة"
   },
   "form": {
     "placeholder": {
@@ -77,6 +82,7 @@
       "age": "ادخل عمرك",
       "address": "ادخل عنوانك",
       "phone": "ادخل رقم التليفون",
+      "comment": "ادخل تعليقك",
       "ques": {
         "whatIsYourDiagnosis": "قم بكتابه تشخيصك",
         "howDidYouKnowForsaTanya": "ادخل..."
@@ -98,6 +104,8 @@
       "dontHaveAccount": "ليس لديك حساب ؟",
       "remember": "تذكرني",
       "phone": "رقم التليفون",
+      "comment": "تعليقك",
+      "rate": "تقييمك",
       "ques": {
         "hadPsychotherapyBefore": "هل قمت بزياره طبيب نفسي من قبل ؟",
         "whatIsYourDiagnosis": "ما هو تشخيصك ؟",
@@ -120,6 +128,7 @@
       "address": "يجب ادخال العنوان",
       "age": "يجب ادخال عمرك",
       "phone": "يجب ادخال رقم التليفون",
+      "comment": "يجب كتابة تعليق",
       "ques": {
         "whatIsYourDiagnosis": "يجب كتابه التشخيص"
       }

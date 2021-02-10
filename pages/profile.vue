@@ -118,10 +118,15 @@
         </b-row>
       </b-col>
     </b-row>
-    <!-- ChangePassword -->
-    <FullScreen v-if="closeScreenChangePassword" slot="other">
-      <ChangePassword @closeFullScreen="closeScreenChangePassword = $event" />
-    </FullScreen>
+    <!-- Model Form -->
+    <ModelForm
+      v-if="closeScreenChangePassword"
+      slot="other"
+      @closeFullScreen="closeScreenChangePassword = $event"
+    >
+      <!-- Change password -->
+      <ChangePassword />
+    </ModelForm>
   </LayoutInfo>
 </template>
 

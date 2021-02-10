@@ -91,7 +91,7 @@
 
 <script>
 export default {
-  name: 'Card',
+  name: 'CardUpcoming',
   data() {
     return {
       rating: 4,
@@ -100,28 +100,4 @@ export default {
 }
 </script>
 
-<style lang="scss">
-//
-.card-sessions {
-  height: 160px;
-  width: 700px;
-  border-radius: 20px;
-
-  //
-  @media (max-width: 1199px) {
-    height: auto;
-  }
-
-  //
-  .image {
-    width: 134px;
-    height: 134px;
-  }
-
-  //
-  .people {
-    width: 30px;
-    height: 30px;
-  }
-}
-</style>
+<style></style>

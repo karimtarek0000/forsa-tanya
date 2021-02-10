@@ -79,6 +79,7 @@ export default {
     '@nuxtjs/style-resources',
   ],
 
+  //
   styleResources: {
     scss: [
       '~/assets/style/helpers/_design-system.scss',
@@ -86,6 +87,7 @@ export default {
     ],
   },
 
+  //
   i18n: {
     locales: [
       { code: 'ar', iso: 'ar-EG', name: 'ع', file: 'ar.json' },
@@ -106,19 +108,28 @@ export default {
     },
   },
 
+  //
   bootstrapVue: {
     bootstrapCSS: false,
     bootstrapVueCSS: false,
-    // bootstrapVue: {
-    //   componentPlugins: [
-    //     'LayoutPlugin',
-    //     'FormInputPlugin',
-    //     'FormRatingPlugin',
-    //     'NavbarPlugin',
-    //   ],
-    //   // components: ['BContainer', 'BRow', 'BCol', 'BFormInput', 'BButton', 'BFormRating', 'BNavbar']
-    // },
-    // directivePlugins: ['VBBSidebarPlugin']
+    componentPlugins: [],
+    directivePlugins: [],
+    components: [
+      'BContainer',
+      'BRow',
+      'BCol',
+      'BFormInput',
+      'BButton',
+      'BForm',
+      'BLink',
+      'BSpinner',
+      'BFormRating',
+      'BFormText',
+      'BFormCheckbox',
+      'BFormGroup',
+      'BFormRow',
+      'BFormRadioGroup',
+    ],
   },
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
@@ -139,6 +150,7 @@ export default {
     },
   },
 
+  //
   router: {
     middleware: 'statusI18n',
     //
@@ -153,14 +165,21 @@ export default {
         path: '/user/edit-profile/:id',
         component: resolve(__dirname, 'pages/edit-profile.vue'),
       })
+      routes.push({
+        name: 'mySessions',
+        path: '/user/my-sessions/:id',
+        component: resolve(__dirname, 'pages/my-sessions.vue'),
+      })
     },
   },
 
+  //
   pageTransition: {
     name: 'start',
     mode: 'out-in',
   },
 
+  //
   generate: {
     fallback: true,
   },
