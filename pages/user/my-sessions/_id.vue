@@ -1,5 +1,5 @@
 <template>
-  <LayoutInfo class="my-sessions">
+  <LayoutInfo src-img="other/3.jpg" class="my-sessions">
     <b-row no-gutters>
       <b-col
         v-for="comp in component"
@@ -39,7 +39,11 @@
 </template>
 
 <script>
+//
+import Validate from '@/mixins/validatePage.js'
+//
 export default {
+  mixins: [Validate],
   data() {
     return {
       selectedComponent: 'UpComing',

@@ -63,7 +63,11 @@
   "labels": {
     "updates": "استلم بريد الكتروني بالتحديثات",
     "appointments": "المواعيد المتاحة",
-    "personalInformation": "المعلومات الشخصية"
+    "personalInformation": "المعلومات الشخصية",
+    "aboutMe": "عنا",
+    "wallet": "المحفظة",
+    "available": "متاح",
+    "unavailable": "غير متاح"
   },
   "placeHolder": {
     "email": "ادخل بريدك الألكتروني",

@@ -16,7 +16,7 @@
             class="px-2 px-lg-0 text-center text-capitalize"
           >
             <!--  -->
-            <h2 class="weight-bolder text-40 text-fifth mb-2">out team</h2>
+            <h2 class="weight-bolder text-40 text-fifth mb-2">our team</h2>
             <!--  -->
             <p class="text-sixth mb-5">
               lorem Ipsum is simply dummy text of the printing and typesetting

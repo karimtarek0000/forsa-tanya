@@ -53,7 +53,7 @@
     "signUp": "sign up",
     "back": "back",
     "editProfile": "edit profile",
-    "saveChanged": "save changed",
+    "saveChanged": "save changes",
     "changePassword": "change password",
     "cancel": "cancel",
     "done": "done",
@@ -63,7 +63,11 @@
   "labels": {
     "updates": "recive email updates",
     "appointments": "available appointments",
-    "personalInformation": "personal info"
+    "personalInformation": "personal info",
+    "aboutMe": "about me",
+    "wallet": "wallet",
+    "available": "available",
+    "unavailable": "unavailable"
   },
   "placeHolder": {
     "email": "Your Email Address",

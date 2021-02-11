@@ -1,5 +1,8 @@
 <template>
-  <LayoutInfo class="auth">
+  <LayoutInfo src-img="other/3.jpg" class="auth">
+    <!-- 1 - Change image -->
+    <EditImage slot="editImage" @getNewImage="form.image = $event" />
+    <!-- 2 - Form edit all information -->
     <b-form @submit.prevent="onSubmit">
       <!-- 1 - Form -->
       <b-form-row no-gutters>
@@ -367,12 +370,11 @@ import {
   maxLength,
   numeric,
 } from 'vuelidate/lib/validators'
-import * as Form from '@/mixins/form.js'
+import Validate from '@/mixins/validatePage.js'
 import { goToBack, statusAlert } from '@/mixins/other.js'
-
 //
 export default {
-  mixins: [Form.actionsForm, goToBack, statusAlert],
+  mixins: [goToBack, statusAlert, Validate],
   data() {
     return {
       form: {
@@ -384,6 +386,7 @@ export default {
         gender: 'prefer not to say',
         age: '',
         address: '',
+        image: null,
         ques: {
           hadPsychotherapyBefore: false,
           whatIsYourDiagnosis: '',

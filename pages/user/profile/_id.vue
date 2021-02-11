@@ -1,5 +1,5 @@
 <template>
-  <LayoutInfo>
+  <LayoutInfo src-img="other/3.jpg">
     <!-- 1) - Personal Info -->
     <div
       class="overlay-title d-flex align-items-center bg-thirdenth position-absolute"
@@ -131,7 +131,11 @@
 </template>
 
 <script>
+//
+import Validate from '@/mixins/validatePage.js'
+//
 export default {
+  mixins: [Validate],
   data() {
     return {
       closeScreenChangePassword: false,
