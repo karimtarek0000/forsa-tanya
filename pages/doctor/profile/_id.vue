@@ -39,7 +39,7 @@
       @changedComponent="selectedComponent = $event"
     />
     <!-- 4 - Render component -->
-    <b-row no-gutters class="px-5 py-4">
+    <b-row no-gutters class="px-2 px-lg-5 py-4">
       <b-col>
         <components :is="selectedComponent">
           <PersonalInfo />

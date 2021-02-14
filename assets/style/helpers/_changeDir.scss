@@ -114,4 +114,25 @@ html[dir='rtl'] {
       text-align: right;
     }
   }
+
+  //
+  .renderComponent {
+    padding-right: 40px;
+    padding-left: 0;
+  }
+
+  //
+  .add-image-2 {
+    margin-right: 0px;
+    margin-left: 40px;
+  }
+
+  //
+  .setRow {
+    //
+    > div {
+      margin-right: 0px;
+      margin-left: 25px;
+    }
+  }
 }

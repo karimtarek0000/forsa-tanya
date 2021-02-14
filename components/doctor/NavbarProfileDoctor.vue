@@ -4,7 +4,7 @@
       v-for="comp in component"
       :key="comp"
       :class="[
-        'un-active cursor text-19 weight-bolder py-2 text-capitalize text-center',
+        'un-active cursor text-17 weight-bolder py-2 text-capitalize text-center',
         { active: comp === selected },
       ]"
       @click="clickRenderComponent(comp)"

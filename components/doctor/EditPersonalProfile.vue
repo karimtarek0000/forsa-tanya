@@ -223,7 +223,7 @@
       </b-col>
     </b-form-row>
     <!-- 2) - Submit - Cancel -->
-    <b-row no-gutters>
+    <b-row no-gutters class="my-5">
       <!-- Submit -->
       <b-col>
         <b-button

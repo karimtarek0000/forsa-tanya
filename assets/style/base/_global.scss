@@ -1,0 +1,12 @@
+//
+.setRow {
+  max-width: 100%;
+  overflow-x: auto;
+
+  @include changeScrollBar();
+}
+
+//
+.setBasisCertificate {
+  flex-basis: 167px;
+}

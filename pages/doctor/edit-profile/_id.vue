@@ -1,7 +1,7 @@
 <template>
   <LayoutInfo src-img="therapists/1.png" class="my-sessions">
-    <!-- 1 - Change image -->
-    <EditImage slot="editImage" @getNewImage="image = $event" />
+    <!-- 1 - Add image -->
+    <AddImage slot="editImage" @addImage="image = $event" />
     <!-- 2 - Add more information specific only doctor not user -->
     <template slot="addElementDoctor">
       <!--  -->
@@ -40,12 +40,12 @@
       :selected-component="selectedComponent"
       @changedComponent="selectedComponent = $event"
     />
-    <!-- 4 - Render component -->
-    <b-row no-gutters class="px-5 py-4">
+    <!-- 5 - Render component -->
+    <b-row no-gutters class="renderComponent py-4">
       <b-col>
         <components :is="selectedComponent">
           <EditPersonalProfile />
-          <AboutMe />
+          <EditAboutMe />
           <Wallet />
         </components>
       </b-col>
@@ -62,7 +62,7 @@ export default {
   data() {
     return {
       selectedComponent: 'EditPersonalProfile',
-      component: ['EditPersonalProfile', 'AboutMe', 'Wallet'],
+      component: ['EditPersonalProfile', 'EditAboutMe', 'Wallet'],
       rating: 3,
       s: true,
       image: null,
@@ -126,5 +126,10 @@ export default {
   @media (min-width: 1199px) {
     padding: 0 70px;
   }
+}
+
+//
+.renderComponent {
+  padding-left: 40px;
 }
 </style>

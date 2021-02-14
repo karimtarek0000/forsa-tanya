@@ -87,6 +87,10 @@
       "address": "ادخل عنوانك",
       "phone": "ادخل رقم التليفون",
       "comment": "ادخل تعليقك",
+      "speciality": "ادخل تخصصك",
+      "yearsExperience": "ادخل عدد سنوات الخبرة",
+      "bio": "ادخل سيرتك الذاتية",
+      "fees": "ادخل تكلفتك",
       "ques": {
         "whatIsYourDiagnosis": "قم بكتابه تشخيصك",
         "howDidYouKnowForsaTanya": "ادخل..."
@@ -110,6 +114,10 @@
       "phone": "رقم التليفون",
       "comment": "تعليقك",
       "rate": "تقييمك",
+      "speciality": "التخصص",
+      "yearsExperience": "عدد سنوات الخبره",
+      "bio": "السيرة الذاتية",
+      "fees": "التكلفة",
       "ques": {
         "hadPsychotherapyBefore": "هل قمت بزياره طبيب نفسي من قبل ؟",
         "whatIsYourDiagnosis": "ما هو تشخيصك ؟",
@@ -133,6 +141,10 @@
       "age": "يجب ادخال عمرك",
       "phone": "يجب ادخال رقم التليفون",
       "comment": "يجب كتابة تعليق",
+      "speciality": "يجب ادخال تخصصك",
+      "yearsExperience": "يجب ادخال عدد سنوات الخبرة",
+      "bio": "يجب ادخال سيرتك الذاتية",
+      "fees": "يجب ادخال تكلفتك",
       "ques": {
         "whatIsYourDiagnosis": "يجب كتابه التشخيص"
       }
@@ -144,6 +156,7 @@
       "confirmPassword": "غير مطابق لكلمة المرور",
       "phone-min": "يجب ان لايقل عن {min} رقم",
       "phone-max": "يجب ان لا يزيد عن {max} رقم",
+      "yearsExperience": "يجب ان لا يزيد عن {max} رقم",
       "age": {
         "length": "يجب ان لا يزيد عدد الأرقام عن {length}",
         "number": "يجب ان يكون ارقام فقط"
