@@ -3,7 +3,12 @@
   <div class="auth">
     <!-- 1) - Alert -->
     <transition name="alert" mode="out-in">
-      <Alert v-if="statusAlert" @closeAlert="changeStatusAlert" />
+      <Alert
+        v-if="statusAlert.status"
+        :type-message="statusAlert.typeMessage"
+        :message="statusAlert.message"
+        @closeAlert="changeStatusAlert"
+      />
     </transition>
     <!-- 2) - Wrapper -->
     <b-row ref="wrapper" no-gutters class="auth__wrapper">

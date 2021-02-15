@@ -162,14 +162,18 @@
       <b-col cols="12" class="text-capitalize mb-20">
         <h6 class="weight-light text-secondary text-18 mb-3">certifications</h6>
         <!--  -->
-        <div class="d-flex justify-content-between">
+        <div class="d-flex flex-column flex-lg-row justify-content-between">
           <!-- 1) - Add Image -->
-          <AddImage type="regtengle" @addImage="getImage" />
+          <AddImage
+            type="regtengle"
+            class="mb-4 mb-lg-0"
+            @addImage="getImage"
+          />
           <!-- 2) - All Certification -->
           <AllCertificate
             :status-remove-image="true"
             class="setRow--change"
-            @removeImage="removeImage"
+            @removeImage="beforeDelete"
           />
         </div>
       </b-col>
@@ -211,11 +215,11 @@
 
 <script>
 import { required, maxLength, numeric } from 'vuelidate/lib/validators'
-import { goToBack, statusAlert } from '@/mixins/other.js'
+import { goToBack } from '@/mixins/other.js'
 //
 export default {
   name: 'EditAboutMe',
-  mixins: [goToBack, statusAlert],
+  mixins: [goToBack],
   data() {
     return {
       form: {
@@ -227,12 +231,19 @@ export default {
       data: [1, 2, 3, 4, 5, 6, 7, 8],
       loading: false,
       disableBtnSubmit: true,
+      placeHolder: null,
     }
   },
   provide() {
     return {
       allCertificate: this.data,
     }
+  },
+  computed: {
+    // 1) - Status confirm delete
+    statusConfirmDelete() {
+      return this.$store.state.statusConfirm
+    },
   },
   validations: {
     form: {
@@ -254,15 +265,26 @@ export default {
     },
   },
   watch: {
+    //
     form: {
       deep: true,
       handler() {
         this.disableBtnSubmit = false
       },
     },
+    //
+    statusConfirmDelete(status) {
+      if (status) {
+        this.removeImage(this.placeHolder)
+        this.$store.commit('changeStatusConfirm', null)
+      }
+    },
   },
   destroyed() {
-    this.$store.commit('changeStatusAlert', false)
+    //
+    this.$store.commit('changeConfirm', {
+      status: false,
+    })
   },
   methods: {
     //
@@ -284,18 +306,43 @@ export default {
     },
     //
     getImage(value) {
-      // eslint-disable-next-line no-console
-      console.log(value)
+      this.$store.commit('changeStatusAlert', {
+        status: true,
+        typeMessage: 'success',
+        message: 'uploadedImage',
+      })
     },
     //
-    getVideo(d) {
-      // eslint-disable-next-line no-console
-      console.log(d)
+    getVideo(video) {
+      //
+      if (!video) {
+        this.$store.commit('changeStatusAlert', {
+          status: true,
+          typeMessage: 'error',
+          message: 'videoLength',
+        })
+      } else {
+        this.$store.commit('changeStatusAlert', {
+          status: true,
+          typeMessage: 'success',
+          message: 'uploadedVideo',
+        })
+      }
     },
     //
     removeImage(id) {
       // eslint-disable-next-line no-console
       console.log(id)
+    },
+    //
+    beforeDelete(id) {
+      this.placeHolder = id
+      //
+      this.$store.commit('changeConfirm', {
+        status: true,
+        message: 'confirmDelete',
+        element: id,
+      })
     },
   },
 }
@@ -331,5 +378,9 @@ export default {
 //
 .setRow--change {
   max-width: 70%;
+  //
+  @media (max-width: 992px) {
+    max-width: 100%;
+  }
 }
 </style>

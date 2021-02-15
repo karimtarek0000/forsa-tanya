@@ -1,11 +1,56 @@
 <template>
-  <p>wallet</p>
+  <div>
+    <!-- 1) If not data will be render empty -->
+    <template v-if="s">
+      <!--  -->
+      <Empty img="other/4.jpg" alt="empty" />
+      <!--  -->
+      <b-col cols="12">
+        <b-button
+          class="mx-auto px-5 py-1 my-2 w-448 text-14 text-primary text-capitalize d-block"
+          pill
+          variant="third"
+          >{{ $t('button.schedule') }}</b-button
+        >
+      </b-col>
+    </template>
+    <!-- 2) - If exsist data will be rendring -->
+    <template v-else>
+      <!--  -->
+      <div class="text-center">
+        <p class="text-18 weight-extraBold text-secondary">You have</p>
+        <p class="text-35 weight-extraBold text-eightenth">
+          2000.00 <span>EGP</span>
+        </p>
+      </div>
+      <!--  -->
+      <WalletCard @sendRecived="ss" />
+    </template>
+    <!-- 3) - Model preview image -->
+    <ModelForm
+      v-if="closeScreenChangePassword"
+      slot="other"
+      @closeFullScreen="closeScreenChangePassword = $event"
+    >
+      <!--  -->
+      <GImage class="obj-image-height" src-image="other/5.jpg" alt="testing" />
+    </ModelForm>
+  </div>
 </template>
 
 <script>
 export default {
   name: 'Wallet',
+  data() {
+    return {
+      s: false,
+      closeScreenChangePassword: false,
+    }
+  },
+  methods: {
+    ss() {
+      this.closeScreenChangePassword = true
+    },
+  },
 }
 </script>
-
-<style></style>

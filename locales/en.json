@@ -58,7 +58,8 @@
     "cancel": "cancel",
     "done": "done",
     "firstSession": "let's book your first session",
-    "bookSession": "book your session"
+    "bookSession": "book your session",
+    "schedule": "view your schedule"
   },
   "labels": {
     "updates": "recive email updates",
@@ -164,6 +165,14 @@
     }
   },
   "alert": {
-    "register": "Please fill all input required"
+    "required": "Please fill all input required",
+    "registerSuccess": "thank you for register forsa tanya",
+    "videoLength": "You shoul'd max duration video 2 min",
+    "uploadedVideo": "video has been uploaded",
+    "uploadedImage": "image has been uploaded",
+    "errorUploadVideo": "please try again upload video",
+    "errorUploadImage": "please try again upload image",
+    "imageDelete": "image has been deleted",
+    "confirmDelete": "are you sure delete {element}"
   }
 }

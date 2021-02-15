@@ -131,5 +131,10 @@ export default {
 //
 .renderComponent {
   padding-left: 40px;
+  //
+  @media (max-width: 900px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 </style>

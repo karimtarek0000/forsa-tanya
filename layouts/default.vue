@@ -2,9 +2,22 @@
   <div>
     <!-- 1) - Alert -->
     <transition name="alert" mode="out-in">
-      <Alert v-if="statusAlert" @closeAlert="changeStatusAlert" />
+      <Alert
+        v-if="statusAlert.status"
+        :type-message="statusAlert.typeMessage"
+        :message="statusAlert.message"
+        @closeAlert="changeStatusAlert"
+      />
     </transition>
-    <!-- 2) - Navbar -->
+    <!-- 2) - Confirm -->
+    <transition name="alert" mode="out-in">
+      <Confirm
+        v-if="statusConfirm.status"
+        :message="statusConfirm.message"
+        :element="statusConfirm.element"
+      />
+    </transition>
+    <!-- 3) - Navbar -->
     <NavbarVue1
       :options-navbar-vue1="options"
       :status-toggler="statusToggler"
@@ -18,11 +31,11 @@
       <!-- 2) - Change Language -->
       <Langauge />
     </NavbarVue1>
-    <!-- 3) - Routing -->
+    <!-- 4) - Routing -->
     <div>
       <Nuxt />
     </div>
-    <!-- 4) - Footer -->
+    <!-- 5) - Footer -->
     <Footer />
   </div>
 </template>

@@ -4,7 +4,17 @@ import * as Type from '../type/index'
 // eslint-disable-next-line import/namespace
 export const state = () => ({
   social: null,
-  statusAlert: false,
+  alert: {
+    status: false,
+    typeMessage: null,
+    message: null,
+  },
+  confirm: {
+    status: null,
+    message: null,
+    element: null,
+  },
+  statusConfirm: null,
   titlePage: null,
   userLogIn: null,
 })
@@ -17,11 +27,19 @@ export const mutations = {
   },
   // 2) - Change status alert
   changeStatusAlert(state, payload) {
-    state.statusAlert = payload
+    state.alert = payload
   },
   // 3) - Change title page
   changeTitlePage(state, payload) {
     state.titlePage = payload
+  },
+  // 4) Change status confirm
+  changeStatusConfirm(state, payload) {
+    state.statusConfirm = payload
+  },
+  // 5) - Change confirm
+  changeConfirm(state, payload) {
+    state.confirm = payload
   },
 }
 

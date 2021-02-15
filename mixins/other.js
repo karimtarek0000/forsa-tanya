@@ -11,15 +11,30 @@ const goToBack = {
 //
 const statusAlert = {
   computed: {
+    // 1) - Status alert
     statusAlert() {
-      return this.$store.state.statusAlert
+      return this.$store.state.alert
+    },
+    // 2) - Status confirm
+    statusConfirm() {
+      return this.$store.state.confirm
     },
   },
   methods: {
     // 1) - Change status alert
     changeStatusAlert(status) {
-      this.$store.commit('changeStatusAlert', status)
+      this.$store.commit('changeStatusAlert', {
+        status,
+      })
     },
+  },
+  mounted() {
+    document.addEventListener('click', () => {
+      //
+      this.$store.commit('changeStatusAlert', {
+        status: false,
+      })
+    })
   },
 }
 
