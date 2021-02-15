@@ -89,7 +89,7 @@
               @click="
                 $router.push(
                   localeRoute({
-                    name: 'editUserProfile',
+                    name: 'user-edit-profile-id',
                     params: { id: 'karim' },
                   })
                 )

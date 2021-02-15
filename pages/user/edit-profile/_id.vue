@@ -1,7 +1,7 @@
 <template>
   <LayoutInfo src-img="other/3.jpg" class="auth">
     <!-- 1 - Change image -->
-    <EditImage slot="editImage" @getNewImage="form.image = $event" />
+    <AddImage slot="editImage" @getNewImage="form.image = $event" />
     <!-- 2 - Form edit all information -->
     <b-form @submit.prevent="onSubmit">
       <!-- 1 - Form -->
@@ -460,11 +460,19 @@ export default {
       if (!this.$v.$invalid) {
         // eslint-disable-next-line no-console
         console.log('valid')
-        this.$store.commit('changeStatusAlert', false)
+        this.$store.commit('changeStatusAlert', {
+          status: true,
+          typeMessage: 'success',
+          message: 'saveChanges',
+        })
       } else {
         this.loading = false
         this.disableBtnSubmit = false
-        this.$store.commit('changeStatusAlert', true)
+        this.$store.commit('changeStatusAlert', {
+          status: true,
+          typeMessage: 'error',
+          message: 'required',
+        })
       }
     },
   },

@@ -135,4 +135,13 @@ html[dir='rtl'] {
       margin-left: 25px;
     }
   }
+
+  //
+  .edit-btn {
+    //
+    @media (min-width: 992px) {
+      left: 10px;
+      right: auto;
+    }
+  }
 }

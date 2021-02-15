@@ -227,11 +227,19 @@ export default {
       if (!this.$v.$invalid) {
         // eslint-disable-next-line no-console
         console.log('valid')
-        this.$store.commit('changeStatusAlert', false)
+        this.$store.commit('changeStatusAlert', {
+          status: true,
+          typeMessage: 'success',
+          message: 'changePassword',
+        })
       } else {
         this.loading = false
         this.disableBtnSubmit = false
-        this.$store.commit('changeStatusAlert', true)
+        this.$store.commit('changeStatusAlert', {
+          status: true,
+          typeMessage: 'error',
+          message: 'required',
+        })
       }
     },
     // 2) - Change status alert

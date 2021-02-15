@@ -10,3 +10,62 @@
 .setBasisCertificate {
   flex-basis: 165px;
 }
+
+//
+// .change {
+//   overflow: hidden;
+//   padding: 0 !important;
+// }
+
+//
+.my-sessions {
+  .un-active {
+    background-color: var(--primary);
+    color: var(--third);
+  }
+  // Active
+  .active {
+    background-color: var(--third);
+    color: var(--primary);
+  }
+}
+
+//
+.card-sessions {
+  height: 160px;
+  width: 707px;
+  border-radius: 20px;
+
+  //
+  @media (max-width: 1199px) {
+    height: auto;
+  }
+
+  //
+  .image {
+    width: 134px;
+    height: 134px;
+  }
+
+  //
+  .people {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+//
+.card__wrapper {
+  padding: 0 10px;
+  @media (min-width: 1199px) {
+    padding: 0 70px;
+  }
+}
+
+//
+.setMaxHeight {
+  max-height: 448px;
+  overflow-y: auto;
+  //
+  @include changeScrollBar();
+}

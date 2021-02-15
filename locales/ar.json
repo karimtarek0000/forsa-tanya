@@ -68,7 +68,11 @@
     "aboutMe": "عنا",
     "wallet": "المحفظة",
     "available": "متاح",
-    "unavailable": "غير متاح"
+    "unavailable": "غير متاح",
+    "from": "من",
+    "to": "الي",
+    "value": "قيمة",
+    "youHave": "لديك"
   },
   "placeHolder": {
     "email": "ادخل بريدك الألكتروني",
@@ -167,6 +171,10 @@
   "alert": {
     "require": "من فضلك قم بملئ كافه الحقول المطلوبة",
     "registerSuccess": "شكرا لتسجيلك في موقع فرصة تانية",
+    "correct": "تم تسجيل الدخول",
+    "notCorrect": "البريد الالكتروني او كلمة المرور غير صحيحة",
+    "saveChanges": "تم حفظ التغيرات",
+    "changePassword": "تم تغيير رقم المرور",
     "videoLength": "يجب ان تكون مدة الفيديو لا تتجاوز ٢ دقيقتين",
     "uploadedVideo": "الفيديو قد تم رفعة",
     "uploadedImage": "الصورة قد تم رفعها",

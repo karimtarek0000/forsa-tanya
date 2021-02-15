@@ -68,7 +68,11 @@
     "aboutMe": "about me",
     "wallet": "wallet",
     "available": "available",
-    "unavailable": "unavailable"
+    "unavailable": "unavailable",
+    "from": "from",
+    "to": "to",
+    "value": "value",
+    "youHave": "You have"
   },
   "placeHolder": {
     "email": "Your Email Address",
@@ -168,6 +172,10 @@
     "required": "Please fill all input required",
     "registerSuccess": "thank you for register forsa tanya",
     "videoLength": "You shoul'd max duration video 2 min",
+    "correct": "sign in successfull",
+    "notCorrect": "email or password not correct",
+    "saveChanges": "save changes successfull",
+    "changePassword": "change password successfull",
     "uploadedVideo": "video has been uploaded",
     "uploadedImage": "image has been uploaded",
     "errorUploadVideo": "please try again upload video",

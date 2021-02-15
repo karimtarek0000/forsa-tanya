@@ -16,15 +16,24 @@
     </template>
     <!-- 2) - If exsist data will be rendring -->
     <template v-else>
-      <!--  -->
-      <div class="text-center">
-        <p class="text-18 weight-extraBold text-secondary">You have</p>
-        <p class="text-35 weight-extraBold text-eightenth">
-          2000.00 <span>EGP</span>
+      <!-- 1) - Header -->
+      <div class="text-center my-3 my-lg-29 user-select">
+        <p class="text-18 mb-0 weight-extraBold text-secondary">
+          {{ $t('labels.youHave') }}
+        </p>
+        <p class="text-35 mb-0 mt-n1 weight-extraBold text-eightenth">
+          2000.00 <span class="mx-3">{{ $t('placeHolder.egp') }}</span>
         </p>
       </div>
-      <!--  -->
-      <WalletCard @sendRecived="ss" />
+      <!-- 2) - Render all wallet card -->
+      <b-row no-gutters class="justify-content-between">
+        <b-col class="basis-100 flex-grow-0">
+          <WalletCard @sendRecived="ss" />
+        </b-col>
+        <b-col class="basis-100 flex-grow-0">
+          <WalletCard @sendRecived="ss" />
+        </b-col>
+      </b-row>
     </template>
     <!-- 3) - Model preview image -->
     <ModelForm
