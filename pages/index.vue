@@ -14,9 +14,9 @@
 <script>
 export default {
   async asyncData({ app }) {
-    const { Data } = await app.$axios.$get('/doctors')
+    const data = await app.$axios.$get('/top')
 
-    return { dataOurTherapists: Data }
+    return { dataOurTherapists: data }
   },
   provide() {
     return {

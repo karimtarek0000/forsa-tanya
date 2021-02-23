@@ -62,8 +62,8 @@ export const actions = {
   // 1) - Get social media footer
   async [Type.SOCIAL_MEDIA]({ commit }) {
     // 1)
-    const { Data } = await this.$axios.$get('/social')
+    const data = await this.$axios.$get('/social')
     // 2)
-    commit('changeAllSocial', Data)
+    commit('changeAllSocial', data)
   },
 }

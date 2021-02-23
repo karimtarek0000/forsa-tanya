@@ -2,7 +2,7 @@
   <b-col
     class="card-sessions basis-100 flex-grow-0 mb-20 mb-lg-40 px-2 py-2 bg-thirtyOne"
   >
-    <b-row no-gutters class="justify-content-around">
+    <b-row no-gutters class="justify-content-around h-100">
       <!-- 1 -->
       <b-col
         lg="3"

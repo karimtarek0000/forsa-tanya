@@ -57,6 +57,11 @@
           <!--  -->
           <slot />
         </b-col>
+
+        <!-- 3) - Pagination -->
+        <b-col lg="9" class="changeDirPagi">
+          <slot name="pagination" />
+        </b-col>
       </b-row>
     </b-container>
     <!--  -->
@@ -107,5 +112,9 @@ export default {
     width: 30px;
     height: 30px;
   }
+}
+
+.changeDirPagi {
+  margin-left: auto;
 }
 </style>

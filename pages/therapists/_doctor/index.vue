@@ -172,22 +172,12 @@
           <div class="carousel-wrapper">
             <!--  -->
             <VueSlickCarousel v-bind="slickOptions1">
-              <div class="certifications img-wrapper" @click="toggle">
-                <img class="img-fluid obj-img" src="@/assets/images/s.png" />
-              </div>
-              <div class="certifications img-wrapper" @click="toggle">
-                <img class="img-fluid obj-img" src="@/assets/images/s.png" />
-              </div>
-              <div class="certifications img-wrapper" @click="toggle">
-                <img class="img-fluid obj-img" src="@/assets/images/s.png" />
-              </div>
-              <div class="certifications img-wrapper" @click="toggle">
-                <img class="img-fluid obj-img" src="@/assets/images/s.png" />
-              </div>
-              <div class="certifications img-wrapper" @click="toggle">
-                <img class="img-fluid obj-img" src="@/assets/images/s.png" />
-              </div>
-              <div class="certifications img-wrapper" @click="toggle">
+              <div
+                v-for="ther in therapist.certificates_slider"
+                :key="ther.id"
+                class="certifications img-wrapper"
+                @click="toggle"
+              >
                 <img class="img-fluid obj-img" src="@/assets/images/s.png" />
               </div>
             </VueSlickCarousel>
@@ -210,6 +200,8 @@
           <div class="carousel-wrapper">
             <VueSlickCarousel v-bind="slickOptions2">
               <div
+                v-for="reviews in therapist.ratings"
+                :key="reviews.rate_id"
                 class="reviews img-wrapper bg-primary pb-2 pt-5 position-relative"
               >
                 <!--  -->
@@ -224,10 +216,7 @@
                   <div
                     class="mx-auto w-110 h-110 rounded-circle position-relative image-avatar"
                   >
-                    <img
-                      class="img-fluid obj-img"
-                      src="@/assets/images/d.png"
-                    />
+                    <img class="img-fluid obj-img" :src="reviews.image" />
                   </div>
                   <!-- 2) - Title -->
                   <h4 class="text-17 weight-bolder marginTop--35 text-seventh">
@@ -235,9 +224,7 @@
                   </h4>
                   <!-- 3) - Quote -->
                   <p class="text-14 line-2 px-3 weight-light">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Modi cupiditate eligendi, pariatur provident expedita esse
-                    molestiae aliquid incidunt doloribus quos.
+                    {{ reviews.message }}
                   </p>
                   <!-- 4) - Other options -->
                   <b-row
@@ -247,7 +234,7 @@
                     <!--  -->
                     <b-col lg="7">
                       <b-form-rating
-                        v-model="rating"
+                        v-model="reviews.rate"
                         class="p-0"
                         readonly
                         size="lg"
@@ -257,166 +244,9 @@
                     </b-col>
                     <!--  -->
                     <b-col lg="3">
-                      <p class="m-0 text-12 text-sixth">2 days ago</p>
-                    </b-col>
-                  </b-row>
-                </div>
-              </div>
-              <div
-                class="reviews img-wrapper bg-primary pb-2 pt-5 position-relative"
-              >
-                <!--  -->
-                <div class="shadow-card-review rounded">
-                  <!-- SVG -->
-                  <GSvg
-                    name-icon="quotes"
-                    title="quotes"
-                    class="svg-70 quotes position-absolute mx-1"
-                  />
-                  <!-- 1) - Image -->
-                  <div
-                    class="mx-auto w-110 h-110 rounded-circle position-relative image-avatar"
-                  >
-                    <img
-                      class="img-fluid obj-img"
-                      src="@/assets/images/d.png"
-                    />
-                  </div>
-                  <!-- 2) - Title -->
-                  <h4 class="text-17 weight-bolder marginTop--35 text-seventh">
-                    hany ali
-                  </h4>
-                  <!-- 3) - Quote -->
-                  <p class="text-14 line-2 px-3 weight-light">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Modi cupiditate eligendi, pariatur provident expedita esse
-                    molestiae aliquid incidunt doloribus quos.
-                  </p>
-                  <!-- 4) - Other options -->
-                  <b-row
-                    no-gutters
-                    class="align-items-center justify-content-between"
-                  >
-                    <!--  -->
-                    <b-col lg="7">
-                      <b-form-rating
-                        v-model="rating"
-                        class="p-0"
-                        readonly
-                        size="lg"
-                        variant="eighth"
-                        :no-border="true"
-                      ></b-form-rating>
-                    </b-col>
-                    <!--  -->
-                    <b-col lg="3">
-                      <p class="m-0 text-12 text-sixth">2 days ago</p>
-                    </b-col>
-                  </b-row>
-                </div>
-              </div>
-              <div
-                class="reviews img-wrapper bg-primary pb-2 pt-5 position-relative"
-              >
-                <!--  -->
-                <div class="shadow-card-review rounded">
-                  <!-- SVG -->
-                  <GSvg
-                    name-icon="quotes"
-                    title="quotes"
-                    class="svg-70 quotes position-absolute mx-1"
-                  />
-                  <!-- 1) - Image -->
-                  <div
-                    class="mx-auto w-110 h-110 rounded-circle position-relative image-avatar"
-                  >
-                    <img
-                      class="img-fluid obj-img"
-                      src="@/assets/images/d.png"
-                    />
-                  </div>
-                  <!-- 2) - Title -->
-                  <h4 class="text-17 weight-bolder marginTop--35 text-seventh">
-                    hany ali
-                  </h4>
-                  <!-- 3) - Quote -->
-                  <p class="text-14 line-2 px-3 weight-light">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Modi cupiditate eligendi, pariatur provident expedita esse
-                    molestiae aliquid incidunt doloribus quos.
-                  </p>
-                  <!-- 4) - Other options -->
-                  <b-row
-                    no-gutters
-                    class="align-items-center justify-content-between"
-                  >
-                    <!--  -->
-                    <b-col lg="7">
-                      <b-form-rating
-                        v-model="rating"
-                        class="p-0"
-                        readonly
-                        size="lg"
-                        variant="eighth"
-                        :no-border="true"
-                      ></b-form-rating>
-                    </b-col>
-                    <!--  -->
-                    <b-col lg="3">
-                      <p class="m-0 text-12 text-sixth">2 days ago</p>
-                    </b-col>
-                  </b-row>
-                </div>
-              </div>
-              <div
-                class="reviews img-wrapper bg-primary pb-2 pt-5 position-relative"
-              >
-                <!--  -->
-                <div class="shadow-card-review rounded">
-                  <!-- SVG -->
-                  <GSvg
-                    name-icon="quotes"
-                    title="quotes"
-                    class="svg-70 quotes position-absolute mx-1"
-                  />
-                  <!-- 1) - Image -->
-                  <div
-                    class="mx-auto w-110 h-110 rounded-circle position-relative image-avatar"
-                  >
-                    <img
-                      class="img-fluid obj-img"
-                      src="@/assets/images/d.png"
-                    />
-                  </div>
-                  <!-- 2) - Title -->
-                  <h4 class="text-17 weight-bolder marginTop--35 text-seventh">
-                    hany ali
-                  </h4>
-                  <!-- 3) - Quote -->
-                  <p class="text-14 line-2 px-3 weight-light">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Modi cupiditate eligendi, pariatur provident expedita esse
-                    molestiae aliquid incidunt doloribus quos.
-                  </p>
-                  <!-- 4) - Other options -->
-                  <b-row
-                    no-gutters
-                    class="align-items-center justify-content-between"
-                  >
-                    <!--  -->
-                    <b-col lg="7">
-                      <b-form-rating
-                        v-model="rating"
-                        class="p-0"
-                        readonly
-                        size="lg"
-                        variant="eighth"
-                        :no-border="true"
-                      ></b-form-rating>
-                    </b-col>
-                    <!--  -->
-                    <b-col lg="3">
-                      <p class="m-0 text-12 text-sixth">2 days ago</p>
+                      <p class="m-0 text-12 text-sixth">
+                        {{ reviews.date }}
+                      </p>
                     </b-col>
                   </b-row>
                 </div>
@@ -448,9 +278,9 @@ const sharePropertyScroll = {
 export default {
   async asyncData({ $axios, params }) {
     try {
-      const { Data } = await $axios.$get(`/doctors/${params.doctor}`)
+      const data = await $axios.$get(`/allDoctors/?id=${params.doctor}`)
 
-      return { therapist: Data, loader: false }
+      return { therapist: data, loader: false }
     } catch {}
   },
   data() {
@@ -551,7 +381,7 @@ export default {
   align-items: center;
   list-style: none;
   margin-bottom: 0;
-  margin-top: 50px;
+  margin-top: 50px !important;
   padding: 0;
   //
   li {

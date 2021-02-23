@@ -39,7 +39,7 @@
       @sendNameComponent="selectedComponent = $event"
     />
     <!-- 4) - Render components -->
-    <b-row no-gutters class="setMaxHeight px-5">
+    <b-row no-gutters class="px-2 px-lg-5">
       <b-col>
         <components
           :is="selectedComponent"
@@ -50,6 +50,21 @@
         </components>
       </b-col>
     </b-row>
+
+    <!-- 5) - Pagination -->
+    <Pagination
+      v-if="selectedComponent === component[1]"
+      slot="pagination"
+      :total="1000"
+      :current-page="page"
+      :per-page="10"
+      @changePage="page = $event"
+    >
+      <!-- Add icon prev -->
+      <GSvg slot="prev" name-icon="angle-left" title="prev" />
+      <!-- Add icon next -->
+      <GSvg slot="next" name-icon="angle-right" title="next" />
+    </Pagination>
   </LayoutInfo>
 </template>
 
@@ -65,6 +80,7 @@ export default {
       component: ['UpComingDoctor', 'PreviousDoctor'],
       s: false,
       rating: 3,
+      page: 1,
     }
   },
   head() {
@@ -75,4 +91,26 @@ export default {
 }
 </script>
 
-<style></style>
+<style lang="scss">
+/*  */
+.change {
+  overflow: hidden;
+  padding: 0 !important;
+}
+
+//
+.pagination {
+  //
+  .pagination__btn {
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+  }
+  //
+  svg {
+    width: 25px;
+    height: 25px;
+    fill: var(--sixth);
+  }
+}
+</style>

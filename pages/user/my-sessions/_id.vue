@@ -53,4 +53,10 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+/*  */
+.change {
+  overflow: hidden;
+  padding: 0 !important;
+}
+</style>
