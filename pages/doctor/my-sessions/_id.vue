@@ -43,6 +43,7 @@
       <b-col>
         <components
           :is="selectedComponent"
+          :page="page"
           @openCard="closeScreenChangePassword = $event"
         >
           <UpComingDoctor />
@@ -73,6 +74,7 @@
 import Validate from '@/mixins/validatePage.js'
 //
 export default {
+  name: 'MySessions',
   mixins: [Validate],
   data() {
     return {

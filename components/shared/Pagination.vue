@@ -31,7 +31,7 @@
           :key="index + 1"
           :class="[
             'pagination__paginator__pagi',
-            { 'pagination__paginator__pagi--active': currentPage == page },
+            { 'pagination__paginator__pagi--active': getCurrentPage == page },
           ]"
           @click="getNumPage(page)"
         >
@@ -103,12 +103,13 @@ export default {
   data() {
     return {
       getPageRang: this.pageRang,
+      getCurrentPage: this.$route.query.page || this.currentPage,
     }
   },
   computed: {
     // 1) - CONVERT CURRENT TO NUMBER
     convertCurrentToNumber() {
-      return +this.currentPage
+      return +this.getCurrentPage
     },
     // 2) - COUNT PAGES
     createPages() {
@@ -160,7 +161,18 @@ export default {
       return Math.ceil(this.total / this.perPage)
     },
   },
+  watch: {
+    currentPage(value) {
+      // 1) - Change new value from current page to get current page
+      this.getCurrentPage = value
+      // 2) - Change query page
+      this.$router.push({ query: { page: value } })
+    },
+  },
   mounted() {
+    // Emit with current page
+    this.getNumPage(this.getCurrentPage)
+    // If window inner width less than or equal 600px will set pageRang equal 1
     if (window.innerWidth <= 600) this.getPageRang = 1
   },
   methods: {

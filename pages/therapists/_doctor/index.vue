@@ -278,7 +278,7 @@ const sharePropertyScroll = {
 export default {
   async asyncData({ $axios, params }) {
     try {
-      const data = await $axios.$get(`/allDoctors/?id=${params.doctor}`)
+      const data = await $axios.$get(`/allDoctors/${params.doctor}`)
 
       return { therapist: data, loader: false }
     } catch {}

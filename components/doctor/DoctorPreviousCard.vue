@@ -17,14 +17,16 @@
             class="d-flex align-items-center justify-content-center"
           >
             <div class="image mx-auto rounded-circle overflow-hidden">
-              <GImage src-image="other/3.jpg" alt="test" />
+              <GImage type-img="api" :src-image="data.image" :alt="data.name" />
             </div>
           </b-col>
           <!-- 2) - Other info -->
           <b-col cols="12" lg="6" class="text-center">
-            <h3 class="text-22 weight-extraBold text-secondary">Hend Sayed</h3>
+            <h3 class="text-22 weight-extraBold text-secondary">
+              {{ data.name }}
+            </h3>
             <p class="text-eightenth mb-0 mt-n2 text-17 weight-bolder">
-              25 years
+              {{ data.age }} years
             </p>
           </b-col>
         </b-row>
@@ -41,9 +43,13 @@
             cols="12"
             class="d-flex align-items-center justify-content-center my-2 my-lg-0"
           >
-            <p class="text-17 mb-0 weight-bolder text-secondary">21 Jun 2021</p>
+            <p
+              class="text-17 mb-0 weight-bolder text-secondary text-capitalize"
+            >
+              {{ data.date }}
+            </p>
             <p class="text-thirtyTwo mb-0 text-15 weight-light mx-1">
-              (09:00 Am)
+              ({{ data.time }} Am)
             </p>
           </b-col>
           <!-- 2 -->
@@ -65,6 +71,12 @@
 <script>
 export default {
   name: 'DoctorPreviousCard',
+  props: {
+    data: {
+      type: Object,
+      required: true,
+    },
+  },
 }
 </script>
 
