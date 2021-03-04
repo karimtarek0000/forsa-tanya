@@ -495,6 +495,7 @@
 <script>
 // Mixin
 import * as Form from '@/mixins/form.js'
+import fakeAuth from 'fake-authentication'
 import {
   required,
   email,
@@ -503,10 +504,12 @@ import {
   sameAs,
   numeric,
 } from 'vuelidate/lib/validators'
+import * as Type from '../type/index'
 //
 export default {
   layout: 'auth',
   mixins: [Form.actionsForm],
+  middleware: 'checkAuth',
   data() {
     return {
       form: {
@@ -577,29 +580,63 @@ export default {
     },
   },
   mounted() {
-    this.$store.commit('changeTitlePage', this.$t('titles.signUp'))
+    this.$store.commit(Type.CHANGE_TITLE_PAGE, this.$t('titles.signUp'))
   },
   destroyed() {
-    this.$store.commit('changeStatusAlert', false)
+    this.$store.commit(Type.CHANGE_STATEUS_ALERT, false)
   },
   methods: {
-    onSubmit() {
+    async onSubmit() {
       // 1) - Check all inputs required
       this.$v.$touch()
-      // 2) - If valid will be do some actions
-      if (!this.$v.$invalid) {
-        // eslint-disable-next-line no-console
-        console.log('valid')
-        this.$store.commit('changeStatusAlert', {
-          status: true,
-          typeMessage: 'success',
-          message: 'registerSuccess',
-        })
-      } else {
-        this.$store.commit('changeStatusAlert', {
+      //
+      try {
+        // 1) - Check if valiad data will be run all action
+        if (!this.$v.$invalid) {
+          // 1) - Sign up
+          const signUp = await fakeAuth.signUp(
+            this.form.email,
+            this.form.password
+          )
+          // 2) - Send all data user to endpoint
+          await this.$axios.$post('/users', {
+            name: this.form.name.replace(' ', '-'),
+            email: this.form.email,
+            phone: this.form.phone,
+            gender: this.form.gender,
+            age: this.form.age,
+            address: this.form.address,
+            ques: this.form.ques,
+          })
+          // 3) - Run alert success
+          this.$store.commit(Type.CHANGE_USER_INFO, {
+            status: signUp.uid,
+            name: this.form.name,
+          })
+          // 4) - Run alert success
+          this.$store.commit(Type.CHANGE_STATEUS_ALERT, {
+            status: true,
+            typeMessage: 'success',
+            message: 'registerSuccess',
+          })
+          // 5) - Finaly change router to home
+          setTimeout(() => {
+            this.$router.push(this.localePath('/'))
+          }, 500)
+        } else {
+          // Run alert error
+          this.$store.commit(Type.CHANGE_STATEUS_ALERT, {
+            status: true,
+            typeMessage: 'error',
+            message: 'required',
+          })
+        }
+      } catch {
+        // Run alert error
+        this.$store.commit(Type.CHANGE_STATEUS_ALERT, {
           status: true,
           typeMessage: 'error',
-          message: 'required',
+          message: 'someError',
         })
       }
     },

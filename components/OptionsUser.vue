@@ -1,14 +1,7 @@
 <template>
   <b-row no-gutters class="options-users mr-4">
-    <!-- If User log out  -->
-    <template v-if="statusUser">
-      <b-col>
-        <b-link class="text-primary" :to="localePath('sign-in')">{{
-          $t('button.signIn')
-        }}</b-link>
-      </b-col>
-    </template>
-    <template v-else>
+    <!-- 1) - If User log in  -->
+    <template v-if="statusUser.status">
       <b-col>
         <b-row
           no-gutters
@@ -23,7 +16,7 @@
             <p
               class="mb-0 text-capitalize direction-ltr order-1 mx-lg-2 order-lg-0 text-16 weight-bolder text-primary d-flex align-items-center"
             >
-              karim
+              {{ statusUser.name.split('-')[0] }}
               <GSvg
                 class="svg-arrow d-block d-lg-none"
                 :name-icon="statusOptionsUser ? 'angle-up' : 'angle-down'"
@@ -49,12 +42,16 @@
                 <span class="ml-2">my profile</span>
               </b-link>
               <b-link
+                :to="localePath('sign-in')"
                 class="text-secondary py-2 px-lg-2 d-block text-capitalize"
               >
                 <GSvg name-icon="session-user" title="session user" />
                 <span class="ml-2">my sessions</span>
               </b-link>
-              <div class="text-secondary py-2 px-lg-2 d-block text-capitalize">
+              <div
+                class="text-secondary py-2 px-lg-2 d-block text-capitalize"
+                @click="logOut"
+              >
                 <GSvg name-icon="log-out" title="log out" />
                 <span class="ml-2">log out</span>
               </div>
@@ -114,10 +111,22 @@
         </b-row>
       </b-col>
     </template>
+    <!-- 2) - If User log out  -->
+    <template v-else>
+      <b-col>
+        <b-link
+          :to="localePath('sign-in')"
+          class="text-primary text-capitalize"
+          >{{ $t('button.signIn') }}</b-link
+        >
+      </b-col>
+    </template>
   </b-row>
 </template>
 
 <script>
+import fakeAuth from 'fake-authentication'
+import * as Type from '@/type/index'
 export default {
   name: 'OptionsUser',
   props: {
@@ -186,7 +195,7 @@ export default {
   computed: {
     // 1) - Status user
     statusUser() {
-      return this.$store.state.userLogIn
+      return this.$store.state.userInfo
     },
     // 2) - Status array notification
     statusNotification() {
@@ -231,6 +240,11 @@ export default {
     // 2) - Toggle options user
     toggleOptionsUser() {
       this.statusOptionsUser = !this.statusOptionsUser
+    },
+    // 3) - Log out
+    async logOut() {
+      await fakeAuth.signOut()
+      this.$store.commit(Type.CHANGE_USER_INFO, { status: null, name: null })
     },
   },
 }

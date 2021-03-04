@@ -14,6 +14,7 @@
     </p>
     <!--  -->
     <span
+      v-if="typeMessage === 'error'"
       class="text-30 mx-2 cursor position-absolute"
       @click="$emit('closeAlert', false)"
       >&times;</span

@@ -183,10 +183,13 @@
 <script>
 // Mixin
 import Form from '@/mixins/form.js'
+import fakeAuth from 'fake-authentication'
 import { required, email } from 'vuelidate/lib/validators'
+import * as Type from '@/type/index'
 //
 export default {
   layout: 'auth',
+  middleware: 'checkAuth',
   mixins: [Form.actionsForm],
   data() {
     return {
@@ -214,26 +217,53 @@ export default {
     },
   },
   mounted() {
-    this.$store.commit('changeTitlePage', this.$t('titles.signIn'))
+    this.$store.commit(Type.CHANGE_TITLE_PAGE, this.$t('titles.signIn'))
   },
   destroyed() {
-    this.$store.commit('changeStatusAlert', false)
+    this.$store.commit(Type.CHANGE_STATEUS_ALERT, false)
   },
   methods: {
-    onSubmit() {
+    async onSubmit() {
       // 1) - Check all inputs required
       this.$v.$touch()
       // 2) - If valid will be do some actions
-      if (!this.$v.$invalid) {
-        // eslint-disable-next-line no-console
-        console.log('valid')
-        this.$store.commit('changeStatusAlert', {
-          status: true,
-          typeMessage: 'success',
-          message: 'correct',
-        })
-      } else {
-        this.$store.commit('changeStatusAlert', {
+      try {
+        if (!this.$v.$invalid) {
+          // 1) - Sign in
+          const signIn = await fakeAuth.signIn(
+            this.form.email,
+            this.form.password
+          )
+          // 2) - Get info user
+          const infoUser = await this.$axios.$get(
+            `/users/?email=${this.form.email}`
+          )
+          // 3) - Set data user info
+          this.$store.commit(Type.CHANGE_USER_INFO, {
+            status: signIn.uuid,
+            name: infoUser[0].name,
+          })
+          // 4) - Run alert success
+          this.$store.commit(Type.CHANGE_STATEUS_ALERT, {
+            status: true,
+            typeMessage: 'success',
+            message: 'correct',
+          })
+          // 5) - Finaly change router to home
+          setTimeout(() => {
+            this.$router.push(this.localePath('/'))
+          }, 500)
+        } else {
+          // Run alert error
+          this.$store.commit(Type.CHANGE_STATEUS_ALERT, {
+            status: true,
+            typeMessage: 'error',
+            message: 'someError',
+          })
+        }
+      } catch {
+        // Run alert not correct
+        this.$store.commit(Type.CHANGE_STATEUS_ALERT, {
           status: true,
           typeMessage: 'error',
           message: 'notCorrect',

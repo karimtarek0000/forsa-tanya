@@ -28,6 +28,7 @@
 </template>
 
 <script>
+import * as Type from '@/type/index'
 export default {
   name: 'Confirm',
   props: {
@@ -48,12 +49,12 @@ export default {
   watch: {
     statusConfirm(status) {
       if (status) {
-        this.$store.commit('changeStatusConfirm', status)
-        this.$store.commit('changeConfirm', { status: false })
+        this.$store.commit(Type.CHANGE_STATUS_CONFIRM, status)
+        this.$store.commit(Type.CHANGE_CONFIRM, { status: false })
         this.statusConfirm = null
       } else {
         this.statusConfirm = null
-        this.$store.commit('changeConfirm', { status: false })
+        this.$store.commit(Type.CHANGE_CONFIRM, { status: false })
       }
     },
   },

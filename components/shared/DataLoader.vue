@@ -27,7 +27,9 @@ export default {
   },
   watch: {
     endPoint() {
-      this.getData()
+      setTimeout(() => {
+        this.getData()
+      }, 300)
     },
   },
   mounted() {

@@ -1,3 +1,5 @@
+import * as Type from '@/type/index'
+
 //
 const goToBack = {
   methods: {
@@ -23,7 +25,7 @@ const statusAlert = {
   methods: {
     // 1) - Change status alert
     changeStatusAlert(status) {
-      this.$store.commit('changeStatusAlert', {
+      this.$store.commit(Type.CHANGE_STATEUS_ALERT, {
         status,
       })
     },
@@ -31,7 +33,7 @@ const statusAlert = {
   mounted() {
     document.addEventListener('click', () => {
       //
-      this.$store.commit('changeStatusAlert', {
+      this.$store.commit(Type.CHANGE_STATEUS_ALERT, {
         status: false,
       })
     })

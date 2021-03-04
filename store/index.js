@@ -16,30 +16,37 @@ export const state = () => ({
   },
   statusConfirm: null,
   titlePage: null,
-  userLogIn: null,
+  userInfo: {
+    status: null,
+    name: null,
+  },
 })
 
 // 1) - mutations
 export const mutations = {
   // 1) - Change from state => social
-  changeAllSocial(state, payload) {
+  [Type.CHANGE_ALL_SOCIAL](state, payload) {
     state.social = payload
   },
   // 2) - Change status alert
-  changeStatusAlert(state, payload) {
+  [Type.CHANGE_STATEUS_ALERT](state, payload) {
     state.alert = payload
   },
   // 3) - Change title page
-  changeTitlePage(state, payload) {
+  [Type.CHANGE_TITLE_PAGE](state, payload) {
     state.titlePage = payload
   },
   // 4) Change status confirm
-  changeStatusConfirm(state, payload) {
+  [Type.CHANGE_STATUS_CONFIRM](state, payload) {
     state.statusConfirm = payload
   },
   // 5) - Change confirm
-  changeConfirm(state, payload) {
+  [Type.CHANGE_CONFIRM](state, payload) {
     state.confirm = payload
+  },
+  // 6) - Change user info
+  [Type.CHANGE_USER_INFO](state, payload) {
+    state.userInfo = payload
   },
 }
 
@@ -48,6 +55,10 @@ export const getters = {
   // 1) Get Language
   getLang(state) {
     return state.i18n.locale
+  },
+  //
+  statusUserInfo(state) {
+    return state.userInfo.status
   },
 }
 
@@ -64,6 +75,6 @@ export const actions = {
     // 1)
     const data = await this.$axios.$get('/social')
     // 2)
-    commit('changeAllSocial', data)
+    commit(Type.CHANGE_ALL_SOCIAL, data)
   },
 }

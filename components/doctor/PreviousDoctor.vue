@@ -7,8 +7,6 @@
     <template #loading>
       <div class="lds-dual-ring"></div>
     </template>
-    <!-- Error -->
-    <!-- <template #error>errors</template> -->
     <!-- Data -->
     <template #data="{ data: allData }">
       <b-row
@@ -54,7 +52,7 @@ export default {
   margin: 8px;
   border-radius: 50%;
   border: 6px solid transparent;
-  border-color: black transparent black transparent;
+  border-color: #2fa18b transparent #2fa18b transparent;
   animation: lds-dual-ring 1.2s linear infinite;
 }
 @keyframes lds-dual-ring {

@@ -181,6 +181,7 @@
     "errorUploadVideo": "لو سمحت قم برفع الفيديو مره اخري",
     "errorUploadImage": "لو سمحت قم برفع الصوره مره اخري",
     "imageDelete": "الصورة قد تم حذفها",
-    "confirmDelete": "هل انت واثق انك تريد حذف {element}"
+    "confirmDelete": "هل انت واثق انك تريد حذف {element}",
+    "someError": "يرجي اعاده المحاولة لظهور خطأ ما"
   }
 }

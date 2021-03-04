@@ -148,6 +148,8 @@ export default {
         },
       })
     },
+
+    transpile: ['fake-authentication'],
   },
 
   //

@@ -216,6 +216,7 @@
 <script>
 import { required, maxLength, numeric } from 'vuelidate/lib/validators'
 import { goToBack } from '@/mixins/other.js'
+import * as Type from '@/type/index'
 //
 export default {
   name: 'EditAboutMe',
@@ -276,7 +277,7 @@ export default {
     statusConfirmDelete(status) {
       if (status) {
         this.removeImage(this.placeHolder)
-        this.$store.commit('changeStatusConfirm', null)
+        this.$store.commit(Type.CHANGE_STATUS_CONFIRM, null)
       }
     },
   },

@@ -16,6 +16,7 @@
     "bootstrap-vue": "^2.17.3",
     "core-js": "^3.6.5",
     "date-fns": "^1.29.0",
+    "fake-authentication": "^1.0.0",
     "nuxt": "^2.14.6",
     "nuxt-i18n": "^6.18.0",
     "vue-airbnb-style-datepicker": "^2.7.1",

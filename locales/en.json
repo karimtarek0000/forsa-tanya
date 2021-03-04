@@ -181,6 +181,7 @@
     "errorUploadVideo": "please try again upload video",
     "errorUploadImage": "please try again upload image",
     "imageDelete": "image has been deleted",
-    "confirmDelete": "are you sure delete {element}"
+    "confirmDelete": "are you sure delete {element}",
+    "someError": "some error please try again"
   }
 }
