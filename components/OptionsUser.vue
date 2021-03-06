@@ -42,7 +42,6 @@
                 <span class="ml-2">my profile</span>
               </b-link>
               <b-link
-                :to="localePath('sign-in')"
                 class="text-secondary py-2 px-lg-2 d-block text-capitalize"
               >
                 <GSvg name-icon="session-user" title="session user" />
@@ -244,7 +243,7 @@ export default {
     // 3) - Log out
     async logOut() {
       await fakeAuth.signOut()
-      this.$store.commit(Type.CHANGE_USER_INFO, { status: null, name: null })
+      this.$store.dispatch(Type.LOG_OUT)
     },
   },
 }

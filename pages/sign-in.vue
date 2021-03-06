@@ -104,9 +104,11 @@
               />
             </b-col>
             <b-col>
-              <span class="text-capitalize text-18">{{
-                $t('form.label.remember')
-              }}</span>
+              <label
+                for="checkbox-1"
+                class="text-capitalize user-select m-0 text-18"
+                >{{ $t('form.label.remember') }}</label
+              >
             </b-col>
           </b-row>
         </b-col>
@@ -186,10 +188,12 @@ import Form from '@/mixins/form.js'
 import fakeAuth from 'fake-authentication'
 import { required, email } from 'vuelidate/lib/validators'
 import * as Type from '@/type/index'
+import Cookie from 'js-cookie'
+
 //
 export default {
   layout: 'auth',
-  middleware: 'checkAuth',
+  middleware: ['checkUser', 'checkAuth'],
   mixins: [Form.actionsForm],
   data() {
     return {
@@ -249,7 +253,15 @@ export default {
             typeMessage: 'success',
             message: 'correct',
           })
-          // 5) - Finaly change router to home
+          // 5) - Set token and name
+          Cookie.set(
+            'token',
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c'
+          )
+
+          Cookie.set('name', infoUser[0].name.replace(' ', '-'))
+
+          // 6) - Finaly change router to home
           setTimeout(() => {
             this.$router.push(this.localePath('/'))
           }, 500)
@@ -258,7 +270,7 @@ export default {
           this.$store.commit(Type.CHANGE_STATEUS_ALERT, {
             status: true,
             typeMessage: 'error',
-            message: 'someError',
+            message: 'required',
           })
         }
       } catch {

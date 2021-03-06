@@ -5,6 +5,8 @@ const CHANGE_TITLE_PAGE = 'index/changeTitlePage'
 const CHANGE_STATUS_CONFIRM = 'index/changeStatusConfirm'
 const CHANGE_CONFIRM = 'index/changeConfirm'
 const CHANGE_USER_INFO = 'index/changeUserInfo'
+const INIT_AUTH = 'index/initAuth'
+const LOG_OUT = 'index/logOut'
 //
 export {
   SOCIAL_MEDIA,
@@ -14,4 +16,6 @@ export {
   CHANGE_STATUS_CONFIRM,
   CHANGE_CONFIRM,
   CHANGE_USER_INFO,
+  INIT_AUTH,
+  LOG_OUT,
 }

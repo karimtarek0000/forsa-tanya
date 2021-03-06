@@ -13,6 +13,7 @@
 
 <script>
 export default {
+  middleware: 'checkUser',
   async asyncData({ app }) {
     const data = await app.$axios.$get('/top')
 

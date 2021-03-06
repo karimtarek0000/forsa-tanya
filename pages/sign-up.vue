@@ -504,12 +504,13 @@ import {
   sameAs,
   numeric,
 } from 'vuelidate/lib/validators'
-import * as Type from '../type/index'
+import Cookie from 'js-cookie'
+import * as Type from '@/type/index'
 //
 export default {
   layout: 'auth',
   mixins: [Form.actionsForm],
-  middleware: 'checkAuth',
+  middleware: ['checkUser', 'checkAuth'],
   data() {
     return {
       form: {
@@ -619,7 +620,15 @@ export default {
             typeMessage: 'success',
             message: 'registerSuccess',
           })
-          // 5) - Finaly change router to home
+          // 5) - Set token and name
+          Cookie.set(
+            'token',
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c'
+          )
+
+          Cookie.set('name', this.form.name.replace(' ', '-'))
+
+          // 6 - Finaly change router to home
           setTimeout(() => {
             this.$router.push(this.localePath('/'))
           }, 500)

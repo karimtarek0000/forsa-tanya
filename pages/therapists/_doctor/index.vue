@@ -214,14 +214,15 @@
                   />
                   <!-- 1) - Image -->
                   <div
-                    class="mx-auto w-110 h-110 rounded-circle position-relative image-avatar"
+                    class="mx-auto w-110 h-110 rounded-circle position-relative image-avatar overflow-hidden"
                   >
                     <img class="img-fluid obj-img" :src="reviews.image" />
                   </div>
                   <!-- 2) - Title -->
-                  <h4 class="text-17 weight-bolder marginTop--35 text-seventh">
-                    hany ali
-                  </h4>
+                  <h4
+                    class="text-17 weight-bolder marginTop--35 text-seventh"
+                    v-text="reviews.username"
+                  />
                   <!-- 3) - Quote -->
                   <p class="text-14 line-2 px-3 weight-light">
                     {{ reviews.message }}
