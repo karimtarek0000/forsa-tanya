@@ -102,16 +102,15 @@ export const actions = {
         name: getName.split('=')[1],
       })
     } else {
-      const getName = localStorage.getItem('name')
-      const getToken = localStorage.getItem('token')
-
-      //
-      if (getName && getToken) {
-        commit(Type.CHANGE_USER_INFO, {
-          status: getToken,
-          name: getName,
-        })
-      }
+      // const getName = localStorage.getItem('name')
+      // const getToken = localStorage.getItem('token')
+      // //
+      // if (getName && getToken) {
+      //   commit(Type.CHANGE_USER_INFO, {
+      //     status: getToken,
+      //     name: getName,
+      //   })
+      // }
     }
   },
   // 3) - Log out
