@@ -101,7 +101,9 @@ export const actions = {
         status: getToken.split('=')[1],
         name: getName.split('=')[1],
       })
-    } else {
+    }
+
+    if (process.client) {
       const getName = localStorage.getItem('name')
       const getToken = localStorage.getItem('token')
       //
