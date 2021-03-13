@@ -101,12 +101,25 @@ export const actions = {
         status: getToken.split('=')[1],
         name: getName.split('=')[1],
       })
+    } else {
+      const getName = localStorage.getItem('name')
+      const getToken = localStorage.getItem('token')
+
+      //
+      if (getName && getToken) {
+        commit(Type.CHANGE_USER_INFO, {
+          status: getToken,
+          name: getName,
+        })
+      }
     }
   },
   // 3) - Log out
   [Type.LOG_OUT]({ commit }) {
     Cookie.remove('name')
     Cookie.remove('token')
+    localStorage.removeItem('name')
+    localStorage.removeItem('token')
     commit(Type.CHANGE_USER_INFO, { status: null, name: null })
   },
 }
