@@ -188,7 +188,7 @@ import Form from '@/mixins/form.js'
 import fakeAuth from 'fake-authentication'
 import { required, email } from 'vuelidate/lib/validators'
 import * as Type from '@/type/index'
-import Cookie from 'js-cookie'
+// import Cookie from 'js-cookie'
 
 //
 export default {
@@ -254,11 +254,11 @@ export default {
             message: 'correct',
           })
           // 5) - Set token and name
-          Cookie.set(
-            'token',
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c'
-          )
-          Cookie.set('name', infoUser[0].name.replace(' ', '-'))
+          // Cookie.set(
+          //   'token',
+          //   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c'
+          // )
+          // Cookie.set('name', infoUser[0].name.replace(' ', '-'))
 
           localStorage.setItem('name', infoUser[0].name.replace(' ', '-'))
           localStorage.setItem(

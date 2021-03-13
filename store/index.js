@@ -1,5 +1,5 @@
 import * as Type from '@/type/index'
-import Cookie from 'js-cookie'
+// import Cookie from 'js-cookie'
 
 //
 // eslint-disable-next-line import/namespace
@@ -79,46 +79,62 @@ export const actions = {
     commit(Type.CHANGE_ALL_SOCIAL, data)
   },
   // 2) Init auth
-  [Type.INIT_AUTH]({ commit }, req) {
-    if (req) {
-      // 1) -
-      const getHeader = req.headers.cookie
+  // [Type.INIT_AUTH]({ commit }, req) {
+  //   //
+  //   if (req) {
+  //     // 1) -
+  //     const getHeader = req.headers.cookie
 
-      // 2) - Get token from cookie
-      const getToken = getHeader
-        .split(';')
-        .find((cookie) => cookie.trim().startsWith('token='))
+  //     // 2) - Get token from cookie
+  //     const getToken = getHeader
+  //       .split(';')
+  //       .find((cookie) => cookie.trim().startsWith('token='))
 
-      // 3) - Get name from cookie
-      const getName = getHeader
-        .split(';')
-        .find((cookie) => cookie.trim().startsWith('name='))
+  //     // 3) - Get name from cookie
+  //     const getName = getHeader
+  //       .split(';')
+  //       .find((cookie) => cookie.trim().startsWith('name='))
 
-      if (!getToken || !getName) return
+  //     if (!getToken || !getName) return
 
-      // 4) - Finaly set all data token and name in state
+  //     // 4) - Finaly set all data token and name in state
+  //     commit(Type.CHANGE_USER_INFO, {
+  //       status: getToken.split('=')[1],
+  //       name: getName.split('=')[1],
+  //     })
+  //   }
+
+  //   if (process.client) {
+  //     const getName = localStorage.getItem('name')
+  //     const getToken = localStorage.getItem('token')
+  //     //
+  //     if (getName && getToken) {
+  //       commit(Type.CHANGE_USER_INFO, {
+  //         status: getToken,
+  //         name: getName,
+  //       })
+  //     }
+
+  //     // eslint-disable-next-line no-console
+  //     console.log(getName)
+  //   }
+  // },
+  //
+  [Type.INIT_AUTH]({ commit }) {
+    const getName = localStorage.getItem('name')
+    const getToken = localStorage.getItem('token')
+    //
+    if (getName && getToken) {
       commit(Type.CHANGE_USER_INFO, {
-        status: getToken.split('=')[1],
-        name: getName.split('=')[1],
+        status: getToken,
+        name: getName,
       })
-    }
-
-    if (process.client) {
-      const getName = localStorage.getItem('name')
-      const getToken = localStorage.getItem('token')
-      //
-      if (getName && getToken) {
-        commit(Type.CHANGE_USER_INFO, {
-          status: getToken,
-          name: getName,
-        })
-      }
     }
   },
   // 3) - Log out
   [Type.LOG_OUT]({ commit }) {
-    Cookie.remove('name')
-    Cookie.remove('token')
+    // Cookie.remove('name')
+    // Cookie.remove('token')
     localStorage.removeItem('name')
     localStorage.removeItem('token')
     commit(Type.CHANGE_USER_INFO, { status: null, name: null })

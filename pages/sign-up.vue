@@ -504,7 +504,7 @@ import {
   sameAs,
   numeric,
 } from 'vuelidate/lib/validators'
-import Cookie from 'js-cookie'
+// import Cookie from 'js-cookie'
 import * as Type from '@/type/index'
 //
 export default {
@@ -621,11 +621,11 @@ export default {
             message: 'registerSuccess',
           })
           // 5) - Set token and name
-          Cookie.set(
-            'token',
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c'
-          )
-          Cookie.set('name', this.form.name.replace(' ', '-'))
+          // Cookie.set(
+          //   'token',
+          //   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c'
+          // )
+          // Cookie.set('name', this.form.name.replace(' ', '-'))
 
           localStorage.setItem('name', this.form.name.replace(' ', '-'))
           localStorage.setItem(
